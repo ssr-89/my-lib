@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Объекты</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script defer src="js/script.js"></script>
+</head>
+<body>
+	<!-- @import "header.html" -->
+	<main class="main">
+		<section class="section-menu">
+			<div class="section-menu__container">
+				<h1 class="section-menu__title title">Объекты (objects)</h1>
+				<nav class="section-menu menu">
+					<ul class="menu__list list">
+						<li class="menu__item">
+							<a class="menu__link link" href="#basic-objects">Объекты</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#operators-objects">Операторы объектов</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#symbols-objects">Вложенность, Symbol, Object.assign и обычное клонирование объекта</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#constructor">Лестница, accumulator, конструктор</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#method-object">Метод объекта</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#"></a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#"></a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#"></a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#"></a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#"></a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</section>
+		<section class="basic-objects" id="basic-objects">
+			<div class="basic-objects__container">
+				<h2 class="basic-objects__title container-title title">Объекты</h2>
+				<div class="basic-objects__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Создание объекта и вывод значений свойств</button>
+						<div class="accordion__content">
+							<h3 class="accordion__heading title">Создание объекта</h3>
+							<div class="accordion__wrapper">
+								<code class="accordion__code block">
+									<i class="accordion__i">// Создание object</i><br>
+									let user = new Object();<br></br>
+									let userInfo = {};<br><br>
+									<i class="accordion__i">// ВАЖНО! Свойства объекта возможно назвать зарезервированными именами, к примеру: for или in.</i>
+								</code>
+							</div>
+							<h3 class="accordion__heading title">Вывод значений свойств</h3>
+							<div class="accordion__wrapper">
+								<p class="accordion__descr text">Простые имена свойств</p>
+								<code class="accordion__code block">
+									const user = {<br>
+									&nbsp;name: "John", <i class="accordion__i">// обычное имя свойства</i><br>
+									&nbsp;surname: "Smith", <i class="accordion__i">// обычное имя свойства</i><br>
+									&nbsp;age: 33, <i class="accordion__i">// обычное имя свойства</i><br>
+									};<br>
+									console.log(userInfo); <i class="accordion__i">// выведет весь объект</i><br>
+									console.log(userInfo.name); <i class="accordion__i">// "John"</i><br><br>
+									console.log(userInfo["age"]); <i class="accordion__i">// 33</i>
+								</code><br>
+								<hr><br>
+								<p class="accordion__descr text">Сложные имена свойств</p>
+								<code class="accordion__code block">
+									const user = {<br>
+									&nbsp;"likes javascript": true, <i class="accordion__i">// имя из нескольких слов пишется в кавычках</i><br>
+									}<br>
+									console.log(bigName["likes javascript"]); <i class="accordion__i">// true !Сложные имена обязательно прописываются в квадратных скобках с кавычками!</i>
+								</code><br>
+								<hr><br>
+								<p class="accordion__descr text">Числовые имена свойств</p>
+								<code class="accordion__code block">
+									const digits = {<br>
+									&nbsp;999: "Значение свойства", <i class="accordion__i">// имя-число как обычное имя прописывается</i><br>
+									};<br>
+									console.log(digit[999]); <i class="accordion__i">// "Значение свойства" !Числовые имена обязательно прописываются в квадратных скобках, но возможно без кавычек!</i>
+								</code><br>
+								<hr><br>
+								<p class="accordion__descr text">Имена свойств в переменных</p>
+								<code class="accordion__code block">
+									let name = "Значение";<br><br>
+									const user = {<br>
+									&nbsp;[name]: "John", <i class="accordion__i">// имя переменной прописывается в квадратных скобках</i><br>
+									}<br>
+									console.log(user[name]); <i class="accordion__i">// "John" !Прописывать в квадратных скобках ОБЯЗАТЕЛЬНО!</i><br>
+									console.log(user["Значение"]); <i class="accordion__i">// "John" !Прописывать в квадратных скобках и в кавычках ОБЯЗАТЕЛЬНО!</i>
+								</code>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Вывод значений свойств с помощью <code class="accordion__code blue-code">function()</code></button>
+						<div class="accordion__content">
+							<h3 class="accordion__heading title">Простой пример</h3>
+							<div class="accordion__wrapper">
+								<code class="accordion__code block">
+									function makeUser(name, age) {<br>
+  								&nbsp;return {<br>
+    							&nbsp;&nbsp;name: name,<br>
+    							&nbsp;&nbsp;age: age,<br>
+    							&nbsp;&nbsp;<i class="accordion__i">// ...другие свойства</i><br>
+  								&nbsp;};<br>
+									}<br>
+									let user = makeUser("John", 30);<br>
+									console.log(user);
+								</code>
+							</div>
+							<h3 class="accordion__heading title">Сложный пример</h3>
+							<div class="accordion__wrapper">
+								<code class="accordion__code block">
+									function myTypes(obj, key) {<br>
+									&nbsp;console.log(obj[key]); <i class="accordion__i">// key должен быть в квадратных скобках</i><br>
+									}<br><br>
+									let me = {<br>
+									&nbsp;name: "John",<br>
+									&nbsp;surname: "Smith",<br>
+									&nbsp;address: {<br>
+									&nbsp;&nbsp;city: "New York",<br>
+									&nbsp;&nbsp;street: "Freedom",<br>
+									&nbsp;}<br>
+									};<br><br>
+									myTypes(me, "name"); <i class="accordion__i">// "John" - вызов функции</i><br>
+									myTypes(me, "surname"); <i class="accordion__i">// "Smith" - вызов функции</i><br>
+									myTypes(me, "address"); <i class="accordion__i">// {"city": "New York", "street": "Freedom",}</i><br>
+									console.log(me.address.city); <i class="accordion__i">// "New York"</i>
+								</code><br><br>
+								<p class="accordion__descr text">
+									<b>address</b> - вложенный объект в объект в качестве свойства
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Добавление свойств</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<code class="accordion__code block">
+									const user = {};<br><br>
+									<i class="accordion__i">// Добавление простых свойств</i><br>
+									user.name = 'John';<br><br>
+									<i class="accordion__i">// Добавление свойств со сложными именами</i><br>
+									user["likes javascript"] = true;<br><br>
+									<i class="accordion__i">// Добавление свойств с вложением</i><br>
+									user.address = {<br>
+									&nbsp;city: "New York",<br>
+									&nbsp;street: "Freedom",<br>
+									}<br><br><hr><br>
+									console.log(user);<br><br>
+									{<br>
+									&nbsp;"name": "John",<br>
+									&nbsp;"likes javascript": true,<br>
+									&nbsp;"address": {<br>
+									&nbsp;&nbsp;"city": "New York",<br>
+									&nbsp;&nbsp;"street": "Freedom",<br>
+									&nbsp;}<br>
+									}
+								</code>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+        		<button class="accordion__title btn" data-spoller>Изменение значений свойств</button>
+        		<div class="accordion__content">
+          		<div class="accordion__wrapper">
+								<code class="accordion__code block">
+									const user = {<br>
+									&nbsp;name: "John",<br>
+									&nbsp;age: 30,<br>
+									}<br>
+									console.log(user); <i class="accordion__i">// {name: "John", age: 30,}</i><br><br>
+									<i class="accordion__i">// изменяем возраст с 30 на 18</i><br>
+									user.age = 18;<br><br>
+									console.log(user); <i class="accordion__i">// {name: "John", age: 18,}</i>
+								</code>
+          		</div>
+        		</div>
+      		</div>
+      		<div class="accordion__item">
+        		<button class="accordion__title btn" data-spoller>Копирование объекта (свойств)</button>
+        		<div class="accordion__content">
+          		<div class="accordion__wrapper">
+								<code class="accordion__code block">
+									<i class="accordion__i">
+										// При копировании объекта - копируется ссылка на него, а не сам объект
+									</i><br><br>
+									const user = {<br>
+									&nbsp;name: "John",<br>
+									&nbsp;age: 30,<br>
+									}<br><br>
+									<i class="accordion__i">// Копирование объекта</i><br>
+									const admin = user;<br><br>
+									<i class="accordion__i">// Изменение свойства</i><br>
+									admin.age = 18;<br><br>
+									console.log(user.age); <i class="accordion__i">// 18 - возраст изменился и у admin и у user</i>
+								</code>
+							</div>
+        		</div>
+      		</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Квадратные скобки <code class="accordion__code blue-code">[key]</code> и имена свойств в переменных</button>
+						<div class="accordion__content">
+							<h3 class="accordion__heading title">Сложные имена свойств</h3>
+							<div class="accordion__wrapper">
+								<code class="accordion__code block">
+									const user = {};<br><br>
+									<i class="accordion__i">// присваивание значения свойству</i><br>
+									user["likes birds"] = 5;<br><br>
+									<i class="accordion__i">// получение значения свойства</i><br>
+									console.log(user["likes birds"]); <i class="accordion__i">// 5</i>
+								</code><br>
+								<hr>
+								<br>
+								<code class="accordion__code block">
+									user["likes birds"] = 5;<br><br>
+									<i class="accordion__i">// то же самое, что и</i><br><br>
+									const user = {<br>
+									&nbsp;['likes birds']: 5,<br>
+									}
+								</code>
+							</div>
+							<h3 class="accordion__heading title">Имена свойств в переменных</h3>
+							<div class="accordion__wrapper">
+								<p>Простой пример:</p>
+								<code class="accordion__code block">
+									<i class="accordion__i">// имя свойства может храниться в переменной</i><br>
+									let key = "likes birds";<br><br>
+									<i class="accordion__i">// присваивание значения свойству</i><br>
+									<i class="accordion__i">// то же самое, что и user["likes birds"] = true;</i><br>
+									user[key] = true;<br>
+									console.log(user[key]); <i class="accordion__i">// true</i>
+								</code><br><br>
+								<p>Сложный пример:</p>
+								<code class="accordion__code block">
+									let user = {<br>
+  								&nbsp;name: "John",<br>
+  								&nbsp;age: 30<br>
+									};<br><br>
+									let key = prompt("Что вы хотите узнать о пользователе?", "name");<br><br>
+									<i class="accordion__i">// доступ к свойству через переменную</i><br>	
+									console.log( user[key] ); <i class="accordion__i">// John (если ввели "name")</i>
+								</code>
+							</div>
+							<h3 class="accordion__heading title">Вычисляемые свойства</h3>
+							<div class="accordion__wrapper">
+								<p>Простой пример:</p>
+								<code class="accordion__code block">
+									let fruit = prompt("Какой фрукт купить?", "apple");<br><br>
+									let bag = {<br>
+									&nbsp;[fruit]: 5, <i class="accordion__i">// имя свойства будет взято из переменной fruit</i><br>
+									};<br><br>
+									console.log( bag.apple ); <i class="accordion__i">// 5, если fruit="apple"</i><br>
+								</code><br><br>
+								<p>Средний пример:</p>
+								<code class="accordion__code block">
+									let fruit = prompt("Какой фрукт купить?", "apple");<br>
+									let bag = {};<br><br>
+									<i class="accordion__i">// имя свойства будет взято из переменной fruit</i><br>
+									bag[fruit] = 5;
+								</code><br><br>
+								<p>Сложный пример:</p>
+								<code class="accordion__code block">
+									let fruit = 'apple';<br>
+									let bag = {<br>
+									&nbsp;[fruit + 'Computers']: 5 <i class="accordion__i">// bag.appleComputers = 5</i><br>
+									};
+								</code>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="operators-objects" id="operators-objects">
+			<div class="operators-objects__container">
+				<h2 class="operators-objects__title container-title title">Операторы объектов</h2>
+				<div class="operators-objects__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+        		<button class="accordion__title btn" data-spoller>Оператор удаления <code class="accordion__code blue-code">delete</code></button>
+        		<div class="accordion__content">
+          		<div class="accordion__wrapper">
+								<code class="accordion__code block">
+									const user = {<br>
+									&nbsp;name: "John",<br>
+									&nbsp;age: 30,<br>
+									&nbsp;["likes javascript"]: true,<br>
+									}<br><br>
+									console.log(user); <i class="accordion__i">// {"name": "John", "age": 30, "likes javascript": true,}</i><br><br>
+									delete user["likes javascript"];<br><br>
+									console.log(user); <i class="accordion__i">// {"name": "John", "age": 30,}</i>
+								</code>
+          		</div>
+       		 	</div>
+      		</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Оператор проверки наличия свойств <code class="accordion__code blue-code">in</code> и другие способы првоерки</button>
+						<div class="accordion__content">
+							<h3 class="accordion__heading title">Простая проверка</h3>
+							<div class="accordion__wrapper">
+								<code class="accordion__code block">
+									let user = new Object();<br>
+									user.name = "John";<br>
+									<i class="accordion__i">//user.age = 30;</i><br><br>
+									<i class="accordion__i">//console.log(user.age);</i><br><br>
+									if (user.age) {<br>
+									&nbsp;console.log(user.age);<br>
+									}
+								</code>
+							</div>
+							<h3 class="accordion__heading title">Опциональная проверка <code class="accordion__code blue-code">?.</code></h3><br>
+							<a target="_blank" class="accordion__link link" href="https://learn.javascript.ru/optional-chaining">Источник</a>
+							<div class="accordion__wrapper">
+								<p class="accordion__descr text">
+									<code class="accordion__code blue-code">?.</code> проверяет левую часть на <code class="accordion__code blue-code">null/undefined</code> и позволяет продолжить вычисление, если это не так.
+								</p>
+								<p class="accordion__descr text">
+									Цепочка <code class="accordion__code blue-code">?.</code> позволяет безопасно получать доступ к вложенным свойствам.
+								</p>
+								<code class="accordion__code block">
+									<i class="accordion__i">// Создаём объект и присваиваем свойства</i><br>
+									let user = new Object();<br>
+									user.name = "John";<br>
+									user.age = 30;<br><br>
+									<i class="accordion__i">
+										/*user.address = {<br>
+									  &nbsp;city: "Uzhhorod",<br>
+									  &nbsp;street: "Freedom"<br>
+										};*/
+									</i><br><br>
+									<i class="accordion__i">//console.log(user.address.street); // выведет ошибку, если нет данного свойства</i><br><br>
+									console.log(user?.address?.street); <i class="accordion__i">// данный способ при проверке выводит undefined, если отсутствует свойство</i><br>
+								</code>
+							</div>
+							<h3 class="accordion__heading title">Проверка через оператор <code class="accordion__code blue-code">in</code></h3>
+							<div class="accordion__wrapper">
+								<code class="accordion__code block">
+									const user = new Object();<br>
+									user.name = "John";<br>
+									user.age = 30;<br>
+									user.address = {<br>
+									&nbsp;city: "Uzhhorod",<br>
+									&nbsp;street: "Freedom"<br>
+									};<br><br>
+									if ("name" in user) {<br>
+									&nbsp;console.log(user.name); <i class="accordion__i">// "John"</i><br>
+									}<br><br>
+									<hr><br>
+									<i class="accordion__i">
+									/*
+									Сравнение с "undefined"<br>
+									const user = {};<br>
+									console.log(user.name === undefined); // true означает "свойства нет"<br>
+									*/<br><br>
+									// ИНФОРМАЦИЯ<br>									
+									//В большинстве случаев следует применять сравнение с "undefined"<br>
+									//либо опциональная цепочка "?."<br>
+									//Однако, если свойство содержит значение "undefined", то необходимо применить для проверки "in".
+									</i>
+									<br><br>
+									<hr><br><br>
+									const user = new Object();<br>
+									user.name = undefined;<br>
+									<i class="accordion__i">
+									// ...следующие свойства<br><br>
+									//код не сработает и выдаст false<br>
+									/*if (user.name) {<br>
+									&nbsp;console.log(user.name);<br>
+									}*/<br><br>
+									//код сработает и выдаст true (undefined)
+									</i>
+									<br>
+									if ("name" in user) {<br>
+									&nbsp;console.log(user.name);<br>
+									}	
+								</code>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Опертора перебора свойств циклом <code class="accordion__code blue-code">for in</code></button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">							
+								<code class="accordion__code block">
+									for (let key in object) {<br>
+									&nbsp;<i class="accordion__i">// тело цикла выполняется для каждого свойства объекта</i><br>
+									}<br><br><br><br>
+									<i class="accordion__i">// создаём объект</i><br>
+									const user = new Object();<br>
+									user.name = "John";<br>
+									user.age = 30;<br>
+									user.address = {<br>
+									&nbsp;&nbsp;city: "New York",<br>
+									&nbsp;&nbsp;street: "Freedom"<br>
+									};<br><br>
+									<hr>
+									<br>
+									for (let key in user) {<br>
+									&nbsp;<i class="accordion__i">// ключи</i><br>
+									&nbsp;console.log(key); <i class="accordion__i">// 'name' 'age' 'address'</i><br><br>
+									&nbsp;<i class="accordion__i">// значения ключей</i><br>
+									&nbsp;console.log(user[key]); <i class="accordion__i">// 'John' '30' {"city": "New York", "street": "Freedom",}</i><br>
+									}<br><br>
+									<hr>
+									<br>
+									for (let key in user.address) {<br>
+									&nbsp;<i class="accordion__i">// ключи</i><br>
+									&nbsp;console.log(key); // city street<br><br>
+									&nbsp;<i class="accordion__i">// значения ключей</i><br>
+									&nbsp;console.log(user.address[key]); <i class="accordion__i">// "city" "New York" "street" "Freedom"</i><br>
+									}<br>
+								</code>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="symbols-objects" id="symbols-objects">
+  		<div class="symbols-objects__container">
+    		<h2 class="symbols-objects__title container-title title">Вложенность, Symbol, Object.assign и обычное клонирование объекта</h2>
+    		<div class="symbols-objects__block accordion" data-spollers data-one-spoller>
+      		<div class="accordion__item">
+        		<button class="accordion__title btn" data-spoller>Вложенность</button>
+        		<div class="accordion__content">
+          		<div class="accordion__wrapper">
+								<code class="accordion__code block">
+									const user = {<br>
+									&nbsp;name: "John",<br>
+									&nbsp;age: 30,<br>
+									&nbsp;address: { <i class="accordion__i">// address - это вложенный объект в другой объект в качестве свойства</i><br>
+									&nbsp;&nbsp;city: "New York",<br>
+									&nbsp;&nbsp;street: "Freedom",<br>
+									&nbsp;},<br>
+									}<br><br><hr><br>
+									console.log(user.address); <i class="accordion__i">// {city: "New York", street: "Freedom",}</i><br><br><hr><br>
+									console.log(user.address.city); <i class="accordion__i">// "New York"</i>
+								</code>
+							</div>
+        		</div>
+      		</div>
+      		<div class="accordion__item">
+        		<button class="accordion__title btn" data-spoller>Symbol и методы</button>
+        		<div class="accordion__content">
+        			<a target="_blank" class="accordion__link link" href="https://learn.javascript.ru/symbol">Источник</a>
+          		<div class="accordion__wrapper">
+								<code class="accordion__code block">
+									const pass = Symbol("password");<br>
+									const user = {<br>
+									&nbsp;name: "John",<br>
+									&nbsp;age: 30,<br>
+									&nbsp;[pass]: 050492,<br>
+									}<br>
+									console.log(user); <i class="accordion__i">// {name: "John", age: 30,} - Symbol не выводится в консоль, но будет присутствовать в коде</i><br><br>
+									<i class="accordion__i">
+										/*<br>
+										Основное применение символов:<br>
+										1. "Скрытые" свойства объектов<br>
+										&nbsp;Символьное свойство не появится в for..in<br>
+										2. Использование системных символов<br>
+										&nbsp;Symbol.iterator, Symbol.toPrimitive и т.д.<br>
+										*/
+									</i>
+									&nbsp;
+								</code>
+          		</div>
+          		<p class="accordion__text text">
+          			Большинство типов данных в JavaScript могут быть неявно преобразованы в строку.
+          		</p>
+          		<p class="accordion__text text">
+          			Например, функция <code class="accordion__code blue-code">alert</code> принимает практически любое значение, автоматически преобразовывает его в строку, а затем выводит это значение, не сообщая об ошибке.
+          		</p>
+          		<p class="accordion__text text">
+          			Символы же особенные и не преобразуются автоматически.
+          		</p>
+          		<p class="accordion__text text">
+          			К примеру, <code class="accordion__code blue-code">alert</code> ниже выдаст ошибку:
+          		</p>
+          		<div class="accordion__wrapper">
+          			<code class="accordion__code block">
+          				const pass = Symbol("password");<br>
+          				alert(pass); <i class="accordion__i">// TypeError: Cannot convert a Symbol value to a string</i>
+          			</code>
+          		</div>
+          		<p class="accordion__text text">
+          			Преобразование в строку:
+          		</p>
+          		<div class="accordion__wrapper">
+          			<code class="accordion__code block">
+          				const pass = Symbol("password");<br>
+          				alert(pass.toString()); <i class="accordion__i">// метод <code class="accordion__code blue-code">.toString()</code> преобразует в строку и вернёт <code class="accordion__code blue-code">Symbol(password)</code></i>
+          			</code>
+          		</div>
+          		<p class="accordion__text text">Вывод описания:</p>
+          		<div class="accordion__wrapper">
+          			<code class="accordion__code block">
+          				const pass = Symbol("password");<br>
+          				alert(pass.description); <i class="accordion__i">// метод <code class="accordion__code blue-code">.description</code> вернёт только описание <code class="accordion__code blue-code">password</code></i>
+          			</code>
+          		</div>
+        		</div>
+      		</div>
+      		<div class="accordion__item">
+        		<button class="accordion__title btn" data-spoller><code class="accordion__code blue-code">Object.assign</code> (клонирование, объединение объектов</button>
+        		<div class="accordion__content">
+        			<h3 class="accordion__heading title">Дублирование объекта</h3>
+          		<div class="accordion__wrapper">
+								<code class="accordion__code block">
+									<p class="accordion__descr text">Object.assign - создаёт клон объекта</p>
+									const user = { gender: 'men', };<br><br>
+									let obj1 = { name: "John" };<br>
+									let obj2 = { surname: 'Smith' };<br>
+									let obj3 = { age: 30 };<br><br>
+									Object.assign(user, obj1, obj2, obj3); <i class="accordion__i">// user - целевой объект, objN - объекты клонирования</i><br><br>
+									console.log(user); <i class="accordion__i">// {"gender": "men", "name":"John","surname":"Smith","age": 30,}</i>									
+								</code>
+          		</div>
+          		<h3>
+          			!Обязательно указать целевой объект даже без имени!
+          		</h3>
+          		<p class="accordion__text text">
+          			Если целевой объект без имени Object.assign() должен находиться значением переменной.
+          		</p>
+          		<span>Пример: <code class="accordion__code blue-code">let primer = Object.assing({}, obj1, obj2, obj3,);</code></span>
+          		<h3>
+          			!Если скопированное имя свойства уже существует, то оно будет перезаписано.
+          		</h3>
+          		<h3>
+          			!С помощью <code class="accordion__code blue-code">Object.assign</code> нельзя склонировать объект внутри объекта <code class="accordion__code blue-code">user.size.height</code>.
+          		</h3>
+          		<p class="accordion__text text">
+          			Для этого необходимо использовать глубокое клонирование: <a target="_blank" href="https://lodash.com/docs/4.17.15#cloneDeep">_.cloneDeep(obj)</a>.
+          		</p>         		
+          		<h3 class="accordion__heading title">Добавление свойств объекту с помощью object.assign</h3>
+          		<div class="accordion__wrapper">
+          			<code class="accordion__code block">
+          				const user = {<br>
+          				&nbsp;name: "John",<br>
+			 	 					&nbsp;age: 30<br>
+          				}<br><br>
+          				Object.assign(user, { ["likes javascript"]: true, city: "New York" });<br><br>
+          				console.log(user); <i class="accordion__i">// { "name": 'John', "age": 30, "likes javascript": true, "city": 'New York', }</i>
+          			</code>
+          		</div>
+        		</div>
+      		</div>
+      		<div class="accordion__item">
+      			<button class="accordion__title btn" data-spoller>Клонирование без <code class="accordion__code blue-code">Object.assign</code></button>
+     		   <div class="accordion__content">
+     		   	<h3 class="accordion__heading title">Данный способ даёт возможность не прибегать к <code class="accordion__code blue-code">object.assign</code></h3>
+    		      <div class="accordion__wrapper">
+								<code class="accordion__code block">
+									const user = {<br>
+									&nbsp;name: "John",<br>
+									&nbsp;age: 30<br>
+									};<br><br>
+									let clone = {}; <i class="accordion__i">// целевой объект</i><br><br>
+									<i class="accordion__i">// копирование объекта user в clone</i><br>
+									for (let key in user) {<br>
+									&nbsp;clone[key] = user[key];<br>
+									}<br><br>
+									<i class="accordion__i">// теперь clone это полностью независимый объект с тем же содержимым</i><br>
+									clone.name = "Pete"; <i class="accordion__i">// изменим в нём данные</i><br><br>
+									console.log( user.name ); <i class="accordion__i">// всё ещё John в первоначальном объекте</i>
+								</code>
+    		      </div>
+    		    </div>
+   		   	</div>
+   		   	<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Клонирование с помощью Оператора расширения <code class="accordion__code blue-code">...</code></button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<code class="accordion__code block">
+									const admin = {<br>
+									&nbsp;name: "John",<br>
+									&nbsp;age: 30,<br>
+									}<br><br>
+									const user = {...admin}; <i class="accordion__i">// Клонирование с помощью оператора расширения</i><br>
+									console.log(user); <i class="accordion__i">// { "name": "John", "age": 30, }</i><br><br>
+									user.name = "Pete";<br>
+									user.age = 35;<br><br>
+									console.log(admin); <i class="accordion__i">// { "name": "John", "age": 30, }</i><br>
+									console.log(user); <i class="accordion__i">// { "name": "Pete", "age": 35, }</i>
+								</code>
+							</div>
+						</div>
+					</div>
+    		</div>
+  		</div>
+		</section>
+		<section class="constructor" id="constructor">
+  		<div class="constructor__container">
+    		<h2 class="constructor__title container-title title">Лестница, accumulator, конструктор</h2>
+    		<div class="constructor__block accordion" data-spollers data-one-spoller>
+      		<div class="accordion__item">
+        		<button class="accordion__title btn" data-spoller>Лестница - <span class="color-yellow">это вывод методов (функций) в лестничном порядке</span></button>
+        		<div class="accordion__content">
+          		<div class="accordion__wrapper">
+								<code class="accordion__code block">
+									const ladder = {<br>
+									&nbsp;step: 0,<br>
+									&nbsp;up() {<br>
+									&nbsp;&nbsp;this.step++; <i class="accordion__i">// +1</i><br>
+									&nbsp;&nbsp;return this;<br>
+									&nbsp;},<br>
+									&nbsp;down() {<br>
+									&nbsp;&nbsp;this.step--; <i class="accordion__i">// -1</i><br>
+									&nbsp;&nbsp;return this;<br>
+									&nbsp;},<br>
+									&nbsp;showStep() {<br>
+									&nbsp;&nbsp;console.log(this.step);<br>
+									&nbsp;&nbsp;return this;<br>
+									&nbsp;},<br>
+									};<br><br>
+									<i class="accordion__i">// вывод метода (функции) - короткий способ</i><br>
+									ladder.up().up().down().showStep().down().showStep(); <i class="accordion__i">// показывает 1 затем 0</i><br>
+									<i class="accordion__i">// Данный способ построения цепочки возможен благодаря <code class="accordion__code blue-code">return this;</code></i><br><br>
+									<i class="accordion__i">// вывод метода (функции) - длинный способ</i><br>
+									ladder.up(); <i class="accordion__i">// +1</i><br>
+									ladder.up(); <i class="accordion__i">// +1</i><br>
+									ladder.down(); <i class="accordion__i">// -1</i><br>
+									ladder.showStep(); <i class="accordion__i">// выведет 1</i><br>
+									ladder.down(); <i class="accordion__i">// -1</i><br>
+									ladder.showStep(); <i class="accordion__i">// выведет 0 каролина бенефилд https://top.porno666.news/video/11856/</i>
+								</code>
+          		</div>
+        		</div>
+      		</div>
+      		<div class="accordion__item">
+        		<button class="accordion__title btn" data-spoller>accumulator</button>
+        		<div class="accordion__content">
+          		<div class="accordion__wrapper">
+          			<p class="accordion__descr text">
+          				Свойство <code class="accordion__code blue-code">value</code> представляет собой сумму всех введённых пользователем значений с учётом начального значения <code class="accordion__code blue-code">startingValue</code>.
+          			</p>
+								<code class="accordion__code block">
+									<i class="accordion__i">// Конструктор</i><br>
+									function Accumulator(startingValue) {<br>
+									&nbsp;this.value = startingValue;<br><br>
+									&nbsp;this.read = function() {<br>
+									&nbsp;&nbsp;this.value += +prompt('Сколько нужно добавить?', 0);<br>
+									&nbsp;};<br><br>
+									}<br><br>
+									let accum = new Accumulator(1); <i class="accordion__i">// Новый объект с начальным значением</i><br><br>
+									accum.read(); <i class="accordion__i">// прибавляет введённое пользователем значение к текущему значению</i><br>
+									accum.read(); <i class="accordion__i">// прибавляет введённое пользователем значение к текущему значению</i><br><br>
+									console.log(accum.value);
+								</code>
+          		</div>
+        		</div>
+      		</div>
+      		<div class="accordion__item">
+        		<button class="accordion__title btn" data-spoller>Фнукция-конструктор: создание конструктора</button>
+        		<div class="accordion__content">
+        			<p class="accordion__text text">
+        				Обычный синтаксис создания объекта{... } позволяет создать только один объект.
+        			</p>
+        			<p class="accordion__text text">
+        				Но зачастую нам нужно создать множество однотипных объектов, таких как пользователи, элементы меню и т.д.
+        			</p>
+        			<p class="accordion__text text">
+        				Это можно сделать при помощи функции - конструктора и оператора 'new'.
+        			</p>
+        			<a target="_blank" class="accordion__link link" href="https://codepen.io/archicolt/pen/oNyXvbg?editors=1112">Источник аналогичного примера</a>
+          		<div class="accordion__wrapper">
+								<code class="accordion__code block">
+									<i class="accordion__i">
+										/*<br>
+										Функции - конструкторы являются обычными функциями.<br>
+										Но есть два правила:<br>
+										1 Имя функции - конструктора должно начитаться с большой буквы.<br>
+										2 Функция - конструктор должна вызываться при помощи оператора 'new'.<br>
+										*/
+									</i><br><br>
+									function User(name, age) {<br>
+									&nbsp;<i class="accordion__i">// this = {}; автоматически создаётся пустой объект (неявно)</i><br><br>
+									&nbsp;this.name = name;<br>
+									&nbsp;this.age = age;<br><br>
+									&nbsp;<i class="accordion__i">// return this; автоматически возвращается объект (неявно) происходит</i><br>
+									}<br><br>
+									console.log(new User("John", "45")); <i class="accordion__i">// при вызове функции-конструктора необходимо указать оператор <code class="blue-code">new</code> для обозначения объекта</i><br><br>
+									<i class="accordion__i">
+										{<br>
+										&nbsp;"name": "John",<br>
+										&nbsp;"age": "45",<br>
+										}<br><br>
+									</i>
+									<span class="color-red">Когда функция вызывается как <code class="blue-code">new User(...)</code>, происходит следующее:</span><br><br>
+									<span class="color-red">
+										1. Создаётся новый пустой объект, и он присваивается <code class="blue-code">this</code>
+									</span><br>
+									<span class="color-red">
+										2. Выполняется тело функции. Обычно оно модифицирует <code class="blue-code">this</code>, добавляя туда новые свойства.
+									</span><br>
+									<span class="color-red">
+										3. Возвращается значение <code class="blue-code">this</code>.
+									</span><br><br>
+									console.log(new User("Kate", 72)); <i class="accordion__i">// { "name": "Kate", "age": 72, }</i>
+								</code>
+          		</div>
+        		</div>
+      		</div>
+      		<div class="accordion__item">
+        		<button class="accordion__title btn" data-spoller>Создание методов в конструкторе</button>
+        		<div class="accordion__content">
+          		<div class="accordion__wrapper">
+								<code class="accordion__code block">
+									function User(name) {<br>
+									&nbsp;this.name = name;<br><br>
+									&nbsp;this.sayHi = function() {<br>
+									&nbsp;&nbsp;console.log("Моё имя: " + this.name);<br>
+									&nbsp;};<br>
+									}<br><br>
+									let john = new User("John");<br><br>
+									john.sayHi(); <i class="accordion__i">// Моё имя: John</i><br><br>
+									<i class="accordion__i">
+										/*<br>
+										john = {<br>
+										&nbsp;name: "John",<br>
+										&nbsp;sayHi: fucntion() { ... },<br>
+										}<br>
+										*/
+									</i>
+									&nbsp;
+								</code>
+          		</div>
+        		</div>
+      		</div>
+    		</div>
+  		</div>
+		</section>
+		<section class="method-object" id="method-object">
+  		<div class="method-object__container">
+  		  <h2 class="method-object__title container-title title">Метод объекта</h2>
+  		  <div class="method-object__block accordion" data-spollers data-one-spoller>
+  		    <div class="accordion__item">
+  		      <button class="accordion__title btn" data-spoller>Метод: первый способ</button>
+   		     	<div class="accordion__content">
+  		        <div class="accordion__wrapper">
+  		        	<p class="accordion__descr text">
+  		        		Метод - это свойство значением которого является функция.
+  		        	</p>
+								<code class="accordion__code block">
+									const user = {<br>
+  								&nbsp;name: "John",<br>
+  								&nbsp;age: 30,<br>
+  								&nbsp;address: {<br>
+  								&nbsp;&nbsp;city: "New York",<br>
+  								&nbsp;&nbsp;street: "Freedom"<br>
+  								&nbsp;},<br>
+ 									&nbsp;<i class="accordion__i">// showInfo - метод</i><br>
+  								&nbsp;showInfo: function () {<br>
+  								&nbsp;&nbsp;console.log(`${user.name}, ${user.age} лет. Адрес: г.${user.address.city}, ул.${user.address.street}`);<br>
+  								&nbsp;},<br>
+  								&nbsp;<i class="accordion__i">// короткая запись</i><br>
+  								&nbsp;showInfo() {<br>
+  								&nbsp;&nbsp;console.log(`${user.name}, ${user.age} лет. Адрес: г.${user.address.city}, ул.${user.address.street}`);<br>
+  								&nbsp;}<br>
+									};<br><br>
+									user.showInfo(); <i class="accordion__i">// "John, 30 лет. Адрес: г.New York, ул.Freedom"</i>
+								</code>
+  		        </div>
+  		      </div>
+  		    </div>
+  		    <div class="accordion__item">
+  		      <button class="accordion__title btn" data-spoller>Метод: второй способ</button>
+   		     	<div class="accordion__content">
+  		        <div class="accordion__wrapper">
+								<code class="accordion__code block">
+									const sandwich = {<br>
+									&nbsp;meat: "",<br>
+									&nbsp;cheease: "",<br>
+									&nbsp;bread: "",<br>
+									&nbsp;condiment: "",<br>
+									&nbsp;makeSandwich: function(meat, cheese, bread, condiment) {<br>
+									&nbsp;&nbsp;this.meat = meat;<br>
+									&nbsp;&nbsp;this.cheese = cheese;<br>
+									&nbsp;&nbsp;this.bread = bread;<br>
+									&nbsp;&nbsp;this.condiment = condiment;<br>
+									&nbsp;&nbsp;let mySandwich =<br>
+									&nbsp;&nbsp;&nbsp;this.bread + ", " +<br>
+									&nbsp;&nbsp;&nbsp;this.meat + ", " +<br>
+									&nbsp;&nbsp;&nbsp;this.cheese + ", " +<br>
+									&nbsp;&nbsp;&nbsp;this.condiment;<br>
+									&nbsp;&nbsp;return mySandwich;<br>
+									&nbsp;}<br>
+									};<br><br>
+									let sandwichOrder = sandwich.makeSandwich("ham", "cheddar", "wheat", "spicy&nbsp;mustard"); <i class="accordion__i">// аргументы</i><br>
+									console.log(sandwichOrder); <i class="accordion__i">// "wheat, ham, cheddar, spicy mustard"</i>
+								</code>
+  		        </div>
+  		      </div>
+  		    </div>
+  		    <div class="accordion__item">
+  		      <button class="accordion__title btn" data-spoller>Метод: третий способ</button>
+   		     	<div class="accordion__content">
+  		        <div class="accordion__wrapper">
+								<code class="accordion__code block">
+									const user = {<br>
+									&nbsp;name: "John",<br>
+									&nbsp;age: 30,<br>
+									}<br><br>
+									user.sayHi = function() { <i class="accordion__i">// функция вне объекта, поэтому необходимо прописать имя объекта</i><br>
+									&nbsp;alert("Привет!");<br>
+									};<br><br>
+									user.sayHi(); <i class="accordion__i">// Привет!</i>
+								</code>
+  		        </div>
+  		        <p class="accordion__text text">
+  		        	Возможно вначале объявить функцию, потом присвоить функцию как свойство объекту.
+  		        </p>
+  		        <p class="accordion__text text">
+  		        	Здесь используется ключевое слово <code class="accordion__code blue-code">this</code>, чтобы сработал код.
+  		        </p><br>
+  		        <div class="accordion__wrapper">
+								<code class="accordion__code block">
+									const admin = { name: "Admin", };<br>
+									const user = { name: "John", };<br><br>
+									<i class="accordion__i">// вначале объявляем функцию</i><br>
+									function sayHi() {<br>
+									&nbsp;console.log( this.name );<br>
+									}<br><br>
+									<i class="accordion__i">// используем одну и ту же функцию в двух объектах</i><br>
+									admin.f = sayHi;<br>
+									user.f = sayHi;<br><br>
+									<i class="accordion__i">// эти вызовы имеют разное значение "this"</i><br>
+									<i class="accordion__i">// "this" внутри функции - это объект "перед точкой"</i><br>
+									admin.f(); <i class="accordion__i">// "Admin"</i><br>
+									user.f(); <i class="accordion__i">// "John"</i><br><br>
+									admin["f"](); <i class="accordion__i">// "Admin" - нет разницы между использование точки или квадратных скобо для доступа к объекту</i>
+								</code>
+  		        </div>
+  		        <p class="accordion__text text">
+  		        	Правило простое: если вызывается <code class="accordion__code blue-code">obj.f()</code>, то во время вызова <code class="accordion__code blue-code">f</code>, <code class="accordion__code blue-code">this</code> – это <code class="accordion__code blue-code">obj</code>. Так что, в приведённом выше примере это либо <code class="accordion__code blue-code">user</code>, либо <code class="accordion__code blue-code">admin</code>.
+  		        </p>
+  		      </div>
+  		    </div>
+  		    <div class="accordion__item">
+  		      <button class="accordion__title btn" data-spoller>Метод и использование <code class="accordion__code blue-code">this</code> вместо имени объекта</button>
+   		     	<div class="accordion__content">
+   		     		<a target="_blank" class="accordion__link link" href="https://learn.javascript.ru/object-methods">Источник</a><br>
+  		        <div class="accordion__wrapper">
+  		        	<h4 class="accordion__heading title"><code class="accordion__code">this</code> и <code class="accordion__code">function()</code></h4><br>
+  		        	<a target="_blank" class="accordion__link link" href="https://codepen.io/archicolt/pen/mdKyZmK?editors=1111">Ссылка на аналогичный вариант</a>
+								<code class="accordion__code block">
+									const user = {<br>
+									&nbsp;name: "John",<br>
+									&nbsp;age: 30,<br>
+									&nbsp;address: {<br>
+									&nbsp;&nbsp;city: "New York",<br>
+									&nbsp;&nbsp;street: "Freedom",<br>
+									&nbsp;},<br>
+									&nbsp;<i class="accordion__i">// использование <code class="accordion__code blue-code">this</code></i><br>
+									&nbsp;showInfo() {<br>
+									&nbsp;&nbsp;console.log(`${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, ул.${this.address.street}`);<br>
+									&nbsp;}<br>
+									};<br><br>
+									user.showInfo(); <i class="accordion__i">// "John, 30 лет. Адрес: г.New York, ул.Freedom"</i>
+								</code>
+  		        </div>
+  		        <div class="accordion__wrapper">
+  		        	<h4 class="accordion__heading title"><code class="accordion__code">this</code> и стрелочная функция</h4>
+								<code class="accordion__code block">
+									const user = {<br>
+									&nbsp;name: "John",<br>
+									&nbsp;age: 30,<br>
+									&nbsp;address: {<br>
+									&nbsp;&nbsp;city: "New York",<br>
+									&nbsp;&nbsp;street: "Freedom",<br>
+									&nbsp;},<br>
+									&nbsp;showInfo() {<br>
+									&nbsp;&nbsp;<i class="accordion__i">// Функция внутри функции<br>
+									&nbsp;&nbsp;// У данной функции "this" обращается к showInfo, у которой нет свойств (ключей) и поэтому выведет ошибку<br>
+									&nbsp;&nbsp;/*function show() {<br>
+									&nbsp;&nbsp;&nbsp;console.log(`${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, ул.${this.address.street}`);<br>
+									&nbsp;&nbsp;};*/</i><br><br>
+									<i class="accordion__i">
+									&nbsp;// Однако, у стрелочной функции нет своего "this"<br>
+									&nbsp;// Поэтому используется значение из внешнего метода user.showInfo()
+									</i><br>
+									&nbsp;&nbsp;let show = () =><br>
+									&nbsp;&nbsp;&nbsp;console.log(`${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, ул.${this.address.street}`);<br>
+									&nbsp;&nbsp;show();<br>
+									&nbsp;},<br>
+									}<br><br>
+									user.showInfo(); <i class="accordion__i">// "John, 30 лет. Адрес: г.New York, ул.Freedom"</i>
+								</code>
+  		        </div>
+  		      </div>
+  		    </div>
+  		    <div class="accordion__item">
+  		      <button class="accordion__title btn" data-spoller><code class="accordion__code blue-code">this</code> вызов без объекта</button>
+   		     	<div class="accordion__content">
+  		        <div class="accordion__wrapper">
+								<code class="accordion__code block">
+									"use strict"<br><br>
+									function sayHi() {<br>
+									&nbsp;console.log(this);<br>
+									}<br><br>
+									sayHi(); <i class="accordion__i">// "undefined" при "use strict"</i>
+								</code>
+  		        </div>
+  		      </div>
+  		    </div>
+  		    <div class="accordion__item">
+  		      <button class="accordion__title btn" data-spoller>Калькуляторы со значением <code class="accordion__code blue-code">this</code> и методом</button>
+   		     	<div class="accordion__content">
+  		        <div class="accordion__wrapper">
+								<code class="accordion__code block">
+									const calc = {<br><br>
+									&nbsp;<i class="accordion__i">// метод</i><br>
+									&nbsp;read() {<br>
+									&nbsp;&nbsp;this.num1 = +prompt("num1?", 0);<br>
+									&nbsp;&nbsp;this.num2 = +prompt("num2?", 0);<br>
+									&nbsp;},<br><br>
+									&nbsp;<i class="accordion__i">// калькулятор</i><br>
+									&nbsp;sum() {<br>
+									&nbsp;&nbsp;return this.num1 + this.num2;<br>
+									&nbsp;},<br>
+									&nbsp;mul() {<br>
+									&nbsp;&nbsp;return this.num1 * this.num2;<br>
+									&nbsp;},<br>
+									};<br><br>
+									calc.read();<br>
+									console.log(calc.sum()); <i class="accordion__i">// выведет сумму введённых чисел</i><br>
+									console.log(calc.mul()); <i class="accordion__i">// выведет произведение введённых чисел</i>
+								</code>
+  		        </div>
+  		      </div>
+  		    </div>
+  		    <div class="accordion__item">
+  		      <button class="accordion__title btn" data-spoller>Калькулятор с помощью конструктора, <code class="accordion__code blue-code">this</code> - свойством и методом</button>
+   		     	<div class="accordion__content">
+  		        <div class="accordion__wrapper">
+								<code class="accordion__code block">
+									<i class="accordion__i">// Конструктор</i><br>
+									function Calculator() {<br><br>
+									&nbsp;<i class="accordion__i">// метод</i><br>
+									&nbsp;this.read = function() {<br>
+									&nbsp;&nbsp;this.a = +prompt("a?", 0);<br>
+									&nbsp;&nbsp;this.b = +prompt("b?", 0);<br>
+									&nbsp;};<br><br>
+									&nbsp;<i class="accordion__i">// калькулятор</i><br>
+									&nbsp;this.sum = function() {<br>
+									&nbsp;&nbsp;return this.a + this.b;<br>
+									&nbsp;};<br><br>
+									&nbsp;this.mul = function() {<br>
+									&nbsp;&nbsp;return this.a * this.b;<br>
+									&nbsp;};<br>
+									}<br><br>
+									let calc = new Calculator(); <i class="accordion__i">// new <u><b>Calculator</b></u>(); - должно быть имя конструктора</i><br>
+									calc.read();<br><br>
+									console.log("Sum=" + calc.sum());<br>
+									console.log("Mul=" + calc.mul());
+								</code>
+  		        </div>
+  		      </div>
+  		    </div>
+  		  </div>
+  		</div>
+		</section>
+		<!-- <section class="000" id="000">
+  <div class="000__container">
+    <h2 class="000__title container-title title">000</h2>
+    <div class="000__block accordion" data-spollers data-one-spoller>
+      <div class="accordion__item">
+        <button class="accordion__title btn" data-spoller>000</button>
+        <div class="accordion__content">
+          <div class="accordion__wrapper">
+            <pre class="accordion__pre block">
+							<code class="accordion__code block">
+									&nbsp;
+							</code>
+						</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+	</main>
+	<!-- @import "footer.html" -->
+</body>
+</html>

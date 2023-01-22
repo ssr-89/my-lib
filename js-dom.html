@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>События DOM</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script defer src="js/script.js"></script>
+</head>
+<body>
+<header class="header">
+	<div class="header__container">
+		<nav class="header__menu header-menu">
+			<ul class="header-menu__list list">
+				<li class="header-menu__item">
+					<a class="header-menu__link link" href="index.html">ГЛАВНАЯ СТРАНИЦА</a>
+				</li>
+				<li class="header-menu__item">
+					<a class="header-menu__link link" href="html-css.html">HTML и CSS</a>
+				</li>
+				<li class="header-menu__item">
+					<a class="header-menu__link link" href="js.html">JavaScript</a>
+				</li>
+				<li class="header-menu__item">
+					<a class="header-menu__link link" href="git.html">Git</a>
+				</li>
+				<li class="header-menu__item">
+					<a class="header-menu__link link" href="tools.html">Инструменты</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>	<main class="main">
+		<section class="section-menu">
+			<div class="section-menu__container">
+				<h1 class="section-menu__title title">DOM (Document Object Model)</h1>
+				<nav class="section__menu menu">
+					<ul class="menu__list list">
+						<li class="menu__item">
+							<a class="menu__link link" href="#dom">
+								DOM (Document Object Model) и базовые элементы
+							</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#dom-elements">
+								Элементы DOM-дерева
+							</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#basic-commands">
+								Базовые команды
+							</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#dom-events">
+								События
+							</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#dom-window">
+								Глобальный объект WINDOW
+							</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#"></a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#"></a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</section>
+		<section class="dom" id="dom">
+			<div class="dom__container">
+				<h2 class="dom__title container-title title">DOM (Document Object Model) и базовые элементы</h2>
+				<div class="dom__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>DOM (Document Object Model) - объектная модель документа</button>
+					<div class="accordion__content">
+						<div class="accordion__wrapper">
+							<p class="accordion__descr text">
+								Каждый объект в DOM-дереве называется DOM-элемент.
+							</p>
+						</div>
+					</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Первый элемент DOM-дерева</button>
+					<div class="accordion__content">
+						<div class="accordion__wrapper">
+								<code class="accordion__code block">
+									document.documentElement <i class="accordion__i">// &lt;html lang=’en’&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;</i>
+								</code>
+						</div>
+					</div>
+					</div>
+						<div class="accordion__item">
+							<button class="accordion__title btn" data-spoller>Дочки первого элемента DOM-дерева</button>
+					<div class="accordion__content">
+						<div class="accordion__wrapper">
+								<code class="accordion__code block">
+									document.documentElement.children <i class="accordion__i">// HTMLCollection(2) [head, body]</i>
+								</code>
+						</div>
+				</div>
+						</div>
+						<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Элемент body</button>
+					<div class="accordion__content">
+						<div class="accordion__wrapper">
+							<code class="accordion__code block">
+								let body = document.documentElement.children[1];<br>
+								let body = document.body;
+							</code>
+						</div>
+					</div>
+				</div>
+				<div class="accordion__item">
+					<button class="accordion__title btn" data-spoller>Элементы внутри body</button>
+					<div class="accordion__content">
+						<div class="accordion__wrapper">
+							<code class="accordion__code block">
+								body.children <i class="accordion__i">// пример: HTMLCollection(4) [‘section’,’ div’ ,’ h1’ ,’p’];</i>
+							</code>
+						</div>
+					</div>
+				</div>
+				<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Добавление текста и стилизация дочерних элементов</button>
+					<div class="accordion__content">
+						<div class="accordion__wrapper">
+							<code class="accordion__code block">
+								body.children[0].innerHTML = ‘Какой-то текст’; <i class="accordion__i">// добавление текста в дочерний элемент</i>
+							</code>
+						</div>
+						<div class="accordion__wrapper">
+							<code class="accordion__code block">
+								body.children[1].style.color = ‘blue’; <i class="accordion__i">// стилизация дочернего элемента</i>
+							</code>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="accordion__item">
+								<button class="accordion__title btn" data-spoller></button>
+								<div class="accordion__content">
+									<div class="accordion__wrapper">
+										<pre class="accordion__pre block">
+											<code class="accordion__code block">
+									
+											</code>
+										</pre>
+									</div>
+								</div>
+							</div> -->
+				</div>
+			</div>
+		</section>
+		<section class="dom-elements" id="dom-elements">
+			<div class="dom-elements__container">
+				<h2 class="dom-elements__title container-title title">Элементы DOM-дерева</h2>
+				<div class="dom-elements__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Создание элемента и в добавление текста</button>
+						<div class="accordion__content">
+								<h3 class="accordion__heading title">Создание элемента:</h3>
+							<div class="accordion__wrapper">
+								<code class="accordion__code block">
+									const div = document.createElement(‘div’); <i class="accordion__i">// &lt;div&gt;&lt;/div&gt;</i>
+								</code>
+							</div>
+								<h3 class="accordion__heading title">Добавление текста в элемент:</h3>
+							<div class="accordion__wrapper">
+								<code class="accordion__code block">
+									div.textContent = '&lt;i&gt;Какой-то текст&lt;/i&gt;’; <i class="accordion__i">// &lt;i&gt;Какой-то текст&lt;/i&gt; - игнорирует HTML-код и прописывает текстом</i><br>
+									div.innerHTML = ‘&lt;i&gt;Какой-то текст&lt;/i&gt;’; <i class="accordion__i">// заменяет HTML-код внутри div на i</i>
+								</code>
+							</div>
+						</div>
+					</div>
+							<div class="accordion__item">
+								<button class="accordion__title btn" data-spoller>Создание несколько элементов и добавление текста</button>
+								<div class="accordion__content">
+										<h3 class="accordion__heading title">Создание нескольких элементов:</h3>
+									<div class="accordion__wrapper">
+										<code class="accordion__code block">
+											const list = [document.createElement('li'), document.createElement('li'), document.createElement('li')];
+										</code>
+									</div>
+										<h3 class="accordion__heading title">Добавление текста в несколько элементов:</h3>
+									<div class="accordion__wrapper">
+										<code class="accordion__code block">
+											list[0].textContent = ‘Какой-то текст’;<br>
+											list[1].textContent = ‘Какой-то текст’;<br>
+											list[2].textContent = ‘Какой-то текст’;
+										</code>										
+									</div>
+								</div>
+							</div>
+							<div class="accordion__item">
+								<button class="accordion__title btn" data-spoller>Добавление элемента в <i class="color-yellow">body / другой элемент / определённое место</i></button>
+								<div class="accordion__content">
+										<h3 class="accordion__heading title">Добавление элемента в body:</h3>
+									<div class="accordion__wrapper">
+										<code class="accordion__code block">
+											document.body.append(div); <i class="accordion__i">// append добавляет последним в список</i>
+										</code>
+									</div>
+										<h3 class="accordion__heading title">Добавление элементов в другой элемент:</h3>
+									<div class="accordion__wrapper">
+										<code class="accordion__code block">
+											ol.append(list[0]); <i class="accordion__i">// append добавляет последним в список</i><br>
+											ol.append(list[1]); <i class="accordion__i">// append добавляет последним в список</i><br>
+											ol.append(list[2]); <i class="accordion__i">// append добавляет последним в список</i><br><br>
+											ol.prepend(list[0]); <i class="accordion__i">// prepend добавляет первым в список</i><br>
+											ol.prepend(list[1]); <i class="accordion__i">// prepend добавляет первым в список</i><br>
+											ol.prepend(list[2]); <i class="accordion__i">// prepend добавляет первым в список</i>
+										</code>
+									</div>
+										<h3 class="accordion__heading title">Добавление элемента в нужное место:</h3>
+									<div class="accordion__wrapper">
+										<code class="accordion__code block">
+											let primer = document.createElement(‘li’); <i class="accordion__i">// создание элемента</i><br>
+											ol[1].before(primer); <i class="accordion__i">// before добавляет элемент перед элементом 1</i><br>
+											ol[0].after(primer); <i class="accordion__i">// after добавляет элемент после элемента 0</i>
+										</code>
+									</div>
+								</div>
+							</div>
+							<div class="accordion__item">
+								<button class="accordion__title btn" data-spoller><b class="color-yellow">replaceWidth</b> – замена элемента на другой и <b class="color-yellow">remove</b> - удаление элемента</button>
+								<div class="accordion__content">
+										<h3 class="accordion__heading title"><b class="color-yellow">replaceWidth</b> – замена элемента на другой:</h3>
+									<div class="accordion__wrapper">
+										<code class="accordion__code block">
+											let primer = document.createElement(‘li’);<br>
+											ol.children[0].replaceWidth(primer);
+										</code>
+									</div>
+										<h3 class="accordion__heading title"><b class="color-yellow">remove</b> - удаление элемента:</h3>
+									<div class="accordion__wrapper">
+										<code class="accordion__code block">
+											ol.children[0].remove;
+										</code>
+									</div>
+								</div>
+							</div>
+							<div class="accordion__item">
+								<button class="accordion__title btn" data-spoller>Добавление атрибутов в элементы</button>
+								<div class="accordion__content">
+									<div class="accordion__wrapper">
+										<code class="accordion__code block">
+											ol.id = 'list'; <i class="accordion__i">// добавляет id</i><br><br>
+											ol.reversed = true; <i class="accordion__i">// обращает нумерацию в обратном порядке</i><br><br>
+											ol.start = 20; <i class="accordion__i">// указывает значение с которого начинается список</i><br><br>
+											ol.removeAttribute('start'); <i class="accordion__i">// удаляет указанный атрибут</i><br><br>
+											ol.className = 'list'; <i class="accordion__i">// добавляет класс</i><br><br>
+											ol.classList.contains('list'); <i class="accordion__i">// true/false проверка наличия класса</i>
+										</code>
+									</div>
+								</div>
+							</div>
+					<!-- <div class="accordion__item">
+								<button class="accordion__title btn" data-spoller></button>
+								<div class="accordion__content">
+									<div class="accordion__wrapper">
+										<pre class="accordion__pre block">
+											<code class="accordion__code block">
+									
+											</code>
+										</pre>
+									</div>
+								</div>
+							</div> -->
+				</div>
+			</div>
+		</section>
+		<section class="basic-commands" id="basic-commands">
+			<div class="basic-commands__container">
+				<h2 class="basic-commands__title container-title title">Базовые команды</h2>
+				<div class="basic-commands__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Базовые команды</button>
+					<div class="accordion__content">
+						<div class="accordion__wrapper">
+							<code class="accordion__code block">
+								document.querySelector('#list'); <i class="accordion__i">// поиск по селектору id</i><br>
+								document.getElementById('list'); <i class="accordion__i">// поиск по селектору id без указаня символа # Работает немного быстрее, чем querySelector</i><br><br>
+
+								document.querySelectorAll('.list'); <i class="accordion__i">// поиск всех элементов по классу list</i><br>
+								document.getElementsByClassName('list'); <i class="accordion__i">// поиск элемента по классу list без указания символа</i><br><br>
+
+								document.getElementsByTagName('ol'); <i class="accordion__i">/ поиск по тегам</i>/
+							</code>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="dom-events" id="dom-events">
+			<div class="dom-events__container">
+				<h2 class="dom-events__title container-title title">События</h2>
+				<div class="dom-events__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Событие <i class="color-yellow">input</i></button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<pre class="accordion__pre block">
+									<code class="accordion__code block">
+document.addEventListener("DOMContentLoaded", function () {
+  let colorInput = document.createElement("input"); <i class="accordion__i">// элемент input - поле для ввода цвета</i>
+  let colorBlock = document.createElement("div"); <i class="accordion__i">// блок с меняющимся цветом фона</i>
+  let clearButton = document.createElement("button"); <i class="accordion__i">// кнопка очистки</i>
+
+  colorInput.classList.add("color-input"); <i class="accordion__i">// добавление класса элементу input</i>
+  colorInput.setAttribute("value", "blue"); <i class="accordion__i">// добавление атрибута 'value' и его значения</i>
+
+  clearButton.classList.add("clear-color-btn"); <i class="accordion__i">// добавление класса кнопке</i>
+  clearButton.textContent = "Очистить"; <i class="accordion__i">// добавление текста кнопке</i>
+
+  colorBlock.classList.add("color-block"); <i class="accordion__i">// добавление класса блоку</i>
+
+  <i class="accordion__i">// Стилизация блока - задание размеров блока</i>
+  colorBlock.style.width = "100%";
+  colorBlock.style.minHeight = "50px";
+
+  <i class="accordion__i">// Добавление input, кнопки и блока в body</i>
+  document.body.append(colorInput);
+  document.body.append(clearButton);
+  document.body.append(colorBlock);
+
+  <i class="accordion__i">// Функция для изменения цвета фона блока при введении цвета в поле ввода</i>
+  function paintBlock() {
+    colorBlock.style.backgroundColor = colorInput.value; <i class="accordion__i">// задание цвета фона блока на основе атрибута 'value' поля для ввода</i>
+  }
+  colorInput.addEventListener("input", paintBlock); <i class="accordion__i">// событие 'input' при вводе цвета в элемент 'input' и последующий вызов функции paintBlock</i>
+
+  paintBlock(); <i class="accordion__i">// изначальный вызов функции с заявленным цветом в поле для ввода</i>
+
+  <i class="accordion__i">// удаление значения атрибута 'value', тем самым удаление цвета фона блока</i>
+  clearButton.addEventListener("click", function () {
+    colorBlock.style.removeProperty("background-color");
+    colorInput.value = "";
+  });
+});
+									</code>
+								</pre>
+								<p class="accordion__text text">ПРИМЕР:</p>
+								<input class="dom-primer-input" value="blue">
+								<button class="dom-primer-btn-color">Очистить</button>
+								<div class="dom-primer-block"></div>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+								<button class="accordion__title btn" data-spoller>Событие <i class="color-yellow">click</i></button>
+								<div class="accordion__content">
+									<div class="accordion__wrapper">
+										<pre class="accordion__pre block">
+											<code class="accordion__code block">
+document.addEventListener("DOMContentLoaded", function () {
+  let p = document.createElement("p");
+  let btn = document.createElement("button");
+
+  <i class="accordion__i">// добавление текста <b>p</b></i>
+  p.textContent = "1";
+
+  btn.setAttribute("type", "button"); <i class="accordion__i">// добавление <b>btn</b> атрибута 'type' со значением 'button'</i>
+  btn.textContent = "+1"; <i class="accordion__i">// добавление текста <b>btn</b></i>
+
+  document.body.append(p); <i class="accordion__i">// доабвление <b>p</b> в <b>body</b></i>
+  document.body.append(btn); <i class="accordion__i">// добавление <b>btn</b> в <b>body</b></i>
+
+  function incrementCount() {
+    let currentCount = parseInt(p.textContent); <i class="accordion__i">// Функция parseInt преобразует первый аргумент в число по указанному основанию, а если это невозможно - возвращает NaN</i>
+    p.textContent = currentCount + 1; <i class="accordion__i">// присваивание переменной <b>currentCount</b> текстом в переменную <b>p</b></i>
+  }
+
+  btn.addEventListener("click", incrementCount); <i class="accordion__i">// вызов функции</i>
+});
+											</code>
+										</pre>
+										<p class="accordion__text text">ПРИМЕР:</p>
+										<p class="dom-primer-text">1</p>
+										<button class="dom-primer-btn-rise">+1</button>
+									</div>
+								</div>
+							</div>
+				</div>
+			</div>
+		</section>
+		<section class="dom-window" id="dom-window">
+			<div class="dom-window__container">
+				<h2 class="dom-window__title container-title title">Глобальный объект WINDOW</h2>
+				<div class="dom-window__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Глобальный объект WINDOW</button>
+					<div class="accordion__content">
+						<div class="accordion__wrapper">
+							<a target="_blank" class="accordion__link" href="https://learn.javascript.ru/global-object">Источник</a>
+							<div class="p accordion__descr text">
+								Объект <i>window</i> представляет собой окно, содержащее DOM документ; свойство document указывает на DOM document (en-US), загруженный в данном окне
+							</div>
+						</div>
+					</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller><b class="color-yellow">Global namespace pollution</b> – Загрязнение глобальной области видимости</button>
+					<div class="accordion__content">
+						<div class="accordion__wrapper">
+							<pre class="accordion__pre block">
+								<code class="accordion__code block">
+
+								</code>
+							</pre>
+						</div>
+					</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller><b class="color-yellow">IIFE – Immediately Invoked Function Expression</b> (Объявление и немедленный вызов функции)</button>
+					<div class="accordion__content">
+						<div class="accordion__wrapper">
+							<code class="accordion__code block">
+								(function(){<br>
+  							&nbsp;&nbsp;<i class="accordion__i">// ваш код</i><br>
+								})(); <i class="accordion__i">// сразу же вызываем функцию</i><br>
+								<i class="accordion__i">// без скобок вокруг объявления функции JavaScript не поймёт, что мы от него хотим</i><br>
+								<i class="accordion__i">// так как функция не имеет имени (анонимная), в window она не попадает</i>
+							</code>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- <section class="000" id="000">
+			<div class="000__container">
+				<h2 class="000__title container-title title">000</h2>
+				<div class="000__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>000</button>
+					<div class="accordion__content">
+						<div class="accordion__wrapper">
+							<pre class="accordion__pre block">
+								<code class="accordion__code block">
+									
+								</code>
+							</pre>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</section> -->
+	</main>
+<footer class="footer">
+	<div class="footer__container">
+		FOOTER
+	</div>
+</footer></body>
+</body>
+</html>

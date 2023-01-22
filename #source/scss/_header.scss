@@ -1,0 +1,25 @@
+.header {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	z-index: 10;
+	background-color: rgba(0, 0, 0, 1.0);
+	color: rgba(255, 255, 255, 1.0);
+	&__container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 10px;
+		min-height: 50px;
+		.header-menu {
+			width: 50%;
+			&__list {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				column-gap: 20px;
+			}
+		}
+	}
+}
