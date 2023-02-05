@@ -5,7 +5,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>События DOM</title>
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/accordion.css">
+	<link rel="stylesheet" href="css/js-main.css">
 	<script defer src="js/script.js"></script>
+	<script defer src="js/accordion.js"></script>
+	<script defer src="js/js-main.js"></script>
 </head>
 <body>
 <header class="header">
@@ -456,7 +460,13 @@ document.addEventListener("DOMContentLoaded", function () {
 	</main>
 <footer class="footer">
 	<div class="footer__container">
-		FOOTER
+		<h2 class="footer__title title">Обратная&nbsp;связь</h2>
+		<form class="footer__form footer-form" action="#" method="post">
+			<input class="footer-form__input input" type="text" placeholder="Введите имя*" required>
+			<input class="footer-form__input input" type="email" placeholder="Введите Email*" required>
+			<textarea class="footer-form__textarea input" placeholder="Введите текст*" required></textarea>
+			<button class="footer-form__btn btn" type="submit">Отправить</button>
+		</form>
 	</div>
 </footer></body>
 </body>

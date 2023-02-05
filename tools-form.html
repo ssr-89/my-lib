@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Форма: валидация и отправка формы на почту</title>	
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/accordion.css">
+	<link rel="stylesheet" href="css/tools-main.css">
+	<script defer src="libs/inputmask.min.js"></script>
+	<script defer src="libs/just-validate.min.js"></script>
+	<script defer src="js/script.js"></script>
+	<script defer src="js/accordion.js"></script>
+	<script defer src="js/tools-main.js"></script>
+</head>
+<body>
+<header class="header">
+	<div class="header__container">
+		<nav class="header__menu header-menu">
+			<ul class="header-menu__list list">
+				<li class="header-menu__item">
+					<a class="header-menu__link link" href="index.html">ГЛАВНАЯ СТРАНИЦА</a>
+				</li>
+				<li class="header-menu__item">
+					<a class="header-menu__link link" href="html-css.html">HTML и CSS</a>
+				</li>
+				<li class="header-menu__item">
+					<a class="header-menu__link link" href="js.html">JavaScript</a>
+				</li>
+				<li class="header-menu__item">
+					<a class="header-menu__link link" href="git.html">Git</a>
+				</li>
+				<li class="header-menu__item">
+					<a class="header-menu__link link" href="tools.html">Инструменты</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>	<main class="main">
+		<section id="hero-form" class="hero-form">
+			<div class="hero-form__container">
+				<h1 class="hero-form__title title">Валидация и отправка формы на почту</h1>
+				<div class="divider"></div>
+				<form class="hero-form__form form" method="POST" action="#" enctype="multipart/form-data">
+					<label class="form__label">
+						<input class="input-name form-input" type="text" data-validate-field='name' name='Имя' placeholder="Введите имя">
+					</label>
+					<label class="form__label">
+						<input class="input-mail form-input"type="email" data-validate-field='email' name="Email" placeholder="Введите Email">
+					</label>
+					<label class="form__label">
+						<input class="input-tel form-input" type="tel" data-validate-field='tel' name='Телефон' placeholder="Введите телефон">
+					</label>
+					<label class="form__label">
+						<textarea class="form-textarea" name="Сообщение" placeholder='Введите сообщение'></textarea>
+					</label>
+					<input class="form-input form-input-file" type="file" name="file[]" multiple id="myfile">
+					<button class="form-btn btn" type="submit">Отправить</button>
+				</form>
+			</div>
+		</section>
+	</main>
+<footer class="footer">
+	<div class="footer__container">
+		<h2 class="footer__title title">Обратная&nbsp;связь</h2>
+		<form class="footer__form footer-form" action="#" method="post">
+			<input class="footer-form__input input" type="text" placeholder="Введите имя*" required>
+			<input class="footer-form__input input" type="email" placeholder="Введите Email*" required>
+			<textarea class="footer-form__textarea input" placeholder="Введите текст*" required></textarea>
+			<button class="footer-form__btn btn" type="submit">Отправить</button>
+		</form>
+	</div>
+</footer></body>
+</html>

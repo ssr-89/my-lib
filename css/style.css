@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2&family=Fira+Sans&display=swap");
 *,
 *::before,
 *::after {
@@ -5,14 +6,13 @@
           box-sizing: border-box;
   -webkit-box-shadow: none;
           box-shadow: none;
-  font-family: inherit;
+  font-family: "Exo 2", "FiraSans", sans-serif;
   color: inherit;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, Verdana, Tahoma, sans-serif;
   font-size: 100%;
   background-color: rgb(192, 192, 192);
 }
@@ -49,10 +49,25 @@ body.blocking {
 }
 
 .btn {
-  background: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: auto;
+}
+
+.input {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  outline: none;
 }
 
 .link {
@@ -72,6 +87,10 @@ body.blocking {
 
 .color-red {
   color: rgb(255, 0, 0);
+}
+
+.color-navy {
+  color: rgb(0, 0, 128);
 }
 
 [class*=__container] {
@@ -120,143 +139,11 @@ body.blocking {
           column-gap: 20px;
 }
 
-/*====================================================================================================*/
-/*JavaScript*/
-/*section-menu*/
-.section-menu__title {
-  margin: 0 0 20px;
-}
-
-.container-title {
-  margin: 0 0 20px;
-}
-
-/*accordion*/
-.accordion {
-  color: rgb(255, 255, 255);
-}
-
-.accordion__item:not(:last-child) {
-  margin: 0 0 20px;
-}
-
-.accordion__title {
-  position: relative;
-  padding: 20px;
-  width: 100%;
+.footer {
   background-color: rgb(0, 0, 0);
-  text-align: left;
-  font-size: 20px;
-  -webkit-transition: margin 0.3s ease-in-out;
-  transition: margin 0.3s ease-in-out;
 }
 
-.accordion._init .accordion__title {
-  padding: 20px 40px 20px 20px;
-}
-
-.accordion._init .accordion__title::after {
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-}
-
-.accordion._init .accordion__title._active::after {
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-}
-
-.accordion._init .accordion__title::before,
-.accordion._init .accordion__title::after {
-  content: "";
-  position: absolute;
-  top: 30px;
-  right: 20px;
-  width: 30px;
-  height: 2px;
-  background-color: rgba(255, 255, 255, 0.9);
-  -webkit-transition: -webkit-transform 0.3s ease 0s;
-  transition: -webkit-transform 0.3s ease 0s;
-  transition: transform 0.3s ease 0s;
-  transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
-}
-
-.accordion__content {
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.accordion__heading {
-  display: inline-block;
-  margin: 0 0 10px;
-  padding: 5px;
-  font-weight: normal;
-  background-color: rgb(0, 0, 128);
-}
-
-.accordion__link {
-  margin: 0 0 20px 0;
-  padding: 5px;
-  color: rgb(255, 255, 255);
-  outline: 1px solid rgb(255, 255, 255);
-  border-radius: 3px;
-  -webkit-transition: background 0.3s ease-in-out, color 0.3s ease-in-out, outline 0.3s ease-in-out;
-  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, outline 0.3s ease-in-out;
-}
-
-.accordion__link:hover {
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-  outline: none;
-}
-
-.accordion__link:active {
-  background-color: rgba(0, 0, 0, 0);
-  color: rgba(255, 255, 255, 0.5);
-  outline: none;
-}
-
-.accordion__wrapper {
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.accordion__wrapper:not(:last-child) {
-  margin: 0 0 30px 0;
-}
-
-.accordion__descr {
-  color: rgb(255, 255, 0);
-}
-
-.accordion__descr:not(:last-child),
-.accordion__text:not(:last-child) {
-  margin: 0 0 10px 0;
-}
-
-.accordion__pre {
-  margin: 0;
-  font-family: Monospace;
-  font-size: 17px;
-}
-
-.accordion__code {
-  font-family: Monospace;
-  font-size: 17px;
-}
-
-.blue-code {
-  background-color: rgba(176, 224, 230, 0.5);
-}
-
-.navy-code {
-  background-color: rgb(0, 0, 128);
-}
-
-.accordion__i {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.js-main__container {
+.footer__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -272,71 +159,165 @@ body.blocking {
           align-items: center;
 }
 
-.js-main__title {
-  margin: 0 0 20px;
-  font-size: 36px;
-}
-
-.js-main-menu__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-column-gap: 20px;
-     -moz-column-gap: 20px;
-          column-gap: 20px;
-}
-
-.js-main-menu__item {
-  margin: 0 0 20px;
-  padding: 10px;
-  max-width: 400px;
-  min-height: 20px;
-  background-color: rgb(0, 0, 0);
-  font-size: 28px;
+.footer__title {
+  margin-bottom: 20px;
   color: rgb(255, 255, 255);
-  -webkit-transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
-  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
 }
 
-.js-main-menu__item:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.js-main-menu__item:active {
-  background-color: rgb(255, 255, 255);
-  outline: 1px solid rgb(0, 0, 0);
-  color: rgb(0, 0, 0);
-}
-
-.js-main-menu__link {
+.footer-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 30%;
+}
+
+.footer-form__input {
+  margin-bottom: 5px;
+  padding: 20px;
   width: 100%;
-  height: 100%;
+  background-color: rgb(192, 192, 192);
+  -webkit-transition: background 0.3s ease-in-out, color 0.3s ease-in-out, outline 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, outline 0.3s ease-in-out;
+  border-radius: 3px;
+  font-size: 18px;
 }
 
-.dom-primer-input {
-  color: black;
+.footer-form__textarea {
+  margin-bottom: 5px;
+  padding: 20px;
+  width: 100%;
+  background-color: rgb(192, 192, 192);
+  border-radius: 3px;
+  font-size: 18px;
 }
 
-.dom-primer-btn-color,
-.dom-primer-btn-rise {
-  color: black;
+.footer-form__input::-webkit-input-placeholder, .footer-form__textarea::-webkit-input-placeholder {
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+  font-size: 18px;
 }
 
-.dom-primer-block {
-  widows: 100%;
-  min-height: 50px;
+.footer-form__input::-moz-placeholder, .footer-form__textarea::-moz-placeholder {
+  -moz-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+  font-size: 18px;
+}
+
+.footer-form__input:-ms-input-placeholder, .footer-form__textarea:-ms-input-placeholder {
+  -ms-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+  font-size: 18px;
+}
+
+.footer-form__input::-ms-input-placeholder, .footer-form__textarea::-ms-input-placeholder {
+  -ms-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+  font-size: 18px;
+}
+
+.footer-form__input::placeholder,
+.footer-form__textarea::placeholder {
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+  font-size: 18px;
+}
+
+.footer-form__btn {
+  padding: 15px;
+  width: 100%;
+  background-color: rgb(192, 192, 192);
+  font-size: 20px;
+  -webkit-transition: background 0.3s ease-in-out, color 0.3s ease-in-out, outline 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, outline 0.3s ease-in-out;
+  border-radius: 3px;
+}
+
+.footer-form__input::-webkit-input-placeholder, .footer-form__textarea::-webkit-input-placeholder {
+  -webkit-transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.footer-form__input::-moz-placeholder, .footer-form__textarea::-moz-placeholder {
+  -moz-transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.footer-form__input:-ms-input-placeholder, .footer-form__textarea:-ms-input-placeholder {
+  -ms-transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.footer-form__input::-ms-input-placeholder, .footer-form__textarea::-ms-input-placeholder {
+  -ms-transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.footer-form__input::placeholder,
+.footer-form__textarea::placeholder {
+  -webkit-transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.footer-form__input:focus:not(:active),
+.footer-form__textarea:focus:not(:active),
+.footer-form__btn:focus:not(:hover):not(:active) {
+  outline: 2px solid rgb(255, 255, 255);
+}
+
+.footer-form__input:focus::-webkit-input-placeholder, .footer-form__textarea:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.footer-form__input:focus::-moz-placeholder, .footer-form__textarea:focus::-moz-placeholder {
+  opacity: 0;
+}
+
+.footer-form__input:focus:-ms-input-placeholder, .footer-form__textarea:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+
+.footer-form__input:focus::-ms-input-placeholder, .footer-form__textarea:focus::-ms-input-placeholder {
+  opacity: 0;
+}
+
+.footer-form__input:focus::placeholder,
+.footer-form__textarea:focus::placeholder {
+  opacity: 0;
+}
+
+.footer-form__input:hover:not(:focus),
+.footer-form__textarea:hover:not(:focus),
+.footer-form__btn:hover {
+  background-color: rgba(192, 192, 192, 0.5);
+  color: rgb(255, 255, 255);
+}
+
+.footer-form__input:hover::-webkit-input-placeholder, .footer-form__textarea:hover::-webkit-input-placeholder {
+  color: rgb(255, 255, 255);
+}
+
+.footer-form__input:hover::-moz-placeholder, .footer-form__textarea:hover::-moz-placeholder {
+  color: rgb(255, 255, 255);
+}
+
+.footer-form__input:hover:-ms-input-placeholder, .footer-form__textarea:hover:-ms-input-placeholder {
+  color: rgb(255, 255, 255);
+}
+
+.footer-form__input:hover::-ms-input-placeholder, .footer-form__textarea:hover::-ms-input-placeholder {
+  color: rgb(255, 255, 255);
+}
+
+.footer-form__input:hover::placeholder,
+.footer-form__textarea:hover::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+.footer-form__btn:active {
+  background-color: rgb(50, 50, 50);
+  color: rgb(255, 255, 255);
 }

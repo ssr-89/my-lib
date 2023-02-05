@@ -1,0 +1,75 @@
+.footer {
+	background-color: rgba(0, 0, 0, 1.0);
+}
+.footer__container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.footer__title {
+	margin-bottom: 20px;
+	color: rgba(255, 255, 255, 1.0);
+}
+.footer-form {
+	display: flex;
+	flex-direction: column;
+	width: 30%;
+}
+.footer-form__input {
+	margin-bottom: 5px;
+	padding: 20px;
+	width: 100%;
+	background-color: rgba(192, 192, 192, 1.0);
+	transition: background .3s ease-in-out, color .3s ease-in-out, outline .3s ease-in-out;
+	border-radius: 3px;
+	font-size: 18px;
+}
+.footer-form__textarea {
+	margin-bottom: 5px;
+	padding: 20px;
+	width: 100%;
+	background-color: rgba(192, 192, 192, 1.0);
+	border-radius: 3px;
+	font-size: 18px;
+}
+.footer-form__input::placeholder,
+.footer-form__textarea::placeholder {
+	transition: color .3s ease-in-out;
+	font-size: 18px;
+}
+.footer-form__btn {
+	padding: 15px;
+	width: 100%;
+	background-color: rgba(192, 192, 192, 1.0);
+	font-size: 20px;
+	transition: background .3s ease-in-out, color .3s ease-in-out, outline .3s ease-in-out;
+	border-radius: 3px;
+}
+.footer-form__input::placeholder,
+.footer-form__textarea::placeholder {
+	transition: opacity 0.3s ease-in-out, color .3s ease-in-out;
+}
+.footer-form__input:focus:not(:active),
+.footer-form__textarea:focus:not(:active),
+.footer-form__btn:focus:not(:hover):not(:active) {
+	outline: 2px solid rgba(255, 255, 255, 1.0);
+}
+.footer-form__input:focus::placeholder,
+.footer-form__textarea:focus::placeholder {
+	opacity: 0;
+}
+.footer-form__input:hover:not(:focus),
+.footer-form__textarea:hover:not(:focus),
+.footer-form__btn:hover {
+	background-color: rgba(192, 192, 192, .5);
+	color: rgba(255, 255, 255, 1.0);
+}
+.footer-form__input:hover::placeholder,
+.footer-form__textarea:hover::placeholder {
+	color: rgba(255, 255, 255, 1.0);
+}
+.footer-form__btn:active {
+	background-color: rgba(50, 50, 50, 1.0);
+	color: rgba(255, 255, 255, 1.0);
+}

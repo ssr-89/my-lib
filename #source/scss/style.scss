@@ -1,16 +1,16 @@
+@import "_fonts.scss";
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   box-shadow: none;
-  font-family: inherit;
+  font-family: 'Exo 2', "FiraSans", sans-serif;
   color: inherit;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, Verdana, Tahoma, sans-serif;
   font-size: 100%;
   background-color: rgba(192, 192, 192, 1);
 }
@@ -47,10 +47,24 @@ body.blocking {
 }
 
 .btn {
-  background: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
   border: none;
   outline: none;
   cursor: pointer;
+}
+.btn:disabled {
+  opacity: .5;
+  cursor: auto;
+}
+
+.input {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  outline: none;
 }
 
 .link {
@@ -70,6 +84,9 @@ body.blocking {
 .color-red {
   color: rgba(255, 0, 0, 1.0);
 }
+.color-navy {
+  color: rgba(0, 0, 128, 1.0);
+}
 
 [class*=__container] {
   margin: 0 auto;
@@ -79,9 +96,4 @@ body.blocking {
 }
 
 @import '_header.scss';
-/*====================================================================================================*/
-/*JavaScript*/
-@import '_js-aide.scss';
-@import '_js-main.scss';
-@import '_js-dom.scss';
 @import "_footer.scss";

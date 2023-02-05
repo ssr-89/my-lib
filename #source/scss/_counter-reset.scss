@@ -1,0 +1,38 @@
+.counter-reset__container {
+	padding: 50px;
+}
+.counter-reset__block {
+	display: grid;
+	place-items: center;
+	margin: 0 auto;
+	background-color: #333;
+	width: 100%;
+	min-height: 400px;
+	color: #eee;
+}
+.counter {
+	counter-reset: ms var(--number);
+	animation: count 60s steps(100) infinite;
+	animation-iteration-count: 3; /*количество циклов для анимации*/
+}
+.counter::after {
+	content: counter(ms);
+	font-size: 10vw;
+}
+@property --number {
+  syntax: '<integer>';
+  inherits: false;
+  initial-value: 0;
+}
+/* <integer> - тип хранения данных в CSS, является частным случаем number, который представляет целые числа: как положительное, так и отрицательное. */
+/* inherits: false; - сброс, чтобы не было никакого наследования*/
+/* initial-value: 0; - с какого числа производится отсчёт*/
+@keyframes count {
+	0% {
+		--number: 60;
+	}
+}
+.counter-reset__code {
+	display: flex;
+	justify-content: space-between;
+}

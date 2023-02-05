@@ -1,43 +1,47 @@
-.js-main {}
-.js-main__container {
+.tools-main {}
+.tools-main__container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
-.js-main__title {
+.tools-main__title {
 	margin: 0 0 20px;
 	font-size: 36px;
 }
-.js-main-menu {}
-.js-main-menu__list {
+.tools-main-menu {}
+.tools-main-menu__list {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	column-gap: 20px;
 }
-.js-main-menu__item {	
+.tools-main-menu__item {	
 	margin: 0 0 20px;
 	padding: 10px;
-	max-width: 400px;
+	max-width: 450px;
 	min-height: 20px;
 	background-color: rgba(0, 0, 0, 1);
 	font-size: 28px;
 	color: rgba(255, 255, 255, 1.0);
 	transition: background .3s ease-in-out, color .3s ease-in-out, border .3s ease-in-out;
 }
-.js-main-menu__item:hover {
+.tools-main-menu__item:hover {
 	background-color: rgba(0, 0, 0, .5);
 }
-.js-main-menu__item:active {
+.tools-main-menu__item:active {
 	background-color: rgba(255, 255, 255, 1);
-	outline: 1px solid rgba(0, 0, 0, 1.0);
+	outline: none;
 	color: rgba(0, 0, 0, 1.0);	
 }
-.js-main-menu__link {
+.tools-main-menu__link {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
 	height: 100%;
 }
+
+@import "_tools-todo-list.scss";
+@import "_counter-reset.scss";
+@import "_tools-form.scss";

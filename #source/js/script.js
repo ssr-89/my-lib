@@ -16,7 +16,4 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
   };
-
-//@prepros-append js.js
-//@prepros-append js-dom.js
 });

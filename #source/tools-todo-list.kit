@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TODO-LIST</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/accordion.css">
+	<link rel="stylesheet" href="css/tools-main.css">
+	<script defer src="js/script.js"></script>
+	<script defer src="js/accordion.js"></script>
+	<script defer src="js/tools-main.js"></script>
+</head>
+<body>
+	<!-- @import "header.html" -->
+	<main class="tools-to-do">
+		<section class="to-do">
+			<div class="to-do__container">
+				<h1 class="to-do__title title">Todo-list</h1>
+				<div id="todo-app" class="to-do__block to-do-block">
+					<h2 class="to-do-block__title title">Мои задачи</h2>
+					<form class="to-do-block__form to-do-form">
+						<input class="to-do-form__input input" type="text" placeholder="Введите задачу">
+						<div class="to-do-form__block-btn to-do-form-block">
+							<button class="to-do-form-block__btn btn" type="submit" disabled>Добавить задачу</button>
+						</div>
+					</form>
+					<ul class="to-do__list todo-list list"></ul>
+				</div>
+			</div>
+		</section>
+		<section class="todo-code">
+			<div class="todo-code__container">
+    		<h2 class="todo-code__title container-title title">todo-code</h2>
+    		<div class="todo-code__block accordion" data-spollers data-one-spoller>
+      		<div class="accordion__item">
+        		<button class="accordion__title btn" data-spoller>HTML</button>
+        		<div class="accordion__content">
+          		<div class="accordion__wrapper">
+            		<pre class="accordion__pre block">
+									<code class="accordion__code todo-code-accordion block">
+&lt;div id="todo-app" class="hero__container"&gt;
+  &lt;h2 class="hero__title title"&gt;Мои задачи&lt;/h2&gt;
+  &lt;form class="hero__form hero-form"&gt;
+    &lt;input class="hero-form__input input" type="text" placeholder="Введите задачу" value&gt;
+    &lt;div class="hero-form__block-btn hero-form-block"&gt;
+      &lt;button type="submit" class="hero-form-block__btn btn"&gt;
+        Добавить задачу
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+  &lt;ul class="hero__list todo-list list"&gt;&lt;/ul&gt;
+&lt;/div&gt;
+									</code>
+								</pre>
+          		</div>
+        		</div>
+      		</div>
+      		<div class="accordion__item">
+        		<button class="accordion__title btn" data-spoller>CSS</button>
+        		<div class="accordion__content">
+          		<div class="accordion__wrapper">
+            		<pre class="accordion__pre block">
+									<code class="accordion__code todo-code-accordion block">
+.hero {
+  background-color: rgba(199, 212, 224, 1);
+}
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+}
+.hero__title {
+  margin: 0 0 20px;
+  font-size: 28px;
+}
+.hero-form {
+  display: flex;
+  margin: 0 0 20px;
+  width: 100%;
+}
+.hero-form__input {
+  padding: 15px;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px 0 0 5px;
+  font-size: 18px;
+}
+.hero-form-block {
+  width: 20%;
+}
+.hero-form-block__btn {
+  padding: 15px;
+  background-color: rgba(0, 0, 128, 1);
+  color: rgba(255, 255, 255, 1);
+  border-radius: 0 5px 5px 0;
+  font-size: 18px;
+  width: 100%;
+}
+.hero-form-block__btn:disabled {
+  background-color: rgba(0, 0, 128, 0.5);
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 0.65;
+  cursor: auto;
+}
+.todo-list {
+  margin: 0;
+  padding: 0;
+}
+.todo-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0 20px;
+  width: 100%;
+  min-height: 60px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(3, 3, 3, 0.2);
+}
+.todo-list__item:not(:last-child) {
+  border-bottom: none;
+}
+.todo-list__item--green {
+  background-color: rgba(223, 240, 216, 1);
+  color: rgba(60, 118, 61, 1);
+}
+.todo-list-block-btns {
+  display: flex;
+  height: 100%;
+}
+.todo-list-block-btns__btn {
+  padding: 10px;
+  height: 100%;
+  font-size: 18px;
+}
+.todo-list-block-btns-ok {
+  background-color: rgba(185, 255, 164, 1);
+}
+.todo-list-block-btns__btn:focus:not(:active) {
+  outline: 1px solid rgba(0, 0, 128, 1);
+  outline-offset: -3px;
+}
+.todo-list-block-btns-ok:hover {
+  background-color: rgba(185, 255, 164, 0.5);
+}
+.todo-list-block-btns-ok:active {
+  background-color: rgba(0, 100, 0, 1);
+  color: rgba(255, 255, 255, 1);
+}
+.todo-list-block-btns-del {
+  background-color: rgba(250, 174, 174, 1);
+}
+.todo-list-block-btns-del:hover {
+  background-color: rgba(250, 174, 174, 0.5);
+}
+.todo-list-block-btns-del:active {
+  background-color: rgba(139, 0, 0, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+									</code>
+								</pre>
+          		</div>
+        		</div>
+      		</div>
+      		<div class="accordion__item">
+        		<button class="accordion__title btn" data-spoller>JS</button>
+        		<div class="accordion__content">
+          		<div class="accordion__wrapper">
+            		<pre class="accordion__pre block">
+									<code class="accordion__code todo-code-accordion block">
+"use strict";
+document.addEventListener("DOMContentLoaded", function () {
+	<i>// Поиск HTML-элементов</i>
+  const heroForm = document.querySelector(".hero-form");
+  const heroInput = heroForm.querySelector(".hero-form__input");
+  const heroWrapperFormBtn = heroForm.querySelector(".hero-form-block");
+  const heroFormBtn = heroWrapperFormBtn.querySelector(".hero-form-block__btn");
+
+  <i>// Присваивание кнопке атрибута 'disabled'</i>
+  heroFormBtn.disabled = true;
+  heroInput.addEventListener("input", function () {
+    heroFormBtn.disabled = false;
+  });
+
+  <i>// Поиск HTML-элементов</i>
+  const todoList = document.querySelector(".todo-list");
+
+  <i>// Создание пустого массива, который будет заполняться по мере добавления задач</i>
+  const todoListArr = new Array();
+
+  <i>/*функция создания элементов при указании задачи*/</i>
+  function createTodoItem(name) {
+  	<i>// Создание ячейки с задачей</i>
+    let todoListItem = document.createElement("li");
+
+    <i>// Присваивание ячейке класса и указания значения</i>
+    todoListItem.classList.add("todo-list__item");
+    todoListItem.textContent = name; <i>// Значение, введённое в</i> heroInput
+
+    <i>// Создание блока функции-кнопок и присваивание классов</i>
+    let buttonGroup = document.createElement("div");
+    buttonGroup.classList.add("todo-list__block-btns", "todo-list-block-btns");
+
+    <i>// Создание функции-кнопок и присваивание классов с текстом</i>
+    let doneBtn = document.createElement("button");
+    doneBtn.classList.add(
+      "todo-list-block-btns__btn",
+      "todo-list-block-btns-ok",
+      "btn"
+    );
+    doneBtn.textContent = "Ok";
+    let delBtn = document.createElement("button");
+    delBtn.classList.add(
+      "todo-list-block-btns__btn",
+      "todo-list-block-btns-del",
+      "btn"
+    );
+    delBtn.textContent = "Del";
+
+    <i>// Добавление ранее созданных элементов в другие элементы</i>
+    buttonGroup.append(doneBtn);
+    buttonGroup.append(delBtn);
+    todoListItem.append(buttonGroup);
+
+    <i>// Добавление обработчиков событий на функции-кнопки</i>
+    doneBtn.addEventListener("click", function () {
+      todoListItem.classList.toggle("todo-list__item--green");
+
+      <i>// Цикл для указания состояния объект на основе синхронности id ячейки с id объекта todoListObj</i>
+      for (let itemList of todoListArr) {
+        if (itemList.id == todoListObj.id) itemList.done = !itemList.done; <i>// Если id объект массива равен id ячейки, то свойство объекта done меняет булево-значение</i>
+      }
+    });
+
+
+    delBtn.addEventListener("click", function () {
+      if (confirm("Are you sure?")) {
+        todoListItem.remove();
+
+        <i>// Цикл по удалению нужного объекта</i>
+        <i>// 1) если i меньше длины todoListArr    3) если второе условие не выполнено, то i прибавляется единица и переходит к первому условию</i>
+        for (let i = 0; i < todoListArr.length; i++) {
+
+        	<i>// 2) если id элемента i равен id todoListObj</i>
+          if (todoListArr[i].id == todoListObj.id) {
+
+          	<i>// 3) то элемент (объект) i и 1 (кол-во элементов, которое следует, начиная с i) удаляется</i>
+          	todoListArr.splice(i, 1);
+
+          }
+        }
+      }
+    });
+
+    <i>// Присваивание id ячейке</i>
+    todoListItem.id = itemId(todoListArr);
+
+    <i>// Функция создания id</i>
+    function itemId(arr) {
+      let max = 0;
+      for (let item of arr) {
+        if (item.id > max) max = item.id;
+      }
+      return max + 1;
+    }
+
+    <i>// Создание объекта массива с добавлением свойств со значениями ячейки</i>
+    let todoListObj = {
+      id: itemId(todoListArr),
+      name: heroInput.value,
+      done: false
+    };
+    todoListArr.push(todoListObj);
+
+    console.log(todoListArr);
+    // console.log(todoListObj);
+
+    return {
+      todoListItem,
+      doneBtn,
+      delBtn
+    };
+  }
+
+  <i>// Функция по объединению всего выше изложенного и запуска процесса добавления задач</i>
+  function createTodoApp() {
+    heroForm.addEventListener("submit", function (e) {
+      e.preventDefault(); <i>// предотвращает перезагрузку страницы при отправке формы</i>
+
+      <i>// игнорируем создание элемента, если пользователь ничего не ввёл в поле</i>
+      if (!heroInput.value) {
+        return;
+      }
+
+      <i>// Переменная со значением функции по созданию ячейки и указанным параметром.</i>
+      let todoItem = createTodoItem(heroInput.value);
+
+      <i>// Добавление ячейки со значением heroInput в список задач</i>
+      todoList.append(todoItem.todoListItem);
+
+      <i>// Добавление атрибута 'disabled' кнопке</i>
+      heroFormBtn.setAttribute("disabled", "disabled");
+
+      <i>// Удаление значения heroInput после добавления задачи</i>
+      heroInput.value = "";
+    });
+  }
+
+  createTodoApp();
+});
+									</code>
+								</pre>
+          		</div>
+        		</div>
+      		</div>
+    		</div>
+  		</div>
+		</section>
+	</main>
+<!-- <section class="000" id="000">
+  <div class="000__container">
+    <h2 class="000__title container-title title">000</h2>
+    <div class="000__block accordion" data-spollers data-one-spoller>
+      <div class="accordion__item">
+        <button class="accordion__title btn" data-spoller>000</button>
+        <div class="accordion__content">
+          <div class="accordion__wrapper">
+            <pre class="accordion__pre block">
+							<code class="accordion__code block">
+									&nbsp;
+							</code>
+						</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+	<!-- @import "footer.html" -->
+</body>
+</html>
