@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function(){
 			}
 
 			xhr.open("POST", "mail.php", true);
-			xhr.send(formData);
+			xhr.send(FormData);
 
 			thisForm.reset();
 		}
