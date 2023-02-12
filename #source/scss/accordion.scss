@@ -84,22 +84,36 @@
 }
 .accordion__descr:not(:last-child),
 .accordion__text:not(:last-child) {
-	margin: 0 0 10px 0;}
+	margin: 0 0 10px 0;
+}
 .accordion__pre {
 	margin: 0;
+	padding: 1rem 1rem 0;
 	font-family: Monospace;
 	font-size: 17px;
+	background-color: rgba(0,80,80,1);
+}
+.accordion__pre:not(:last-child) {
+	margin-bottom: 20px;;
 }
 .accordion__code {
 	font-family: Monospace;
 	font-size: 17px;
 }
 .blue-code {
+	padding: 0 5px;
 	background-color: rgba(176, 224, 230, .5);
 }
 .navy-code {
 	background-color: rgba(0, 0, 128, 1);
 }
 .accordion__i {
-	color: rgba(255, 255, 255, 0.6);
+	color: rgba(170, 170, 170, 1);
+}
+.accordion__table th,
+.accordion__table td {
+	padding: 5px 10px;
+	text-align: center;
+	border: 1px solid rgba(150, 150, 150, 1.0);
+	color: rgba(200, 200, 200, 1.0);
 }

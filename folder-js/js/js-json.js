@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",(function(){localStorage.setItem("person",JSON.stringify({name:"John",surname:"Smith",age:30}));const e=localStorage.getItem("person"),n=JSON.parse(e);n.name="James",console.log(n)}));

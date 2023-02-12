@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Циклы</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/accordion.css">
+	<link rel="stylesheet" href="css/js-main.css">
+	<script defer src="../js/script.js"></script>
+	<script defer src="../js/accordion.js"></script>
+	<script defer src="js/js-main.js"></script>
+</head>
+<body>
+	<main class="main">
+		<section class="section-menu">
+			<div class="section-menu__container">
+				<h1 class="section-menu__title title">Циклы (cycle)</h1>
+				<nav class="section-menu menu">
+					<ul class="menu__list list">
+						<li class="menu__item">
+							<a class="menu__link link" href="#for">for</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#for-of">for of</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#for-in">for in</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#while">while</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#fo-while">fo while</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#continue">continue</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#break">break</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#for-while">for while</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#select-cycle">Когда и какой цикл выбрать</a>
+						</li>						
+						<!-- <li class="menu__item">
+							<a class="menu__link link" href="#"></a>
+						</li> -->
+					</ul>
+				</nav>
+			</div>
+		</section>
+		<section class="for" id="for">
+			<div class="for__container">
+				<h2 class="for__title container-title title">for</h2>
+				<a target="_blank" class="js-main__link" href="https://learn.javascript.ru/while-for">Источник</a>
+				<div class="for__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Принцип работы цикла <code class="color-yellow">for</code></button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<a target="_blank" class="accordion__link link" href="https://codepen.io/archicolt/pen/wvjQGRN?editors=0012">Codepen</a>
+								<pre class="accordion__pre">
+var fibo = [1,1];
+
+for (var i = 1; i < 9; ++i) { <i class="accordion__i">// к i после каждой итерации прибавляется 1</i>
+  fibo.push(fibo[i] + fibo[i - 1]); <i class="accordion__i">// i - это индексы массива, значения которых складываются и прибавляются в конце</i>
+}
+console.log(fibo);
+
+<i class="accordion__i">//[1,1,2,3,5,8,13,21,34,55] итого 10 чисел</i>
+<i class="accordion__i">// 0,1,2,3,4,5,6, 7, 8, 9 - индекс исчисления</i>
+								</pre>
+								<p class="accordion__text text">
+									Принцип работы цикла <code class="color-yellow">for</code>
+								</p>
+								<pre class="accordion__pre">
+1) Начало: var i = 1; <i class="accordion__i">// выполняется один раз при входе в цикл</i>
+
+2) Условие: i < 9; <i class="accordion__i">// выполняется перед каждой итерацией цикла, если оно false, цикл остановится</i>
+
+3) Тело: fibo.push(fibo[i] + fibo[i - 1]);
+<i class="accordion__i">// вернёт [1,1,2]. В данном случае i - это индекс массива, т.е. первый элемент массива плюс нулевый элемент (1+1=2).</i>
+<i class="accordion__i">// Данный код выполняется пока условие true.</i>
+
+4) Шаг: ++i; <i class="accordion__i">// 1 + 1 = 2 = i</i>
+5) Условие: i < 9; <i class="accordion__i">// 2 < 9;</i>
+6) Тело: fibo.push(fibo[i] + fibo[i - 1]); <i class="accordion__i">// вернёт [1,1,2,3]. Последнее число i = 2 после вычета шага. Значит второе число плюс первое (2+1=3)</i>
+7) Шаг: ++i; <i class="accordion__i">// 1 + 2 = 3 = i</i>
+8) Условие: i < 9; <i class="accordion__i">// 3 < 9;</i>
+9) Тело: fibo.push(fibo[i] + fibo[i - 1]); <i class="accordion__i">// вернёт [1,1,2,3,5]. Последнее число i = 3 после вычета шага. Значит второе число плюс первое (3+2=5)</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Простой пример цикла</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<pre class="accordion__pre">
+var i = 0;
+
+for (i; i < 3; i++) {
+  console.log(i); <i class="accordion__i">// закончится на 2, потому что МАХ 3 - 0 1 2</i>
+}
+console.log(i); <i class="accordion__i">// закончится на 3, потому что цикл завершён и возвращает последний результат вне цикла, который не подошёл условиям цикла (false)</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Пример цикла с вероятностью завершения 10%</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<a target="_blank" class="accordion__link link" href="https://codepen.io/archicolt/pen/xxPQrYG?editors=0010">Codepen</a>
+								<pre class="accordion__pre">
+<i class="accordion__i">// цикл, который может завершиться на любой итерации с вероятностью 10%</i>
+for (; Math.random() >= 0.1; ) console.log("И ещё разок"); <i class="accordion__i">// Math.random() >= 0.1; - условие при котором не выполнится цикл</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Пример вечного цикла 1</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<a target="_blank" class="accordion__link link" href="https://codepen.io/archicolt/pen/xxPQrYG?editors=0010">Codepen</a>
+								<pre class="accordion__pre">
+for (;;) console.log("Я буду сниться тебе в кошмарах"); <i class="accorion__i">// (;;) ничего прописано в первой/второй/третьей частях</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Пример вечного цикла 2</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<a target="_blank" class="accordion__link link" href="https://codepen.io/archicolt/pen/xxPQrYG?editors=0010">Codepen</a>
+								<pre class="accordion__pre">
+for (let i = 0;; ++i) { console.log(i); } <i class="accorion__i">// выводит максимальное кол-во чисел</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="for-of" id="for-of">
+			<div class="for-of__container">
+				<h2 class="for-of__title container-title title">for of</h2>
+				<div class="for-of__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>000</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<h3 class="accordion__heading title"></h3>
+								<p class="accordion__text text"></p>
+								<pre class="accordion__pre"></pre>
+								<code class="accordion__code block">
+									&nbsp;
+								</code>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="for-in" id="for-in">
+			<div class="for-in__container">
+				<h2 class="for-in__title container-title title">for in</h2>
+				<div class="for-in__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>000</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<h3 class="accordion__heading title"></h3>
+								<p class="accordion__text text"></p>
+								<pre class="accordion__pre"></pre>
+								<code class="accordion__code block">
+									&nbsp;
+								</code>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="while" id="while">
+			<div class="while__container">
+				<h2 class="while__title container-title title">while</h2>
+				<div class="while__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>000</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<h3 class="accordion__heading title"></h3>
+								<p class="accordion__text text"></p>
+								<pre class="accordion__pre"></pre>
+								<code class="accordion__code block">
+									&nbsp;
+								</code>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="fo-while" id="fo-while">
+			<div class="fo-while__container">
+				<h2 class="fo-while__title container-title title">fo while</h2>
+				<div class="fo-while__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>000</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<h3 class="accordion__heading title"></h3>
+								<p class="accordion__text text"></p>
+								<pre class="accordion__pre"></pre>
+								<code class="accordion__code block">
+									&nbsp;
+								</code>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="continue" id="continue">
+			<div class="continue__container">
+				<h2 class="continue__title container-title title">continue</h2>
+				<div class="continue__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>000</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<h3 class="accordion__heading title"></h3>
+								<p class="accordion__text text"></p>
+								<pre class="accordion__pre"></pre>
+								<code class="accordion__code block">
+									&nbsp;
+								</code>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="break" id="break">
+			<div class="break__container">
+				<h2 class="break__title container-title title">break</h2>
+				<div class="break__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>000</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<h3 class="accordion__heading title"></h3>
+								<p class="accordion__text text"></p>
+								<pre class="accordion__pre"></pre>
+								<code class="accordion__code block">
+									&nbsp;
+								</code>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="for-while" id="for-while">
+			<div class="for-while__container">
+				<h2 class="for-while__title container-title title">for VS while</h2>
+				<div class="for-while__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>000</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<h3 class="accordion__heading title"></h3>
+								<p class="accordion__text text"></p>
+								<pre class="accordion__pre"></pre>
+								<code class="accordion__code block">
+									&nbsp;
+								</code>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="select-cycle" id="select-cycle">
+			<div class="select-cycle__container">
+				<h2 class="select-cycle__title container-title title">Когда и какой цикл выбрать</h2>
+				<div class="select-cycle__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>000</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<h3 class="accordion__heading title"></h3>
+								<p class="accordion__text text"></p>
+								<pre class="accordion__pre"></pre>
+								<code class="accordion__code block">
+									&nbsp;
+								</code>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</body>
+</html>

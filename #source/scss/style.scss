@@ -4,8 +4,6 @@
 *::after {
   box-sizing: border-box;
   box-shadow: none;
-  font-family: 'Exo 2', "FiraSans", sans-serif;
-  color: inherit;
 }
 
 body {
@@ -13,6 +11,7 @@ body {
   padding: 0;
   font-size: 100%;
   background-color: rgba(192, 192, 192, 1);
+  font-family: 'Exo 2', "FiraSans", sans-serif;
 }
 
 body.blocking {
@@ -27,6 +26,8 @@ body.blocking {
   margin: 0;
   padding: 0;
   font-weight: 700;
+  color: inherit;
+  font-family: 'Exo 2', "FiraSans", sans-serif;
 }
 
 .text {
@@ -34,16 +35,22 @@ body.blocking {
   padding: 0;
   font-weight: 400;
   font-size: inherit;
+  color: inherit;
+  font-family: 'Exo 2', "FiraSans", sans-serif;
 }
 
 .list {
   margin: 0;
   padding: 0;
   list-style: none;
+  color: inherit;
+  font-family: 'Exo 2', "FiraSans", sans-serif;
 }
 
 .table {
   border-collapse: collapse;
+  color: inherit;
+  font-family: 'Exo 2', "FiraSans", sans-serif;
 }
 
 .btn {
@@ -53,6 +60,8 @@ body.blocking {
   border: none;
   outline: none;
   cursor: pointer;
+  color: inherit;
+  font-family: 'Exo 2', "FiraSans", sans-serif;
 }
 .btn:disabled {
   opacity: .5;
@@ -65,12 +74,15 @@ body.blocking {
   background: transparent;
   border: none;
   outline: none;
+  color: inherit;
+  font-family: 'Exo 2', "FiraSans", sans-serif;
 }
 
 .link {
   display: inline-block;
   text-decoration: none;
   color: inherit;
+  font-family: 'Exo 2', "FiraSans", sans-serif;
 }
 
 .img {

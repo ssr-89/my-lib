@@ -42,5 +42,11 @@
 	height: 100%;
 }
 
+.js-main__link {
+	display: inline-block;
+	margin-bottom: 1rem;
+	color: auto;
+}
+
 @import "_js-dom.scss";
 @import "_js-test-content.scss";
