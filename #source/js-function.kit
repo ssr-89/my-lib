@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Функции</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/accordion.css">
+	<link rel="stylesheet" href="css/js-main.css">
+	<link rel="stylesheet" href="../css/section-menu.css">
+	<link rel="stylesheet" href="css/js-function.css">
+	<script defer src="../js/script.js"></script>
+	<script defer src="../js/accordion.js"></script>
+	<script defer src="js/js-main.js"></script>
+</head>
+<body>
+	<main class="main">
+		<section class="section-menu">
+			<div class="section-menu__container">
+				<h1 class="section-menu__title title">Функция (function)</h1>
+				<nav class="section-menu__menu menu">
+					<ul class="menu__list list">
+						<li class="menu__item">
+							<a class="menu__link link" href="#alert-prompt-confim">Функции <code class="blue-code">alert()</code>, <code class="blue-code">prompt()</code> и <code class="blue-code">confim()</code></a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#func">Функция (function), Function Declaration и Function Expression</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#arg-param">Аргументы и параметры</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#func-arrow">Стрелочная функция <code class="blue-code">=&gt;</code></a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#function-digit">
+								Функции для чисел: <code class="blue-code">parseInt()</code> и <code class="blue-code">parseFloat()</code>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#function-string">Функции для строк</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#callback">Функция "колбэк"</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#return">Оператор <code class="blue-code">return</code></a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#func-name">Имена функций</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#closure">Замыкание (closure)</a>
+						</li>
+						<!-- <li class="menu__item">
+							<a class="menu__link link" href="#"></a>
+						</li> -->
+					</ul>
+				</nav>
+				<button class="section-menu__btn btn">
+					<span></span>
+				</button>
+			</div>
+		</section>
+		<section id="alert-prompt-confim" class="alert-prompt-confim">
+			<div class="alert-prompt-confim__container">
+				<h2 class="alert-prompt-confim__title container-title title">Функции <code class="blue-code">alert()</code>, <code class="blue-code">prompt()</code> и <code class="blue-code">confim()</code></h2>
+				<a target="_blank" class="js-main__link" href="https://learn.javascript.ru/alert-prompt-confirm">Источник</a>
+				<div class="alert-prompt-confim__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller><code class="color-yellow">alert()</code></button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<p class="accordion__text text">
+									Функция <code class="color-yellow">alert</code> выводит результат кода, который был указан для вывода в&nbsp;виде модального окна.
+								</p>
+								<p class="accordion__text text">
+									При этом интерфейс остальной части страницы блокируется пока модальное окно не&nbsp;будет закрыто.
+								</p>
+								<pre class="accordion__pre">
+var a = "Hello";
+
+alert(a);
+								</pre>
+								<p class="accordion__text text">
+									Данная функция показывает сообщение и&nbsp;ждёт, пока пользователь нажмёт кнопку &laquo;ОК&raquo;.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller><code class="color-yellow">prompt()</code></button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<p class="accordion__text text">
+									Модальное окно с&nbsp;полем для ввода
+								</p>
+								<pre class="accordion__pre">
+let puck = prompt("Test", ''); <i class="accordion__i">// для IE</i>
+
+
+let puck = prompt("Сколько тебе лет?", [] или "" или "100");
+alert(`Тебе ${puck} лет!`); <i class="accordion__i">// Тебе 100 лет!</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller><code class="color-yellow">confim()</code></button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<p class="accordion__text text">
+									Модальное окно с&nbsp;вопросом и&nbsp;вариантами ответа
+								</p>
+								<pre class="accordion__pre">
+let isBoss = confirm("Ты здесь главный?");
+alert(isBoss); <i class="accordion__i">// true, если нажата OK</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="func" id="func">
+			<div class="func__container">
+				<h2 class="func__title container-title title">Функция (function)</h2>
+				<div class="func__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Функция (function)</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<h3 class="accordion__heading title">
+									Функция&nbsp;&mdash; это значение, представляющее &laquo;действие&raquo;
+								</h3>
+								<p class="accordion__text text">
+									Обычные значения, такие как строки или числа представляют собой данные.
+								</p>
+								<p class="accordion__text text">
+									Функции, с&nbsp;другой стороны, можно воспринимать как действия.
+								</p>
+								<p class="accordion__text text">
+									Мы&nbsp;можем передавать их&nbsp;из&nbsp;переменной в&nbsp;переменную и&nbsp;запускать, когда захотим.
+								</p>
+								<pre class="accordion__pre">
+<i class="accordion__i">// Саму функцию можно вызвать до её объявления</i>
+printWeekday(); <i class="accordion__i">// вызов функции до её объявления</i>
+
+function printWeekday() {
+  var dayIndex = new Date().getDay();
+  var days = [
+    'воскресенье',
+    'понедельник',
+    'вторник',
+    'среда',
+    'четверг',
+    'пятница',
+    'суббота',
+  ];
+  console.log(`Сегодня ${days[dayIndex]}`);
+}
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Function Declaration (объявление функции) <code class="blue-code">function name(...) {...}</code></button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<p class="accordion__text text">
+									<span class="color-yellow">Function Declaration</span> - это функция с именем: <code class="blue-code">function name(...) {...}</code>
+								</p>
+								<pre class="accordion__pre">
+<i class="accordion__i">// Function Declaration</i>
+function sum(a, b) {
+  return a + b;
+}
+								</pre>
+								<p class="accordion__text text">Более сложный вариант</p>
+								<pre class="accordion__pre">
+<i class="accordion__i">// Саму функцию можно вызвать до её объявления</i>
+primerName(); <i class="accordion__i">// вызов функции до её объявления</i>
+
+function primerName() {
+  var dayIndex = new Date().getDay();
+  var days = [
+    'воскресенье',
+    'понедельник',
+    'вторник',
+    'среда',
+    'четверг',
+    'пятница',
+    'суббота',
+  ];
+  console.log(`Сегодня ${days[dayIndex]}`);
+}
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Function Expression <code class="blue-code">var/let/conts name = function(...) {...}</code></button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<a target="_blank" class="js-main__link" href="https://learn.javascript.ru/function-expressions">Источник</a>
+								<p class="accordion__text text">
+									<span class="color-yellow">Function Expression</span> - это функция без имени или созданная внутри другого выражения, либо синтаксической конструкции: <code class="blue-code">var/let/conts name = function(...) {...}</code>
+								</p>
+								<pre class="accordion__pre">
+<i class="accordion__i">// Function Expression</i>
+let sum = function(a, b) {
+  return a + b;
+};
+								</pre>
+								<pre class="accordion__pre">
+var primerName = function() {
+  var dayIndex = new Date().getDay();
+  var days = [
+    'воскресенье',
+    'понедельник',
+    'вторник',
+    'среда',
+    'четверг',
+    'пятница',
+    'суббота',
+    ];
+  console.log(`Сегодня ${days[dayIndex]}`);
+};
+primerName(); <i class="accordion__i">// вызов функции возможен только после объявления переменной в которой функция является значением</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Копирование функции в переменную</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<pre class="accordion__pre">
+function sayHi() { <i class="accordion__i">// (1) создаём</i>
+  alert( "Привет" );
+}
+
+let func = sayHi; <i class="accordion__i">// (2) копируем - sayHi БЕЗ КРУГЛЫХ СКОБОК, ИНАЧЕ ОШИБКУ ВЫДАСТ ПРИ ВЫЗОВЕ func();</i>
+
+func(); <i class="accordion__i">// Привет - (3) вызываем копию (работает)!</i>
+sayHi(); <i class="accordion__i">// Привет</i>
+
+<hr>
+<i class="accordion__i">// с помощью переменной</i>
+<i class="accordion__i">// В&nbsp;данном случае функция создаётся в&nbsp;правой части &laquo;выражения присваивания&raquo; <span class="color-yellow">=</span></i>
+let sayHi = function() { <i class="accordion__i">// (1) создаём</i>
+  alert( "Привет" );
+}; <i class="accordion__i">// ТОЧКА С ЗАПЯТОЙ ОБЯЗАТЕЛЬНА В ДАННОМ СЛУЧАЕ</i>
+let func = sayHi; <i class="accordion__i">// (2) копируем - sayHi БЕЗ КРУГЛЫХ СКОБОК, ИНАЧЕ ОШИБКУ ВЫДАСТ ПРИ ВЫЗОВЕ func();</i>
+
+func(); <i class="accordion__i">// Привет - (3) вызываем копию (работает)!</i>
+sayHi(); <i class="accordion__i">// Привет</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Самовыполняющиеся анонимная функция</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<p class="accordion__text text">
+									Чтобы сделать самовыполняющуюся функцию&nbsp;&mdash; необходимо функцию добавить в&nbsp;круглые скобки и&nbsp;в&nbsp;конце пару пустых круглых скобок добавить.
+								</p>
+								<p class="accordion__text text">
+									Анонимная функция&nbsp;&mdash; это функция без имени и&nbsp;без переменной
+								</p>
+								<pre class="accordion__pre">
+(function() {
+  ...
+})();
+
+var  myVariable = "Я нахожусь вне функции.";
+
+(function() {
+  var myVariable = "Я нахожусь в этой анонимной функции";
+  console.log(myVariable);
+})();
+
+console.log(myVariable);
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Возведение в&nbsp;степень без объекта Math.pow</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<pre class="accordion__pre">
+function pow(x, n) {
+  let result = x;
+
+  for (let i = 1; i < n; i++) { <i class="accordion__i">// проверяет i больше или равно n</i>
+    result *= x; <i class="accordion__i">// умножает на само себя</i>
+  }
+
+  return result;
+}
+
+let x = prompt("x?", ''); <i class="accordion__i">// какое число x?</i>
+let n = prompt("n?", ''); <i class="accordion__i">// какое число n?</i>
+
+if (n < 1) {
+  alert(`Степень ${n} не поддерживается, используйте натуральное число`);
+} else {
+  alert( pow(x, n) );
+}
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="arg-param" id="arg-param">
+			<div class="arg-param__container">
+				<h2 class="arg-param__title container-title title">Аргументы и параметры</h2>
+				<div class="arg-param__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>
+							<span class="color-red">ВАЖНО:</span> примитивные (элементарные) типы данных для аргументов: <code class="color-yellow">number, string, boolean, undefined, null</code>
+						</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<pre class="accordion__pre">
+function <i>ИМЯ ФУНКЦИИ(ПАРАМЕТР, ПАРАМЕТР)</i> {
+  <i>ИНСТРУКЦИЯ ФУНКЦИИ</i>
+}
+<i>ИМЯ ФУНКЦИИ(АРГУМЕНТ, АРГУМЕНТ);</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>
+							Применение объекта <code class="color-yellow">arguments</code> в&nbsp;функции с&nbsp;превышением кол-ва аргументов над кол-вом параметров
+						</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<pre class="accordion__pre">
+<i class="accordion__i">// выдаст последний аргумент при превышении кол-ва аргументов над кол-вом параметров</i>
+function flexMobile() {
+  var welcome = 'Добро пожаловать, ';
+  for (i = 0; i < arguments.length; i++) {
+    welcome = welcome + arguments[i] + '';
+  }
+  return welcome;
+}
+console.log(flexMobile(("Christopher", "James", "Phoenix", "Minnick") + ""));
+
+<i class="accordion__i">// "Добро пожаловать, Minnick"</i>
+
+
+
+console.log(flexMobile(("Eva", "Ann", "Holland") + ""));
+
+<i class="accordion__i">// "Добро пожаловать, Holland"</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Функция с 2-мя аргументами</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<pre class="accordion__pre">
+<i class="accordion__i">// при этом второй аргумент имеет значение по умолчанию</i>
+function findCard(cards, wantedCard = "Туз") { <i class="accordion__i">// cards и wantedCard со значением - это ПАРАМЕТРЫ</i>
+  console.log("Ищем в колоде карту " + wantedCard);
+
+  let found = false;
+
+  for (let card of cards) {
+    console.log(`Из колоды вытянута карта ${card}`);
+    if (card === wantedCard) {
+      found = true;
+      break;
+    }
+  }
+  console.log(
+    found
+      ? `Мы нашли карту ${wantedCard}!`
+      : `В колоде нет карты ${wantedCard} :(`
+  );
+}
+
+let myCards = ["2", "Король", "Туз", "5", "6", "Король"];
+
+<i class="accordion__i">// ищем туза в переданной колоде карт</i>
+findCard(myCards);
+<i class="accordion__i">// ищем пятёрку в переданной колоде карт</i>
+findCard(myCards, "5"); <i class="accordion__i">// myCards и "5" - это АРГУМЕНТЫ</i>
+
+
+<i class="accordion__i">/*
+Вернёт:
+"Ищем в колоде карту Туз"
+"Из колоды вытянута карта 2"
+"Из колоды вытянута карта Король"
+"Из колоды вытянута карта Туз"
+"Мы нашли карту Туз!"
+"Ищем в колоде карту 5"
+"Из колоды вытянута карта 2"
+"Из колоды вытянута карта Король"
+"Из колоды вытянута карта Туз"
+"Из колоды вытянута карта 5"
+"Мы нашли карту 5!"
+*/
+// ПОСЛЕ ТОГО, КАК НАШЁЛСЯ "ТУЗ" ФУНКИЦЯ ЗАПУСКАЕТСЯ СНОВА И ИЩЕТ "5"
+</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Пример работы функции</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<img class="accordion__img img" src="img/function/argument-function.jpg" alt="Пример работы функции">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="func-arrow" id="func-arrow">
+			<div class="func-arrow__container">
+				<h2 class="func-arrow__title container-title title">Стрелочная функция <code class="blue-code">=&gt;</code></h2>
+				<a target="_blank" class="js-main__link" href="https://learn.javascript.ru/arrow-functions-basics">Источник</a>
+				<div class="func-arrow__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Обычное применение стрелочной функции</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<pre class="accordion__pre">
+let sum = (a, b) => a + b; 
+<i class="accordion__i">// если параметр только один (a), то скобки можно не ставить</i>
+<i class="accordion__i">// если нет параметров, то необходимо указать пустые скобки ()</i>
+
+<i class="accordion__i">
+/* Эта стрелочная функция представляет собой более короткую форму:
+
+let sum = function(a, b) {
+  return a + b;
+};
+*/
+</i>
+alert( sum(1, 2) ); <i class="accordion__i">// 3</i>
+
+<hr>
+<i class="accordion__i">// ВАЖНО помнить</i>
+<i class="accordion__i">// при многострочном использовании стрелочной функции</i>
+<i class="accordion__i">// тело функции необходимо обернуть в фигурные скобки: <code class="color-yellow">{ тело функции }</code></i>
+<i class="accordion__i">// в которых прописать <code class="color-yellow">return</code> для возврата значения</i>
+let sum = (a, b) => {
+  let result = a + b;
+  return result;
+}
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Ситуации применения обычной функции и стрелочной</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<pre class="accordion__pre">
+<i class="accordion__i">// Function Declaration/Expression</i>
+
+
+<i class="accordion__i">/* ОБЫЧНЫЕ ФУНКЦИИ */</i>
+
+<i class="accordion__i">// 1 Методы объектов, чтобы не потерять доступ к this</i>
+const obj = {
+  name: 'Name',
+  printName() {
+    console.log(this.name);
+  }
+}
+
+<i class="accordion__i">// 2 Обработчики событий, когда нужен this</i>
+input.addEventListener('input', function(){
+  console.log(this.value);
+});
+
+<i class="accordion__i">// 3 Простые именованные функции</i>
+function userName() {
+  // code
+}
+
+
+
+<i class="accordion__i">/* СТРЕЛОЧНЫЕ ФУНКЦИИ */</i>
+
+<i class="accordion__i">// 1 Обработчики событий, когда не нужен доступ к this</i>
+input.addEventListener('input', () => {
+  console.log('Input event');
+});
+
+<i class="accordion__i">// 2 При передаче анонимной функции в качестве параметра другой функции</i>
+setInterval(() => {
+  console.log('tick');
+}, 1000);
+
+<i class="accordion__i">// 3 IIFE - вызов функции после её объявления</i>
+(() => {})(); <i class="accordion__i">// vs (function() {})();</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Применение стрелочной функции как и&nbsp;Function Expression (функционального выражения)</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<pre class="accordion__pre">
+<span class="color-yellow">// Первый вариант</span>
+let age = prompt("Сколько Вам лет?", 18);
+
+let welcome = (age < 18) ?
+  () => alert('Привет!') :
+  () => alert("Здравствуйте!");
+
+welcome();
+
+<hr>
+
+<span class="color-yellow">// Второй вариант</span>
+<i class="accordion__i">// Function Expression (функционального выражения)</i>
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+ask(
+  "Вы согласны?",
+  function() { alert("Вы согласились."); },
+  function() { alert("Вы отменили выполнение."); }
+);
+
+
+<i class="accordion__i">// Стрелочная функция</i>
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+ask(
+  "Вы согласны?",
+  () => alert("Вы согласились."),
+  () => alert("Вы отменили выполнение.")
+);
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="function-digit" id="function-digit">
+			<div class="function-digit__container">
+				<h2 class="function-digit__title container-title title">Функции для чисел: <code class="blue-code">parseInt()</code> и <code class="blue-code">parseFloat()</code></h2>
+				<div class="function-digit__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>
+							<code class="color-yellow">parseInt()</code>
+						</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<p class="accordion__text text">
+									<code class="color-yellow">parseInt()</code> - отбрасывает дробные части и&nbsp;выводит только целое число
+								</p>
+								<pre class="accordion__pre">
+const john = parseInt(10.333);
+console.log(john); <i class="accordion__i">// 10</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller><code class="color-yellow">parseFloat()</code></button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<p class="accordion__text text">
+									<code class="color-yellow">parseFloat()</code> - возвращает число каким оно должно быть. Целое&nbsp;&mdash; целым, дробное&nbsp;&mdash; дробным.
+								</p>
+								<pre class="accordion__pre">
+const john = parseFloat(10.333);
+console.log(john); <i class="accordion__i">// 10.333</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="function-string" id="function-string">
+			<div class="function-string__container">
+				<h2 class="function-string__title container-title title">Функции для строк</h2>
+				<div class="function-string__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller><code class="color-yellow">charAt()</code></button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<p class="accordion__text text">
+									<code class="color-yellow">charAt()</code> возвращает символ, находящийся в&nbsp;указанной позиции в&nbsp;строке. Обращаем внимание на&nbsp;то, что отсчёт позиций начинается с&nbsp;0.
+								</p>
+								<pre class="accordion__pre">
+const string = "Javascript";
+console.log(string.charAt(3)); <i class="accordion__i">// возвращает "a"</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller><code class="color-yellow">concat()</code></button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<p class="accordion__text text">
+									<code class="color-yellow">concat()</code> - присоединяет к&nbsp;строке одну или несколько строк и&nbsp;возвращает объединённую строку.
+								</p>
+								<pre class="accordion__pre">
+const string = "Javascript";
+console.log(string.concat(" - это круто!!!")); <i class="accordion__i">// возвращает "Javascript - это круто!!!"</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller><code class="color-yellow">indexOf()</code></button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<p class="accordion__text text">
+									<code class="color-yellow">indexOf()</code> - выполняет поиск первого вхождения символа или подстроки в&nbsp;данной строке и&nbsp;возвращает номер соответствующей позиции.
+								</p>
+								<pre class="accordion__pre">
+const string = "Javascript - это здорово!";
+console.log(string.indexOf("здорово")); <i class="accordion__i">// возвращает 17, т.к. буква "з" на 17 позиции</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller><code class="color-yellow">split()</code></button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<p class="accordion__text text">
+									<code class="color-yellow">split()</code> - разбивает строку на&nbsp;массив подстрок.
+								</p>
+								<pre class="accordion__pre">
+const string = "Javascript - это здорово!";
+console.log(string.split("з")); <i class="accordion__i">// возвращает ["Javascript - это ", "дорово!"]	</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller><code class="color-yellow">substr()</code></button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<p class="accordion__text text">
+									<code class="color-yellow">substr()</code> - извлекает часть строки, начиная с&nbsp;указанной позиции, и&nbsp;возвращает указанное кол-во символов.
+								</p>
+								<pre class="accordion__pre">
+const string = "Javascript";
+console.log(string.substr(2,5)); <i class="accordion__i">// возвращает "vascr"</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller><code class="color-yellow">substring()</code></button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<p class="accordion__text text">
+									<code class="color-yellow">substring()</code> - извлекает символы строки, заключённые между указанными позициями (символ, соответствующий концу диапазона, в&nbsp;результат не&nbsp;включается).
+								</p>
+								<pre class="accordion__pre">
+const string = "Javascript";
+console.log(string.substring(2,5)); <i class="accordion__i">// возвращает "vas"</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller><code class="color-yellow">toLowerCase()</code></button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<p class="accordion__text text">
+									<code class="color-yellow">toLowerCase()</code> - переводит указанные символы строки в&nbsp;нижний регистр.
+								</p>
+								<pre class="accordion__pre">
+const string = "Javascript";
+console.log(string.toLowerCase()); <i class="accordion__i">// возвращает "javascript"</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller><code class="color-yellow">toUpperCase()</code></button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<p class="accordion__text text">
+									<code class="color-yellow">toUpperCase()</code> - переводит указанные символы строки в&nbsp;верхний регистр.
+								</p>
+								<pre class="accordion__pre">
+const string = "Javascript";
+console.log(string.toUpperCase()); <i class="accordion__i">// возвращает "JAVASCRIPT"</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="callback" id="callback">
+			<div class="callback__container">
+				<h2 class="callback__title container-title title">Функция "колбэк"</h2>
+				<div class="callback__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Функция "колбэк"</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<h3 class="accordion__heading title">
+									Функции &laquo;колбэки&raquo;&nbsp;&mdash; это функции, которые объявляются в&nbsp;качестве аргументов для другой функции
+								</h3>
+								<pre class="accordion__pre">
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+function showOk() {
+  alert( "Вы согласны." );
+}
+
+function showCancel() {
+  alert( "Вы отменили выполнение." );
+}
+
+<i class="accordion__i">// использование: функции showOk, showCancel передаются в качестве аргументов ask</i>
+ask("Вы согласны?", showOk, showCancel);
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="return" id="return">
+			<div class="return__container">
+				<h2 class="return__title container-title title">Оператор <code class="blue-code">return</code></h2>
+				<div class="return__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Оператор <code class="color-yellow">return</code></button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<h3 class="accordion__heading title">
+									Оператор <code class="color-yellow">return</code> завершает выполнение текущей функции и&nbsp;возвращает её&nbsp;значение.
+								</h3>
+								<p class="accordion__text text">
+									Директива <code class="color-yellow">return</code> может находиться в&nbsp;любом месте тела функции.
+								</p>
+								<p class="accordion__text text">
+									Как только выполнение доходит до&nbsp;этого места, функция останавливается, и&nbsp;значение возвращается в&nbsp;вызвавший её&nbsp;код (присваивается переменной, указанной выше).
+								</p>
+								<pre class="accordion__pre">
+function sum(a, b) {
+  return a + b;
+}
+
+let result = sum(1, 2);
+alert(result); <i class="accordion__i">// 3</i>
+								</pre>
+								<p class="accordion__text text">
+									ВАЖНО! <code class="color-yellow">return</code> и&nbsp;его значение НЕОБХОДИМО писать в&nbsp;одну строку, либо значение прописать в&nbsp;круглых скобках и&nbsp;разместить в&nbsp;несколько строк,
+								</p>
+								<p class="accordion__text text">
+									иначе <code class="color-yellow">return</code> будет пустым, что равняется <code class="color-yellow">undefined</code>.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Пример 1</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<a target="_blank" class="accordion__link link" href="https://codepen.io/archicolt/pen/OJzEQgY?editors=0012">Codepen</a>
+								<pre class="accordion__pre">
+function findCardIndex(cards, wantedCard = "Туз") {
+  console.log("Ищем в колоде карту " + wantedCard);
+
+  let foundIndex = -1;
+
+  for (let index in cards) {
+    let card = cards[index];
+    console.log(`Из колоды вытянута карта ${card}`);
+    if (card === wantedCard) {
+      foundIndex = index;
+      break;
+    }
+  }
+  <i class="accordion__i">// ВАРИАНТ №1</i>
+  console.log(
+    foundIndex > -1
+      ? `Мы нашли карту ${wantedCard}!`
+      : `В колоде нет карты ${wantedCard} :(`
+  );
+
+  <i class="accordion__i">
+  /*
+  ВАРИАНТ №2
+  if (foundIndex > -1) {
+    console.log(`Мы нашли карту ${wantedCard}!`);
+  } else {
+    console.log(`В колоде нет карты ${wantedCard} :(`);
+  }
+  */
+  </i>
+  return foundIndex;
+}
+
+let myCards = ["2", "Король", "7", "Туз", "5", "6", "Дама"];
+
+let aceIndex = findCardIndex(myCards);
+let jackIndex = findCardIndex(myCards, "Валет");
+
+console.log(aceIndex + " - показывает кол-во перебранных карт");
+console.log(jackIndex);
+<i class="accordion__i">
+/*
+"Ищем в колоде карту Туз"
+"Из колоды вытянута карта 2"
+"Из колоды вытянута карта Король"
+"Из колоды вытянута карта 7"
+"Из колоды вытянута карта Туз"
+"Мы нашли карту Туз!"
+"Ищем в колоде карту Валет"
+"Из колоды вытянута карта 2"
+"Из колоды вытянута карта Король"
+"Из колоды вытянута карта 7"
+"Из колоды вытянута карта Туз"
+"Из колоды вытянута карта 5"
+"Из колоды вытянута карта 6"
+"Из колоды вытянута карта Дама"
+"В колоде нет карты Валет :("
+"3 - показывает кол-во перебранных карт"
+-1
+*/</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Пример 2</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<a target="_blank" class="accordion__link link" href="https://codepen.io/archicolt/pen/ExoRQOQ?editors=0012">Codepen</a>
+								<pre class="accordion__pre">
+function findCardIndex(cards, wantedCard = "Туз") {
+  console.log("Ищем в колоде карту " + wantedCard);
+
+  for (let index in cards) {
+    let card = cards[index];
+    console.log(`Из колоды вытянута карта ${card}`);
+    if (card === wantedCard) {
+      console.log(`Мы нашли карту ${wantedCard}!`);
+      return index;
+    }
+  }
+  console.log(`В колоде нет карты ${wantedCard} :(`);
+  return -1;
+}
+
+let myCards = ["2", "Король", "7", "Туз", "5", "6", "Дама"];
+findCardIndex(myCards);
+findCardIndex(myCards, "Валет");
+<i class="accordion__i">
+/*
+"Ищем в колоде карту Туз"
+"Из колоды вытянута карта 2"
+"Из колоды вытянута карта Король"
+"Из колоды вытянута карта 7"
+"Из колоды вытянута карта Туз"
+"Мы нашли карту Туз!"
+"Ищем в колоде карту Валет"
+"Из колоды вытянута карта 2"
+"Из колоды вытянута карта Король"
+"Из колоды вытянута карта 7"
+"Из колоды вытянута карта Туз"
+"Из колоды вытянута карта 5"
+"Из колоды вытянута карта 6"
+"Из колоды вытянута карта Дама"
+"В колоде нет карты Валет :("
+*/</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Пример 3</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<a target="_blank" class="accordion__link link" href="https://codepen.io/archicolt/pen/zYpaReR?editors=0012">Codepen</a>
+								<pre class="accordion__pre">
+function checkAge(age) {
+  console.log(`Вам ${age} лет`);
+  if (age >= 18) return;
+  console.log("Школота!");
+  console.log(`Потерпи ещё ${18 - age} лет до совершеннолетия`);
+}
+
+<i class="accordion__i">// все сообщения будут выведены</i>
+checkAge(2);
+
+<i class="accordion__i">// функция перестанет выполняться после первого сообщения</i>
+checkAge(23);
+checkAge(18);
+<i class="accordion__i">
+/*
+"Вам 2 лет"
+"Школота!"
+"Потерпи ещё 16 лет до совершеннолетия"
+"Вам 23 лет"
+"Вам 18 лет"
+*/</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Пример 4 и undefined</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<a target="_blank" class="accordion__link link" href="https://codepen.io/archicolt/pen/ExoRQzL?editors=0012">Codepen</a>
+								<pre class="accordion__pre">
+function doNothing() {
+  console.log("Я ничего не делаю!");
+}
+
+console.log(doNothing()); <i class="accordion__i">// undefined</i>
+let x = doNothing();
+console.log(x); <i class="accordion__i">// undefined</i>
+
+let y;
+console.log(y);
+<i class="accordion__i">
+/*
+"Я ничего не делаю!"
+undefined
+"Я ничего не делаю!"
+undefined
+undefined
+*/</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="func-name" id="func-name">
+			<div class="func-name__container">
+				<h2 class="func-name__title container-title title">Имена функций</h2>
+				<div class="func-name__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Имена функций</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<pre class="accordion__pre">
+showMessage(..)     <i class="accordion__i">// показывает сообщение</i>
+getAge(..)          <i class="accordion__i">// возвращает возраст (получая его каким-то образом)</i>
+calcSum(..)         <i class="accordion__i">// вычисляет сумму и возвращает результат</i>
+createForm(..)      <i class="accordion__i">// создаёт форму (и обычно возвращает её)</i>
+checkPermission(..) <i class="accordion__i">// проверяет доступ, возвращая true/false</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="closure" class="closure">
+			<div class="closure__container">
+				<h2 class="closure__title title">Замыкание (closure)</h2>
+				<p class="closure__text text">
+					<a target="_blank" class="closure__link" href="https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%BC%D1%8B%D0%BA%D0%B0%D0%BD%D0%B8%D0%B5_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)" >Замыкание</a>&nbsp;&mdash; это функция, которая запоминает свои внешние переменные и&nbsp;может получить к&nbsp;ним доступ. В&nbsp;некоторых языках это невозможно, или функция должна быть написана специальным образом, чтобы получилось замыкание. Но, как было описано выше, в&nbsp;JavaScript, все функции изначально являются замыканиями (есть только одно исключение, про которое будет рассказано в <a target="_blank" class="closure__link" href="https://learn.javascript.ru/new-function">&nbsp;Синтаксис &laquo;new Function&raquo;</a>).
+				</p>
+				<p class="closure__text text">
+					То&nbsp;есть они автоматически запоминают, где были созданы, с&nbsp;помощью скрытого свойства <code class="blue-code">[[Environment]]</code>, и&nbsp;все они могут получить доступ к&nbsp;внешним переменным.
+				</p>
+				<p class="closure__text text">
+					Когда на&nbsp;собеседовании фронтенд-разработчик получает вопрос: &laquo;что такое замыкание?&raquo;,&nbsp;&mdash; правильным ответом будет определение замыкания и&nbsp;объяснения того факта, что все функции в&nbsp;JavaScript являются замыканиями, и, может быть, несколько слов о&nbsp;технических деталях: свойстве <code class="blue-code">[[Environment]]</code> и&nbsp;о&nbsp;том, как работает лексическое окружение.
+				</p>
+				<hr>
+				<div class="closure__content closure-content">
+					<p class="closure-content__text text">
+						В&nbsp;JavaScript у&nbsp;каждой выполняемой функции, блока кода и&nbsp;скрипта есть связанный с&nbsp;ними <span class="fw-bold">внутренний (скрытый) объект</span>, называемым <span class="fw-bold">лексическим окружением LexicaEnvironment</span>
+					</p>
+					<p class="closure-content__text text">
+						Объект состоит из&nbsp;двух частей:
+					</p>
+					<p class="closure-content__text text">
+						1. <span class="fw-bold">Environment Record</span>&nbsp;&mdash; объект, в&nbsp;котором как свойства хранятся все локальные переменные (а&nbsp;также некоторая другая информация, такая как значение <span class="fw-bold">this</span>)
+					</p>
+					<p class="closure-content__text text">
+						2. Ссылка на&nbsp;внешнее лексическое окружение&nbsp;&mdash; то&nbsp;есть&nbsp;то, которое соответствует коду снаружи (снаружи от&nbsp;текущих фигурных скобок)
+					</p>
+					<h3 class="closure-content__title title">РАЗБОР НА ПРИМЕРЕ:</h3>
+					<ol class="closure-content__list closure-content-list">
+						<li class="closure-content-list__item">
+							<p class="closure-content-list__text text">
+								Все функции &laquo;при рождении&raquo; получают скрытое свойство <code class="blue-code">[[Environment]]</code>, которое ссылается на&nbsp;лексическое окружение места, где они были созданы. Это&nbsp;то, каким образом функции знают, где они были созданы.
+							</p>
+							<img class="closure-content-list__img img" src="img/function/1-closure.jpg" alt="Первый этап действия функции">
+						</li>
+						<li class="closure-content-list__item">
+							<p class="closure-content-list__text text">
+								В&nbsp;момент вызова <code class="blue-code">makeCounter()</code> создаётся лексическое окружение, для хранения его переменных и&nbsp;аргументов. В&nbsp;данном случае лексическое окружение: <code class="blue-code">counter: undefined</code> от&nbsp;вызова <code class="blue-code">let counter = makeCounter();</code>
+							</p>
+							<img class="closure-content-list__img img" src="img/function/2-closure.jpg" alt="Второй этап действия функции">
+						</li>
+						<li class="closure-content-list__item">
+							<p class="closure-content-list__text text">
+								В&nbsp;процессе выполнения <code class="blue-code">makeCounter()</code> создаётся небольшая вложенная функция.
+							</p>
+							<p class="closure-content-list__text text">
+								Неважно <span class="fw-bold">Function Declaration</span> или <span class="fw-bold">Function Expression</span> всё равно получает свойство <code class="blue-code">[[Environment]]</code>, которое ссылается на&nbsp;лексическое окружение, в&nbsp;котором она была создана, в&nbsp;данном случае текущее лексическое окружение <code class="blue-code">makeCounter()</code>.
+							</p>
+							<img class="closure-content-list__img img" src="img/function/3-closure.jpg" alt="Третий этап действия функции">
+							<p class="closure-content-list__text text">
+								<span class="color-red fw-bold">ВАЖНО!!!</span> На&nbsp;этом шаге внутренняя функция была создана, но&nbsp;ещё не&nbsp;вызвана. Код внутри <code class="blue-code">function() { return count++ }</code> не&nbsp;выполняется.
+							</p>
+						</li>
+						<li class="closure-content-list__item">
+							<p class="closure-content-list__text text">
+								Выполнение продолжается, вызов <code class="blue-code">makeCounter()</code> завершается, и&nbsp;результат (небольшая вложенная функция) присваивается глобальной переменной <code class="blue-code">counter()</code>:
+							</p>
+							<img class="closure-content-list__img img" src="img/function/4-closure.jpg" alt="Четвёртый этап действия функции">
+							<p class="closure-content-list__text text">
+								В&nbsp;этой функции есть только одна строчка: <code class="blue-code">return count++</code>, которая будет выполнена, когда мы&nbsp;вызовем функцию.
+							</p>
+						</li>
+						<li class="closure-content-list__item">							
+							<p class="closure-content-list__text text">
+								При вызове <code class="blue-code">counter()</code> для это вызова создаётся новое лексическое окружение. Оно пустое, так как в&nbsp;самом <code class="blue-code">counter()</code> локальных переменных нет. Но&nbsp;<code class="blue-code">[[Environment]]</code> <code class="blue-code">counter</code> используется, как ссылка на&nbsp;внешнее лексическое окружение <code class="blue-code">outer</code>, которое даёт доступ к&nbsp;переменным предшествующего вызова <code class="blue-code">makeCounter</code>, где <code class="blue-code">counter</code> был создан.
+							</p>
+							<img class="closure-content-list__img img" src="img/function/5-closure.jpg" alt="Пятый этап действия функции">
+							<p class="closure-content-list__text text">
+								Теперь, когда вызов ищет переменную <code class="blue-code">count</code>, он&nbsp;сначала ищет в&nbsp;собственном лексическом окружении (пустое), а&nbsp;затем в&nbsp;лексическом окружении предшествующего вызова <code class="blue-code">makeCounter()</code>, где и&nbsp;находит&nbsp;её.
+							</p>
+							<p class="closure-content-list__text text">
+								<span class="color-red fw-bold">ВАЖНО!!!</span> Хотя <code class="blue-code">makeCounter()</code> закончил выполнение некоторое время назад, его лексическое окружение остаётся в&nbsp;памяти, потому что есть вложенная функция&nbsp;с <code class="blue-code">[[Environment]]</code>, который ссылается на&nbsp;него.
+							</p>
+							<p class="closure-content-list__text text">
+								В&nbsp;большинстве случаев, объект лексического окружения существует до&nbsp;того момента, пока есть функция, которая может его использовать. И&nbsp;только тогда, когда таких не&nbsp;остаётся, окружение уничтожается.
+							</p>
+						</li>
+						<li class="closure-content-list__item">
+							<p class="closure-content-list__text text">
+								Вызов <code class="blue-code">counter()</code> не&nbsp;только возвращает значение <code class="blue-code">count</code>, но&nbsp;также увеличивает его. Обратите внимание, что модификация происходит &laquo;на&nbsp;месте&raquo;. Значение <code class="blue-code">count</code> изменяется конкретно в&nbsp;том окружении, где оно было найдено.
+							</p>
+							<img class="closure-content-list__img img" src="img/function/6-closure.jpg" alt="Шестой этап действия функции">
+						</li>
+					</ol>
+				</div>
+			</div>
+		</section>
+		<!--
+		<section class="000" id="000">
+			<div class="000__container">
+				<h2 class="000__title container-title title">000</h2>
+				<div class="000__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>000</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<h3 class="accordion__heading title"></h3>
+								<p class="accordion__text text"></p>
+								<pre class="accordion__pre"></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>-->
+	</main>
+</body>
+</html>

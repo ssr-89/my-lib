@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Массив</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/accordion.css">
+	<link rel="stylesheet" href="css/js-main.css">
+	<link rel="stylesheet" href="../css/section-menu.css">
+	<script defer src="../js/script.js"></script>
+	<script defer src="../js/accordion.js"></script>
+	<script defer src="js/js-main.js"></script>
+</head>
+<body>
+	<main class="main">
+		<section class="section-menu">
+			<div class="section-menu__container">
+				<h1 class="section-menu__title title">Массив (array)</h1>
+				<nav class="section-menu__menu menu">
+					<ul class="menu__list list">
+						<li class="menu__item">
+							<a class="menu__link link" href="#array">Массив</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#property-array">Свойства массива</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link link" href="#methods-array">Методы массива</a>
+						</li>
+						<!-- <li class="menu__item">
+							<a class="menu__link link" href="#"></a>
+						</li> -->
+					</ul>
+				</nav>
+				<button class="section-menu__btn btn">
+					<span></span>
+				</button>
+			</div>
+		</section>
+		<section class="array" id="array">
+			<div class="array__container">
+				<h2 class="array__title container-title title">Массив</h2>
+				<div class="array__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Создание массива</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<pre class="accordion__pre">
+const arr = new Array();
+
+const array = [];
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Выведение значения по индексу</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<pre class="accordion__pre">
+const arr = ['a','b','c','d','e'];
+
+console.log(arr); <i class="accordion__i">// ['a','b','c','d','e']</i>
+
+console.log(arr[arr.length - 1]); <i class="accordion__i">// e</i>
+console.log(arr[arr.length - 2]); <i class="accordion__i">// d</i>
+console.log(arr[arr.length - 3]); <i class="accordion__i">// c</i>
+console.log(arr[arr.length - 4]); <i class="accordion__i">// b</i>
+console.log(arr[arr.length - 5]); <i class="accordion__i">// a</i>
+
+console.log(arr[0]); <i class="accordion__i">// a</i>
+console.log(arr[1]); <i class="accordion__i">// b</i>
+console.log(arr[2]); <i class="accordion__i">// c</i>
+console.log(arr[3]); <i class="accordion__i">// d</i>
+console.log(arr[4]); <i class="accordion__i">// e</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Замена значения по индексу</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<pre class="accordion__pre">
+const arr = ['a','b','u','d','e'];
+
+console.log(arr); <i class="accordion__i">// ['a','b','u','d','e']</i>
+
+arr[2] = 'c';
+
+console.log(arr); <i class="accordion__i">// ['a','b','c','d','e']</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="property-array" id="property-array">
+			<div class="property-array__container">
+				<h2 class="property-array__title container-title title">Свойства массива</h2>
+				<div class="property-array__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Свойства массива (точечная нотация)</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<pre class="accordion__pre">
+array.prototype <i class="accordion__i">// позволяет добавлять свойства и методы в объект Array</i>
+array.constructor <i class="accordion__i">// ссылка на функцию, создавшую прототип объекта Array</i>
+array.length <i class="accordion__i">// возвращает или устанавливает кол-во элементов в массиве</i>
+
+
+<i class="accordion__i">Пример усечения массива</i>
+array[2000];
+array.length; <i class="accordion__i">// возвращает 2001</i>
+array.length = 10;
+array.length; <i class="accordion__i">// возвращает 10</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="methods-array" id="methods-array">
+			<div class="methods-array__container">
+				<h2 class="methods-array__title container-title title">Методы массивов</h2>
+				<div class="methods-array__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Методы массивов</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<a target="_blank" class="accordion__link link" href="https://learn.javascript.ru/array-methods">Источник</a>
+								<pre class="accordion__pre">
+concat() <i class="accordion__i">// новый массив, содержащий текущий массив и дополненный другними массивами и элементами</i>
+every() <i class="accordion__i">// возвращает значение true, если каждый элемент массива удовлетворяет условию, предоставляемому тестовой функцией</i>
+filter() <i class="accordion__i">// новый массив, который содержит все элементы текущего массива, удовлетворяющиие условию, предоставляемому заданной тестовой функцией</i>
+forEach() <i class="accordion__i">// выполняет заданную функцию для каждого элемента массива</i>
+indexOf() <i class="accordion__i">// индекс первого вхождения заданного значения в массиве. Если значение не обнаружено, то возвращается -1</i>
+
+
+join() <i class="accordion__i">// объединяет все элементы массива в одну строку</i>
+lastIndexOf() <i class="accordion__i">// индекс последнего вхождения заданного значения в массиве. Если значение не обнаружено, возвращается -1</i>
+map() <i class="accordion__i">// новый массив, полученный путём преобразования каждого элемента текущего массива с помощью заданной функции</i>
+pop() <i class="accordion__i">// удаляет последний элемент из массива</i>
+push() <i class="accordion__i">// добавляет новые элементы в конец массива</i>
+
+
+reduce() <i class="accordion__i">// сводит два значения массива в одно, применяя к обоим заданную функцию (слева направо)</i>
+reduceRight() <i class="accordion__i">// сводит два значения массива в одно, применяя к обоим заданную функцию (справа налево)</i>
+reverse() <i class="accordion__i">// обращает порядок следования элементов в массиве в обратный порядок</i>
+shift() <i class="accordion__i">// удаляет первый элемент из массива и возвращает его, изменяя длину массива</i>
+slice() <i class="accordion__i">// выбирает часть массива и возвращает его в виде нового массива</i>
+
+
+some() <i class="accordion__i">// возвращает значение true, если один или несколько элементов массива удовлетворяет условию, предоставляемому тестовой функцией</i>
+sort() <i class="accordion__i">// возвращает отсортированный массив (по умолчанию сортировка выполняется в алфавитном порядке и в порядке возрастания</i>
+splice() <i class="accordion__i">// возвращает новый масив, состоящий из элементов, которые были добавлены или удалены из данного массива</i>
+toString() <i class="accordion__i">// преобразует массив в строку</i>
+unShift() <i class="accordion__i">// возвращает новый массив другой длины, к которому добавлены один или несколько элементов</i>
+								</pre>
+								<p class="accordion__text text">
+									Примеры применения методов:
+								</p>
+								<pre class="accordion__pre">
+arr.push(...items) <i class="accordion__i">// добавляет элементы в конец,</i>
+arr.pop() <i class="accordion__i">// извлекает элемент из конца,</i>
+arr.shift() <i class="accordion__i">// извлекает элемент из начала,</i>
+arr.unshift(...items) <i class="accordion__i">// добавляет элементы в начало.</i>
+
+
+let arr = ["I", "go", "home"];
+delete arr[1]; <i class="accordion__i">// удалит "go", но оставит пустое место '' со значением undefined</i>
+console.log(arr); <i class="accordion__i">// вернёт ["I",,"home"]</i>
+console.log(arr.length); <i class="accordion__i">// вернёт 3</i>
+console.log(arr[1]); <i class="accordion__i">// вернёт undefined</i>
+
+<i class="accordion__i">// Метод splice удаляет пустое место</i>
+
+arr.splice(1, 1); <i class="accordion__i">// начиная с позиции 1 удаляет 1 элемент</i>
+console.log(arr); <i class="accordion__i">// вернёт ["I","home"]</i>
+
+<i class="accordion__i">// Так что можно без delete обойтись</i>
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</body>
+</html>

@@ -1,3 +1,27 @@
+.hero {
+  background-image: url("../img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 450px;
+}
+
+.hero__container {
+  padding: 5rem;
+  color: rgb(255, 255, 255);
+}
+
+.hero__title {
+  margin: 0 0 20px;
+  font-size: 36px;
+}
+
+.hero__text {
+  width: 35%;
+  font-size: 1.2em;
+  line-height: 2;
+}
+
 .js-main__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -12,11 +36,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.js-main__title {
-  margin: 0 0 20px;
-  font-size: 36px;
 }
 
 .js-main-menu__list {

@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/accordion.css">
 	<link rel="stylesheet" href="css/js-main.css">
+	<link rel="stylesheet" href="../css/section-menu.css">
 	<script defer src="../js/script.js"></script>
 	<script defer src="../js/accordion.js"></script>
 	<script defer src="js/js-main.js"></script>
@@ -15,16 +16,16 @@
 		<section class="section-menu">
 			<div class="section-menu__container">
 				<h1 class="section-menu__title title">Справочник JavaScript</h1>
-				<nav class="section-menu menu">
+				<nav class="section-menu__menu menu">
 					<ul class="menu__list list">
 						<li class="menu__item">
-							<a class="menu__link link" href="#"></a>
+							<a class="menu__link link" href="#operator-param">Остаточные параметры, "arguments" и оператор расширения</a>
 						</li>
 						<li class="menu__item">
-							<a class="menu__link link" href="#"></a>
+							<a class="menu__link link" href="#falsy">falsy - ложные значения</a>
 						</li>
 						<li class="menu__item">
-							<a class="menu__link link" href="#"></a>
+							<a class="menu__link link" href="#nodejs">Node.js в VSCode</a>
 						</li>
 						<li class="menu__item">
 							<a class="menu__link link" href="#"></a>
@@ -49,6 +50,9 @@
 						</li>
 					</ul>
 				</nav>
+				<button class="section-menu__btn btn">
+					<span></span>
+				</button>
 			</div>
 		</section>
 		<section class="operator-param" id="operator-param">
@@ -219,18 +223,112 @@
 				</div>
 			</div>
 		</section>
+		<section class="falsy" id="falsy">
+			<div class="falsy__container">
+				<h2 class="falsy__title container-title title"><code class="blue-code">falsy</code> ложные значения</h2>
+				<div class="falsy__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller><code class="color-yellow">falsy</code> ложные значения</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<p class="accordion__text text">
+									Число <code class="color-yellow">0</code>, пустая строка <code class="color-yellow">""</code>, <code class="color-yellow">null</code>, <code class="color-yellow">undefined</code> и <code class="color-yellow">NaN</code> становятся <code class="color-yellow">false</code>. Из-за этого их называют «ложными» <span class="fw-bold">«falsy»</span> значениями.
+								</p>
+								<p class="accordion__text text">
+									Остальные значения становятся <code class="color-yellow">true</code>, поэтому их называют «правдивыми» <span class="fw-bold">«truthy»</span>.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="nodejs" id="nodejs">
+			<div class="nodejs__container">
+				<h2 class="nodejs__title container-title title">Node.js в VSCode</h2>
+				<div class="nodejs__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Node.js в VSCode</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<p class="accordion__text text">
+									1. Установить <span class="fw-bold">breakpoint</span> с помощью F9
+								</p>
+								<p class="accordion__text text">
+									2. Запуск компилятора с помощью F5 (Node.js)
+								</p>
+								<p class="accordion__text text">
+									3. И делать прогон по шагам с помощью F11
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="script-console" id="script-console">
+			<div class="script-console__container">
+				<h2 class="script-console__title container-title title">Цикл для вывода свойств и&nbsp;их&nbsp;значений</h2>
+				<div class="script-console__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Цикл для вывода свойств и&nbsp;их&nbsp;значений</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<p class="accordion__text text">
+									С&nbsp;помощью данного цикла возможно в&nbsp;DevTools (F12) во&nbsp;владке &laquo;Console&raquo; прописать и&nbsp;на&nbsp;странице откроется список свойств и&nbsp;их&nbsp;значений объекта document
+								</p>
+								<pre class="accordion__pre">
+for (var prop in document){
+  document.write(prop + ": " + document[prop] +"<br> ");
+}
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="debugger" id="debugger">
+			<div class="debugger__container">
+				<h2 class="debugger__title container-title title">Команда <code class="blue-code">debugger</code> - остановка кода</h2>
+				<div class="debugger__block accordion" data-spollers data-one-spoller>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Команда <code class="color-yellow">debugger</code> - остановка кода</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<p class="accordion__text text">
+									Выполнение кода можно приостановить с&nbsp;помощью команды <code class="color-yellow">debugger</code> прямо изнутри самого кода:
+								</p>
+								<pre class="accordion__pre">
+function hello(name) {
+  let phrase = `Привет, ${name}!`;
+
+  debugger; <i class="accordion__i">// тут отладчик остановится</i>
+
+  say(phrase);
+}
+								</pre>
+								<p class="accordion__text text">
+									Такая команда сработает только если открыты инструменты разработки, иначе браузер ее&nbsp;проигнорирует.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 		<!--
 		<section class="000" id="000">
 			<div class="000__container">
-				<h2 class="000__title container-title title">000</h2>
+				<h2 class="000__title container-title title">111</h2>
 				<div class="000__block accordion" data-spollers data-one-spoller>
 					<div class="accordion__item">
-						<button class="accordion__title btn" data-spoller>000</button>
+						<button class="accordion__title btn" data-spoller>111</button>
 						<div class="accordion__content">
 							<div class="accordion__wrapper">
-								<code class="accordion__code block">
+								<pre class="accordion__pre">
 									&nbsp;
-								</code>
+								</pre>
 							</div>
 						</div>
 					</div>

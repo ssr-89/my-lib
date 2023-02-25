@@ -17,16 +17,43 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   };
 
-  const body = document.querySelector('body');
+  const $body = document.querySelector('body');
 
-  const header = document.createElement('header');
-  header.classList.add('header');
-  header.innerHTML = '<div class="header__container"><nav class="header__menu header-menu"><ul class="header-menu__list list"><li class="header-menu__item"><a class="header-menu__link link" href="../index.html"><span>ГЛАВНАЯ&nbsp;СТРАНИЦА</span></a></li><li class="header-menu__item"><a class="header-menu__link link" href="../folder-html-css/html-css.html"><span>HTML&nbsp;и&nbsp;CSS</span></a></li><li class="header-menu__item"><a class="header-menu__link link" href="../folder-js/js.html"><span>JavaScript</span></a></li><li class="header-menu__item"><a class="header-menu__link link" href="../folder-git/git.html"><span>Git</span></a></li><li class="header-menu__item"><a class="header-menu__link link" href="../folder-tools/tools.html"><span>Инструменты</span></a></li></ul></nav></div>';
-  body.prepend(header);
+  const $header = document.createElement('header');
+  $header.classList.add('header');
+  $header.innerHTML = '<div class="header__container"><nav class="header__menu header-menu"><ul class="header-menu__list list"><li class="header-menu__item"><a class="header-menu__link link" href="../index.html"><span>ГЛАВНАЯ&nbsp;СТРАНИЦА</span></a></li><li class="header-menu__item"><a class="header-menu__link link" href="../folder-html-css/html-css.html"><span>HTML&nbsp;и&nbsp;CSS</span></a></li><li class="header-menu__item"><a class="header-menu__link link" href="../folder-js/js.html"><span>JavaScript</span></a></li><li class="header-menu__item"><a class="header-menu__link link" href="../folder-git/git.html"><span>Git</span></a></li><li class="header-menu__item"><a class="header-menu__link link" href="../folder-tools/tools.html"><span>Инструменты</span></a></li></ul></nav></div>';
+  $body.prepend($header);
 
-  const footer = document.createElement('footer');
-  footer.classList.add('footer');
-  footer.innerHTML = '<div class="footer__container"><h2 class="footer__title title">Обратная&nbsp;связь</h2><form class="footer__form footer-form" action="#" method="post"><input class="footer-form__input input" type="text" placeholder="Введите имя*" required><input class="footer-form__input input" type="email" placeholder="Введите Email*" required><textarea class="footer-form__textarea input" placeholder="Введите текст*" required></textarea><button class="footer-form__btn btn" type="submit">Отправить</button></form></div>';
-  body.append(footer);
+  const $footer = document.createElement('footer');
+  $footer.classList.add('footer');
+  $footer.innerHTML = '<div class="footer__container"><h2 class="footer__title title">Обратная&nbsp;связь</h2><form class="footer__form footer-form" action="#" method="post"><input class="footer-form__input input" type="text" placeholder="Введите имя*" required><input class="footer-form__input input" type="email" placeholder="Введите Email*" required><textarea class="footer-form__textarea input" placeholder="Введите текст*" required></textarea><button class="footer-form__btn btn" type="submit">Отправить</button></form></div>';
+  $body.append($footer);
 
+  /*section-menu*/
+  const sectionMenu = document.querySelector(".section-menu__menu");
+  const sectionBtn = document.querySelector(".section-menu__btn");
+  const sectionMenuLinks = document.querySelectorAll(".menu__link");
+
+  sectionBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    this.classList.toggle("active");
+    if (this.classList.contains("active")) {
+      sectionMenu.classList.add("active");
+    } else {
+      sectionMenu.classList.remove("active");
+    }
+  });
+  sectionMenuLinks.forEach(function(el) {
+    el.addEventListener("click", function() {
+      sectionBtn.classList.remove("active");
+      sectionMenu.classList.remove("active");
+    });
+  });
+  document.addEventListener('mouseup', (element) => {
+   if (! sectionBtn.contains(element.target)) {
+      sectionBtn.classList.remove("active");
+      sectionMenu.classList.remove("active");
+   }
+  });
+  sectionBtn.setAttribute("aria-label", "open-menu");
 });

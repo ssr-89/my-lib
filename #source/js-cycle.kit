@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/accordion.css">
 	<link rel="stylesheet" href="css/js-main.css">
+	<link rel="stylesheet" href="../css/section-menu.css">
 	<script defer src="../js/script.js"></script>
 	<script defer src="../js/accordion.js"></script>
 	<script defer src="js/js-main.js"></script>
@@ -16,7 +17,7 @@
 		<section class="section-menu">
 			<div class="section-menu__container">
 				<h1 class="section-menu__title title">Циклы (cycle)</h1>
-				<nav class="section-menu menu">
+				<nav class="section-menu__menu menu">
 					<ul class="menu__list list">
 						<li class="menu__item">
 							<a class="menu__link link" href="#for">for</a>
@@ -50,6 +51,9 @@
 						</li> -->
 					</ul>
 				</nav>
+				<button class="section-menu__btn btn">
+					<span></span>
+				</button>
 			</div>
 		</section>
 		<section class="for" id="for">
@@ -61,6 +65,9 @@
 						<button class="accordion__title btn" data-spoller>Принцип работы цикла <code class="color-yellow">for</code></button>
 						<div class="accordion__content">
 							<div class="accordion__wrapper">
+								<h3 class="accordion__heading title">
+									Цикл <code class="color-yellow">for</code> позволяет выполнять одинаковое действие определённое кол-во раз
+								</h3><br>
 								<a target="_blank" class="accordion__link link" href="https://codepen.io/archicolt/pen/wvjQGRN?editors=0012">Codepen</a>
 								<pre class="accordion__pre">
 var fibo = [1,1];
@@ -82,7 +89,8 @@ console.log(fibo);
 2) Условие: i < 9; <i class="accordion__i">// выполняется перед каждой итерацией цикла, если оно false, цикл остановится</i>
 
 3) Тело: fibo.push(fibo[i] + fibo[i - 1]);
-<i class="accordion__i">// вернёт [1,1,2]. В данном случае i - это индекс массива, т.е. первый элемент массива плюс нулевый элемент (1+1=2).</i>
+<i class="accordion__i">// вернёт [1,1,2]. i - индекс массива (порядковый номер элемента)</i>
+<i class="accordion__i">// т.е. к элементу массива fibo[i] прибавляется предыдущий элемент массива fibo[i - 1] и получается (1+1=2).</i>
 <i class="accordion__i">// Данный код выполняется пока условие true.</i>
 
 4) Шаг: ++i; <i class="accordion__i">// 1 + 1 = 2 = i</i>
@@ -128,7 +136,7 @@ for (; Math.random() >= 0.1; ) console.log("И ещё разок"); <i class="ac
 							<div class="accordion__wrapper">
 								<a target="_blank" class="accordion__link link" href="https://codepen.io/archicolt/pen/xxPQrYG?editors=0010">Codepen</a>
 								<pre class="accordion__pre">
-for (;;) console.log("Я буду сниться тебе в кошмарах"); <i class="accorion__i">// (;;) ничего прописано в первой/второй/третьей частях</i>
+for (;;) console.log("Я буду сниться тебе в кошмарах"); <i class="accordion__i">// (;;) ничего прописано в первой/второй/третьей частях</i>
 								</pre>
 							</div>
 						</div>
@@ -139,7 +147,7 @@ for (;;) console.log("Я буду сниться тебе в кошмарах");
 							<div class="accordion__wrapper">
 								<a target="_blank" class="accordion__link link" href="https://codepen.io/archicolt/pen/xxPQrYG?editors=0010">Codepen</a>
 								<pre class="accordion__pre">
-for (let i = 0;; ++i) { console.log(i); } <i class="accorion__i">// выводит максимальное кол-во чисел</i>
+for (let i = 0;; ++i) { console.log(i); } <i class="accordion__i">// выводит максимальное кол-во чисел</i>
 								</pre>
 							</div>
 						</div>
@@ -152,15 +160,32 @@ for (let i = 0;; ++i) { console.log(i); } <i class="accorion__i">// выводи
 				<h2 class="for-of__title container-title title">for of</h2>
 				<div class="for-of__block accordion" data-spollers data-one-spoller>
 					<div class="accordion__item">
-						<button class="accordion__title btn" data-spoller>000</button>
+						<button class="accordion__title btn" data-spoller>for of</button>
 						<div class="accordion__content">
 							<div class="accordion__wrapper">
-								<h3 class="accordion__heading title"></h3>
-								<p class="accordion__text text"></p>
-								<pre class="accordion__pre"></pre>
-								<code class="accordion__code block">
-									&nbsp;
-								</code>
+								<h3 class="accordion__heading title">
+									<code class="color-yellow">for of</code> принимает элемент массива
+								</h3><br>
+								<a target="_blank" class="accordion__link link" href="https://codepen.io/archicolt/pen/eYebpLo">Codepen</a>
+								<pre class="accordion__pre">
+let fruits = ['Яблоко', 'Банан', 'Апельсин', 'Ананас', 'Дыня']; <i class="accordion__i">// массив фруктов</i>
+
+console.log('Сегодня я съел:');
+
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+<i class="accordion__i">
+/*
+"Сегодня я съел:"
+"Яблоко"
+"Банан"
+"Апельсин"
+"Ананас"
+"Дыня"
+*/
+</i>
+								</pre>
 							</div>
 						</div>
 					</div>
@@ -172,15 +197,39 @@ for (let i = 0;; ++i) { console.log(i); } <i class="accorion__i">// выводи
 				<h2 class="for-in__title container-title title">for in</h2>
 				<div class="for-in__block accordion" data-spollers data-one-spoller>
 					<div class="accordion__item">
-						<button class="accordion__title btn" data-spoller>000</button>
+						<button class="accordion__title btn" data-spoller>for in</button>
 						<div class="accordion__content">
 							<div class="accordion__wrapper">
-								<h3 class="accordion__heading title"></h3>
-								<p class="accordion__text text"></p>
-								<pre class="accordion__pre"></pre>
-								<code class="accordion__code block">
-									&nbsp;
-								</code>
+								<h3 class="accordion__heading title">
+									<code class="color-yellow">for in</code> принимает индекс массива
+								</h3><br>
+								<a target="_blank" class="accordion__link link" href="https://codepen.io/archicolt/pen/eYebpLo">Codepen</a>
+								<p class="accordion__text text">
+									Оператор <code class="color-yellow">for in</code>&nbsp;выделяет каждое значение отдельно из&nbsp;массива
+								</p>
+								<pre class="accordion__pre">
+let rating = ['Катя', 'Вася', 'Маша', 'Петя', 'Лена'];
+
+console.log('Рейтинг студентов:');
+for (let i in rating) {
+  console.log(`${parseInt(i) + 1} место: ${rating[i]}`);
+}
+<i class="accordion__i">
+/*
+"Рейтинг студентов:"
+"1 место: Катя"
+"2 место: Вася"
+"3 место: Маша"
+"4 место: Петя"
+"5 место: Лена"
+*/
+
+
+// parseInt преобразует строку в число. если убрать parseInt, 
+то будет двухзначная нумерация - 01 11 21, т.е. конкатена́ция — операция склеивания объектов линейной структуры, обычно строк.. 
+операция + будет выбирать последующие категории
+</i>
+								</pre>
 							</div>
 						</div>
 					</div>
@@ -192,15 +241,21 @@ for (let i = 0;; ++i) { console.log(i); } <i class="accorion__i">// выводи
 				<h2 class="while__title container-title title">while</h2>
 				<div class="while__block accordion" data-spollers data-one-spoller>
 					<div class="accordion__item">
-						<button class="accordion__title btn" data-spoller>000</button>
+						<button class="accordion__title btn" data-spoller>while</button>
 						<div class="accordion__content">
 							<div class="accordion__wrapper">
-								<h3 class="accordion__heading title"></h3>
-								<p class="accordion__text text"></p>
-								<pre class="accordion__pre"></pre>
-								<code class="accordion__code block">
-									&nbsp;
-								</code>
+								<a target="_blank" class="accordion__link link" href="https://codepen.io/archicolt/pen/BamvKRy?editors=0012">Codepen</a>
+								<pre class="accordion__pre">
+let teaVolume = 200;
+
+console.log("Вы налили себе " + teaVolume + " мл чая");
+
+while (teaVolume > 0) {
+  teaVolume -= 10; <i class="accordion__i">// снижает кол-во чая на 10 мл</i>
+  console.log("В чашке осталось " + teaVolume + " мл чая");
+}
+console.log("Вы выпили весь чай");
+								</pre>
 							</div>
 						</div>
 					</div>
@@ -209,18 +264,30 @@ for (let i = 0;; ++i) { console.log(i); } <i class="accorion__i">// выводи
 		</section>
 		<section class="fo-while" id="fo-while">
 			<div class="fo-while__container">
-				<h2 class="fo-while__title container-title title">fo while</h2>
+				<h2 class="fo-while__title container-title title">do while</h2>
 				<div class="fo-while__block accordion" data-spollers data-one-spoller>
 					<div class="accordion__item">
-						<button class="accordion__title btn" data-spoller>000</button>
+						<button class="accordion__title btn" data-spoller>do while</button>
 						<div class="accordion__content">
 							<div class="accordion__wrapper">
-								<h3 class="accordion__heading title"></h3>
-								<p class="accordion__text text"></p>
-								<pre class="accordion__pre"></pre>
-								<code class="accordion__code block">
-									&nbsp;
-								</code>
+								<a target="_blank" class="accordion__link link" href="https://codepen.io/archicolt/pen/BamvKRy?editors=0012">Codepen</a>
+								<p class="accordion__text text">
+									Сначала выполняется итерация, потом проверяется условие
+								</p>
+								<pre class="accordion__pre">
+<i class="accordion__i">
+// do while - стоит использовать только, когда условие будет на 100% выполнено хотя бы 1 раз
+// для простоты примера представим, что в барабане пистолета 5 слотов и 1 патрон
+// вероятность выстрела - 20%
+// в данном цикле нет переменной
+</i>
+
+do {
+  console.log("Нажимаем на спуск");
+} while (Math.random() > 0.2); <i class="accordion__i">// пока рандомное число больше 0.2 условие выполняется</i>
+
+console.log("Похоже, вам не повезло");
+								</pre>
 							</div>
 						</div>
 					</div>
@@ -232,15 +299,31 @@ for (let i = 0;; ++i) { console.log(i); } <i class="accorion__i">// выводи
 				<h2 class="continue__title container-title title">continue</h2>
 				<div class="continue__block accordion" data-spollers data-one-spoller>
 					<div class="accordion__item">
-						<button class="accordion__title btn" data-spoller>000</button>
+						<button class="accordion__title btn" data-spoller>continue</button>
 						<div class="accordion__content">
 							<div class="accordion__wrapper">
-								<h3 class="accordion__heading title"></h3>
-								<p class="accordion__text text"></p>
-								<pre class="accordion__pre"></pre>
-								<code class="accordion__code block">
-									&nbsp;
-								</code>
+								<a target="_blank" class="accordion__link link" href="https://codepen.io/archicolt/pen/BamMqjM?editors=1112">Codepen</a>
+								<pre class="accordion__pre">
+<i class="accordion__i">// ВАЖНО! в continue ненужные карты отсеиваются сразу и не участвуют в цикле</i>
+
+let cards = ["2", "Король", "Туз", "5", "6", "Король", "Дама"]; // карты в руке
+let hand = [];
+
+for (let card of cards) {
+  <i class="accordion__i">// выполняем только для нечётного индекса</i>
+  if (card !== "Король" && card !== "Туз") continue; <i class="accordion__i">// continue отсеивает то, что соответствует условию, т.е. '5' не равно 'Король' или 'Туз' и её отсеивает.</i>
+  hand.push(card);
+  console.log("Карта " + card + " добавлена в руку");
+}
+
+console.log("Карты в руке", hand);
+
+<i class="accordion__i">// вернёт</i>
+Карта Король добавлена в руку
+Карта Туз добавлена в руку
+Карта Король добавлена в руку
+Карты в руке (3) ['Король', 'Туз', 'Король']
+								</pre>
 							</div>
 						</div>
 					</div>
@@ -252,15 +335,31 @@ for (let i = 0;; ++i) { console.log(i); } <i class="accorion__i">// выводи
 				<h2 class="break__title container-title title">break</h2>
 				<div class="break__block accordion" data-spollers data-one-spoller>
 					<div class="accordion__item">
-						<button class="accordion__title btn" data-spoller>000</button>
+						<button class="accordion__title btn" data-spoller>break</button>
 						<div class="accordion__content">
 							<div class="accordion__wrapper">
-								<h3 class="accordion__heading title"></h3>
-								<p class="accordion__text text"></p>
-								<pre class="accordion__pre"></pre>
-								<code class="accordion__code block">
-									&nbsp;
-								</code>
+								<h3 class="accordion__heading title">Принцип работы continue и&nbsp;break</h3><br>
+								<a target="_blank" class="accordion__link link" href="https://codepen.io/archicolt/pen/wvPNYgb?editors=0012">Codepen</a>
+								<pre class="accordion__pre">
+<i class="accordion__i">// ВАЖНО! в break перечисляются все карты до тех пор, пока не попадётся нужная карта. Все карты участвуют в цикле</i>
+
+let cards = ["2", "Король", "Туз", "5", "6", "Валет", "Дама"];
+
+console.log("Ищем даму в колоде...");
+
+let found = false;
+
+for (let card of cards) {
+  console.log(`Из колоды вытянута карта ${card}`);
+  if (card === "Дама") {
+    found = true;
+    break; <i class="accordion__i">// выход из цикла если выполняется true</i>
+  }
+}
+
+console.log(found ? "Мы нашли даму!" : "В колоде нет дам :(");
+								</pre>
+								<img class="accordion__img img" src="img/cycle/break_continue.jpg" alt="Принцип работы continue и break">
 							</div>
 						</div>
 					</div>
@@ -272,15 +371,31 @@ for (let i = 0;; ++i) { console.log(i); } <i class="accorion__i">// выводи
 				<h2 class="for-while__title container-title title">for VS while</h2>
 				<div class="for-while__block accordion" data-spollers data-one-spoller>
 					<div class="accordion__item">
-						<button class="accordion__title btn" data-spoller>000</button>
+						<button class="accordion__title btn" data-spoller>for VS while</button>
 						<div class="accordion__content">
 							<div class="accordion__wrapper">
-								<h3 class="accordion__heading title"></h3>
-								<p class="accordion__text text"></p>
-								<pre class="accordion__pre"></pre>
-								<code class="accordion__code block">
-									&nbsp;
-								</code>
+								<a target="_blank" class="accordion__link link" href="https://codepen.io/archicolt/pen/vYWbVdV?editors=0010">Codepen</a>
+								<pre class="accordion__pre">
+let i;
+
+console.log("Цикл for");
+
+<i class="accordion__i">// цикл for</i>
+for (i = 0; i < 11; i += 2) {
+  <i class="accordion__i">// в первой части код до выполнения цикла, во второй части условие для выполнения итерации, в третьей части код после каждой итерации</i>
+  console.log(i); <i class="accordion__i">// четвёртая часть ТЕЛО ЦИКЛА</i>
+}
+
+console.log("Цикл while");
+
+<i class="accordion__i">// аналогичный цикл while с условием для завершения в теле цикла</i>
+i = 0;
+while (true) {
+  if (i > 10) break; <i class="accordion__i">// если i больше 10, то выходим из цикла break</i>
+  console.log(i);
+  i += 2;
+}
+								</pre>
 							</div>
 						</div>
 					</div>
@@ -292,15 +407,70 @@ for (let i = 0;; ++i) { console.log(i); } <i class="accorion__i">// выводи
 				<h2 class="select-cycle__title container-title title">Когда и какой цикл выбрать</h2>
 				<div class="select-cycle__block accordion" data-spollers data-one-spoller>
 					<div class="accordion__item">
-						<button class="accordion__title btn" data-spoller>000</button>
+						<button class="accordion__title btn" data-spoller>Когда и какой цикл выбрать</button>
 						<div class="accordion__content">
 							<div class="accordion__wrapper">
-								<h3 class="accordion__heading title"></h3>
-								<p class="accordion__text text"></p>
-								<pre class="accordion__pre"></pre>
-								<code class="accordion__code block">
-									&nbsp;
-								</code>
+								<a target="_blank" class="accordion__link link" href="https://codepen.io/archicolt/pen/XWzGaLb?editors=0012">Codepen</a>
+								<pre class="accordion__pre">
+<i class="accordion__i">// Простое повторение действий по счётчику</i>
+for (let i = 0; i < 10; ++i) {
+  console.log(i);
+}
+
+<i class="accordion__i">// Заполнение массива на основе счётчика</i>
+let a = [];
+for (let i = 0; i < 10; ++i) {
+  a.push(i * i);
+}
+
+<i class="accordion__i">// Заполнение массива на основе значений другого массива</i>
+let b = [];
+for (let pow2 of a) {
+  b.push(pow2 / 2);
+}
+
+<i class="accordion__i">// Заполнение пустого массива на основе других данных (длина массива неизвестна)</i>
+let c = [];
+let next;
+white (next = file.nextLine()) {
+  c.push(next);
+}
+
+<i class="accordion__i">// Обработка значений массива (возможно of)</i>
+for (let line in c) {
+  console.log('Длина строки:', line.length);
+}
+
+<i class="accordion__i">// Обработка индексов массива (возможно in)</i>
+for (let number of c) {
+  console.log(`Длина строки: ${number}: ${c[number].length}`);
+}
+
+<i class="accordion__i">// Обработка значений или индексов массива в обработном порядке</i>
+let aReversed = [];
+for (let i = a.length - 1; i >= 0; --i) {
+  aReversed.push(a[i]);
+}
+
+<i class="accordion__i">// Сложная логика выхода из цикла</i>
+let currentAttempt = 0;
+while (currentAttempt++ < 1000) {
+  if (crayfishwhistles()) break;
+} <i class="accordion__i">// crayfishwhistles() - какое-то сложное условие. в случае выполнения условия, то иттерация завершается</i>
+
+<i class="accordion__i">// Обработка нескольких массивов одинаковой длины</i>
+for (let i in a) {
+  console.log(a[i] + aReversed[i]);
+}
+for (let i = 0; i < a.length; ++i) {
+  console.log(a[i] + aReversed[i]);
+}
+
+<i class="accordion__i">// Цикл со счётчиком и сложной логикой изменения значения счётчиков</i>
+for (let x = 0; x < 100; x += Math.round(Math.random() * 5)) {
+  console.log(x);
+}
+								</pre>
 							</div>
 						</div>
 					</div>

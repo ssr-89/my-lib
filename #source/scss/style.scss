@@ -99,10 +99,13 @@ body.blocking {
 .color-navy {
   color: rgba(0, 0, 128, 1.0);
 }
+.fw-bold {
+  font-weight: bold;
+}
 
-[class*=__container] {
+[class*='__container'] {
   margin: 0 auto;
-  padding: 100px 50px;
+  padding: 50px;
   max-width: 1700px;
   width: 100%;
 }

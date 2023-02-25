@@ -1,0 +1,36 @@
+.closure {}
+.closure__container {}
+.closure__title {	
+	margin-bottom: 2em;
+}
+.closure__text {
+	margin-bottom: 1em;
+	width: 50%;
+	line-height: 1.5em;
+}
+.closure-content {
+	width: 50%;
+}
+.closure-content__text {	
+	margin-bottom: 1em;
+	width: 100%;
+	line-height: 1.5em;
+}
+.closure-content__title {
+	margin: 2em 0 1em;
+}
+.closure-content-list {}
+.closure-content-list__item {}
+.closure-content-list__item:not(:last-child) {
+	margin-bottom: 3em;
+}
+.closure-content-list__img {}
+.closure-content-list__img:not(:last-child) {
+	margin-bottom: 1em;
+}
+.closure-content-list__text {
+	line-height: 1.5em;
+}
+.closure-content-list__text:not(:last-child) {
+	margin-bottom: 1em;
+}
