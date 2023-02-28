@@ -23,4 +23,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   riseBtn.addEventListener("click", incrementCount); // вызов функции
+
+
+  /*событие change*/
+  // JS
+  const input = document.querySelector('.input');
+
+  input.addEventListener('change', () => {
+    alert(this.value);
+  });
+
 });

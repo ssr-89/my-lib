@@ -108,6 +108,12 @@
   min-height: 50px;
 }
 
+/*dom-window*/
+.window-text {
+  width: 50%;
+  line-height: 1.5;
+}
+
 .js-test-content--block:not(:last-child) {
   margin: 0 0 50px;
 }

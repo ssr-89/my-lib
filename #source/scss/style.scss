@@ -93,7 +93,7 @@ body.blocking {
 .color-yellow {
   color: rgba(255, 255, 0, 1.0);
 }
-.color-red {
+.color-red {  
   color: rgba(255, 0, 0, 1.0);
 }
 .color-navy {
@@ -101,6 +101,9 @@ body.blocking {
 }
 .fw-bold {
   font-weight: bold;
+}
+.warning {
+  background-color: rgba(176, 224, 230, 1);
 }
 
 [class*='__container'] {

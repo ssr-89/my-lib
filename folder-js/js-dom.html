@@ -180,7 +180,7 @@
 											list[0].textContent = ‘Какой-то текст’;<br>
 											list[1].textContent = ‘Какой-то текст’;<br>
 											list[2].textContent = ‘Какой-то текст’;
-										</code>										
+										</code>
 									</div>
 								</div>
 							</div>
@@ -294,7 +294,6 @@
 						<div class="accordion__content">
 							<div class="accordion__wrapper">
 								<pre class="accordion__pre block">
-									<code class="accordion__code block">
 document.addEventListener("DOMContentLoaded", function () {
   let colorInput = document.createElement("input"); <i class="accordion__i">// элемент input - поле для ввода цвета</i>
   let colorBlock = document.createElement("div"); <i class="accordion__i">// блок с меняющимся цветом фона</i>
@@ -331,7 +330,6 @@ document.addEventListener("DOMContentLoaded", function () {
     colorInput.value = "";
   });
 });
-									</code>
 								</pre>
 								<p class="accordion__text text">ПРИМЕР:</p>
 								<input class="dom-primer-input" value="blue">
@@ -345,7 +343,6 @@ document.addEventListener("DOMContentLoaded", function () {
 								<div class="accordion__content">
 									<div class="accordion__wrapper">
 										<pre class="accordion__pre block">
-											<code class="accordion__code block">
 document.addEventListener("DOMContentLoaded", function () {
   let p = document.createElement("p");
   let btn = document.createElement("button");
@@ -366,7 +363,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   btn.addEventListener("click", incrementCount); <i class="accordion__i">// вызов функции</i>
 });
-											</code>
 										</pre>
 										<p class="accordion__text text">ПРИМЕР:</p>
 										<p class="dom-primer-text">1</p>
@@ -374,18 +370,46 @@ document.addEventListener("DOMContentLoaded", function () {
 									</div>
 								</div>
 							</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>Событие <i class="color-yellow">change</i></button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<p class="accordion__text text">
+									Событие <span class="color-yellow">change</span> происходит по&nbsp;окончании изменения значения элемента формы, когда это изменение зафиксировано.
+								</p>
+								<p class="accordion__text text">
+									Для текстовых элементов это означает, что событие произойдёт не&nbsp;при каждом вводе, а&nbsp;при потере фокуса.
+								</p>
+								<p class="accordion__text text">
+									Например, пока вы&nbsp;набираете что-то в&nbsp;текстовом поле ниже&nbsp;&mdash; события нет. Но&nbsp;как только вы&nbsp;уведёте фокус на&nbsp;другой элемент, например, нажмёте кнопку&nbsp;&mdash; произойдёт событие <span class="color-yellow">change</span>.
+								</p>
+								<pre class="accordion__pre block">
+<i class="accordion__i">// HTML</i>
+&lt;input class="input"&gt;
+&lt;button class="btn"&gt;BUTTON&lt;/button&gt;
+
+<i class="accordion__i">// JS</i>
+const input = document.querySelector('.input');
+
+input.addEventListener('change', () => {
+  alert(this.value);
+});
+								</pre>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
 		<section class="dom-window" id="dom-window">
 			<div class="dom-window__container">
 				<h2 class="dom-window__title container-title title">Глобальный объект WINDOW</h2>
+				<a target="_blank" class="dom-window__link js-main__link" href="https://learn.javascript.ru/global-object">Источник</a>
 				<div class="dom-window__block accordion" data-spollers data-one-spoller>
 					<div class="accordion__item">
 						<button class="accordion__title btn" data-spoller>Глобальный объект WINDOW</button>
 					<div class="accordion__content">
 						<div class="accordion__wrapper">
-							<a target="_blank" class="accordion__link" href="https://learn.javascript.ru/global-object">Источник</a>
 							<div class="p accordion__descr text">
 								Объект <i>window</i> представляет собой окно, содержащее DOM документ; свойство document указывает на DOM document (en-US), загруженный в данном окне
 							</div>
@@ -396,11 +420,29 @@ document.addEventListener("DOMContentLoaded", function () {
 						<button class="accordion__title btn" data-spoller><b class="color-yellow">Global namespace pollution</b> – Загрязнение глобальной области видимости</button>
 					<div class="accordion__content">
 						<div class="accordion__wrapper">
+							<p class="accordion__text text window-text">
+								Любое значение, объявленное вне функции или блока в&nbsp;сценарии, имеет глобальную область действия, и&nbsp;любой другой файл сценария в&nbsp;вашей программе может получить к&nbsp;нему доступ.
+							</p>
+							<p class="accordion__text text">
+								Например, объявление глобальной переменной в&nbsp;одном файле:
+							</p>
 							<pre class="accordion__pre block">
-								<code class="accordion__code block">
-
-								</code>
+<i class="accordion__i">// index.js</i>
+let globalVariable = "some value"
 							</pre>
+							<p class="accordion__text text">
+								Означает, что любой другой скрипт в&nbsp;вашей программе может получить к&nbsp;нему доступ:
+							</p>
+							<pre class="accordion__pre block">
+<i class="accordion__i">// otherScript.js</i>
+console.log(globalVariable) // some value
+							</pre>
+							<p class="accordion__text text window-text">
+								Объявление переменных JavaScript в&nbsp;глобальной области видимости&nbsp;&mdash; плохая практика, поскольку это может привести к&nbsp;загрязнению пространства имен. Глобальное пространство имен&nbsp;&mdash; это верхнее пространство Javascript, которое содержит переменные, объекты и&nbsp;функции. В&nbsp;браузере он&nbsp;присоединяется к&nbsp;объекту Window, а&nbsp;NodeJS использует объект с&nbsp;именем global.
+							</p>
+							<p class="accordion__text text window-text">
+								Загрязнение глобального пространства имен может привести к&nbsp;конфликту имен. Это ситуация, в&nbsp;которой ваш код пытается использовать одно и&nbsp;то&nbsp;же имя переменной для разных вещей в&nbsp;одном и&nbsp;том&nbsp;же пространстве имен. Конфликты имен часто встречаются в&nbsp;больших проектах, использующих несколько сторонних библиотек.
+							</p>
 						</div>
 					</div>
 					</div>

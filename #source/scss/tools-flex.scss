@@ -72,3 +72,39 @@
 .child:nth-child(16) {
 	background-image: url("https://images.unsplash.com/photo-1676839560241-bca2c9116ead?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80");
 }
+
+
+/*flex-main*/
+.flex-main {}
+.flex-main__container {}
+.flex-main__title {
+	margin-bottom: 2em;
+}
+.flex-main__list {
+	width: 40vw;
+}
+.flex-list__item {}
+.flex-list__item:not(:last-child) {
+	margin-bottom: 4vh;
+}
+.flex-list__item .flex-list__item:not(:last-child) {
+	margin-bottom: .5em;
+}
+.flex-list__title {
+	margin-bottom: .5em;
+}
+.flex-list__text {
+	line-height: 1.5;
+}
+.flex-list__text:not(:last-child) {
+	margin-bottom: .5em;
+}
+
+/*flex-links*/
+.flex-links {
+	display: flex;
+	flex-flow: column nowrap;
+}
+.flex-links__link:not(:last-child) {
+	margin-bottom: .5em;
+}
