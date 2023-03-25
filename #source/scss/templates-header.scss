@@ -1,0 +1,183 @@
+:root {
+	--index: calc(1vw + 1vh);
+}
+.header-primer {}
+.header-primer__container {
+	display: flex;	
+	align-items: center;
+	margin-top: 150px;
+	padding: 20px 50px;
+	background-color: powderblue;
+}
+
+
+.header-primer__logo {
+	margin-right: auto;
+	width: 2em;
+}
+.header-primer__logo svg {
+	width: 100%;
+}
+
+.header-primer-menu {
+	margin-right: calc(var(--index)*10);
+}
+.header-primer-menu,
+.header-primer-menu__list,
+.header-primer-menu__item,
+.header-primer-menu__link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.header-primer-menu__list {
+	column-gap: 2em;
+}
+.header-primer-menu__item {}
+.header-primer-menu__link {}
+
+
+.block-login {
+	position: fixed;
+	top: 50px;
+	left: 0;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .8);
+
+	display: none;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+.block-login.active, 
+.signin-form.active,
+.signup-form.active {
+	display: flex;
+}
+
+
+.block-login__form {	
+	display: none;
+	flex-flow: column nowrap;
+	border-radius: 2px;
+	width: 20vw;
+	background-color: rgba(255, 255, 255, 1.0);
+}
+.block-login-close-btn {
+	position: absolute;
+  top: 25%;
+  right: 35%;
+	font-size: 60px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 1.0);
+}
+
+
+.signin-form {}
+.signin-form__login,
+.signin-form__pass {
+	padding: 1em 10px;
+	border-bottom: 1px solid rgba(192, 192, 192, 1);
+	border-width: 80%;
+	transition: border .3s ease-in-out;
+}
+.signin-form__login::placeholder,
+.signin-form__pass::placeholder {
+	transition: color .3s ease-in-out;
+}
+.signin-form__login:focus,
+.signin-form__pass:focus {
+	border-bottom: 1px solid rgba(150, 150, 150, 1);
+}
+.signin-form__login:focus::placeholder,
+.signin-form__pass:focus::placeholder {
+	color: transparent;
+}
+.signin-form__login {}
+.signin-form__pass {}
+.signin-form__btn {
+	padding: 1em;
+	background-color: transparent;
+}
+
+
+.signup-form {}
+.signup-form__login,
+.signup-form__email,
+.signup-form__pass {
+	padding: 1em 10px;
+	border-bottom: 1px solid rgba(192, 192, 192, 1);
+	border-width: 80%;
+	transition: border .3s ease-in-out;
+}
+.signup-form__login::placeholder,
+.signup-form__email::placeholder,
+.signup-form__pass::placeholder {
+	transition: color .3s ease-in-out;
+}
+.signup-form__login:focus,
+.signup-form__email:focus,
+.signup-form__pass:focus {
+	border-bottom: 1px solid rgba(150, 150, 150, 1);
+}
+.signup-form__login:focus::placeholder,
+.signup-form__email:focus::placeholder,
+.signup-form__pass:focus::placeholder {
+	color: transparent;
+}
+.signup-form__login {}
+.signup-form__email {}
+.signup-form__pass {}
+.signup-form__btn {
+	padding: 20px;
+	background-color: transparent;
+}
+
+
+.block-login-btns {
+	display: flex;
+	margin-right: calc(var(--index)*2);
+}
+.block-login-btns__btn {
+	padding: 10px 5px;
+	border: 1px solid rgba(0, 0, 0, 1.0);
+}
+.block-login-btns__btn--in {
+	border-right: none;
+}
+.block-login-btns__btn--up {
+}
+
+
+.header-primer-search {}
+.header-primer-search__form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.header-primer-search__input {
+	margin-right: 1em;
+	padding: 5px 10px;
+	border-bottom: 1px solid rgba(150, 150, 150, 1);
+	transition: border .3s ease-in-out;
+}
+.header-primer-search__input::placeholder {
+	color: rgba(150, 150, 150, 1);
+	transition: color .3s ease-in-out;
+}
+.header-primer-search__input:focus {
+	border-bottom: 1px solid rgba(100, 100, 100, 1);
+}
+.header-primer-search__input:focus::placeholder {
+	color: transparent;
+}
+.header-primer-search__btn {
+	width: 2em;
+}
+.header-primer-search__btn svg {
+	width: 100%;
+}

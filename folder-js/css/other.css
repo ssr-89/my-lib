@@ -1,0 +1,64 @@
+.lexical__title {
+  margin-bottom: 1.1em;
+}
+
+.lexical__text {
+  margin-bottom: 1em;
+  width: 50%;
+  line-height: 1.5em;
+}
+
+.lexical-link {
+  color: rgb(0, 200, 200);
+}
+
+.lexical-content {
+  width: 50%;
+}
+
+.accordion__text--lexical {
+  width: 60%;
+  line-height: 1.5em;
+}
+
+.accordion__text--lexical:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.lexical-content__title {
+  margin-bottom: 1em;
+}
+
+.lexical-content__title--example {
+  margin: 2em 0 1em;
+}
+
+.lexical-content-list__item:not(:last-child) {
+  margin-bottom: 3em;
+}
+
+.lexical-content-list__img {
+  width: 50%;
+}
+
+.lexical-content-list__img:not(:last-child) {
+  margin-bottom: 3em;
+}
+
+.accordion__text--lexical {
+  line-height: 1.5em;
+}
+
+.accordion__text--lexical:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.lexical-content__pre {
+  padding: 1em 1em 0;
+  background-color: rgb(255, 255, 255);
+  font-size: 1.1em;
+}
+
+.accordion__pre--lexical:not(:last-child) {
+  margin-bottom: 2em;
+}

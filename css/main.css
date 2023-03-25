@@ -1,3 +1,24 @@
+.hero {
+  height: calc(100vh - 400px);
+}
+
+.hero-form {
+  padding: 1em;
+  width: 20%;
+  background-color: darkcyan;
+  color: rgb(255, 255, 255);
+}
+
 .index-input {
   background: transparent;
+}
+
+.index-btn,
+.index-input--date {
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.index-btn:disabled {
+  color: rgba(255, 255, 255, 0.5);
 }

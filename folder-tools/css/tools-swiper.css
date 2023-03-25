@@ -1,0 +1,121 @@
+body {
+  background-color: rgb(17, 24, 39);
+  color: rgb(255, 255, 255);
+}
+
+/*lib-swiper*/
+.lib-swiper__container {
+  padding: 50px;
+}
+
+.swiper-code-top {
+  margin-bottom: 30px;
+}
+
+.swiper-code-top__title {
+  margin-bottom: 20px;
+  font-size: 48px;
+  color: rgb(255, 255, 255);
+}
+
+.swiper-code-links__heading {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+}
+
+/*swiper*/
+.test-swiper {
+  max-width: 900px;
+}
+
+.test-swiper-wrapper {
+  margin-bottom: 50px;
+}
+
+.test-swiper-slide-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.test-swiper-slide-img {
+  max-width: 400px;
+}
+
+.test-swiper-pgn {
+  bottom: 20px;
+}
+
+.test-swiper .swiper-scrollbar {
+  bottom: 0;
+  height: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+.test-swiper .swiper-scrollbar-drag {
+  background-color: rgb(0, 128, 200);
+}
+
+/*TABS*/
+.swiper-tabs-btns {
+  font-size: 0;
+}
+
+.swiper-tabs-btn {
+  padding: 10px 20px;
+  background-color: rgb(17, 24, 39);
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+}
+
+.swiper-tabs-btn.open-tabs-btn {
+  background-color: rgb(0, 128, 200);
+  /*teal*/
+}
+
+.swiper-tabs-item {
+  display: none;
+}
+
+.swiper-tabs-item.open-tabs-item {
+  display: block;
+}
+
+.swiper-tabs-item__list {
+  padding: 20px;
+  background-color: rgb(0, 128, 200);
+  /*teal*/
+}
+
+.swiper-tabs-item__item::marker {
+  font-family: "Exo 2", "FiraSans", sans-serif;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+}
+
+.swiper-tabs-item__text {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+}
+
+.swiper-code-pre {
+  margin: 0;
+  padding: 15px 20px 0;
+  background-color: rgb(0, 128, 200);
+  /*teal*/
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+}
+
+.swiper-code-pre:not(:last-child) {
+  margin-bottom: 10px;
+}

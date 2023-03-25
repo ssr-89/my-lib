@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Адаптивный слайдер на JavaScript</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/accordion.css">
+	<link rel="stylesheet" href="css/templates-main.css">
+  <link rel="stylesheet" href="../css/section-menu.css">
+	<link rel="stylesheet" href="css/templates-slider.css">
+	<script defer src="../js/script.js"></script>
+	<script defer src="../js/accordion.js"></script>
+	<script defer src="js/templates-main.js"></script>
+	<script defer src="js/templates-slider.js"></script>
+</head>
+<body>
+	<main class="main">
+    <section class="hero">
+      <div class="hero__container">
+        <h1 class="hero__title title">Адаптивный слайдер на JavaScript</h1>
+        <div class="hero__slider-block slider-block">
+          <button class="slider-block__btn btn-prev btn"></button>
+          <div class="slider-block__line slider">
+            <img class="slider__img img" src="img/111.jpg" alt="">
+            <img class="slider__img img" src="img/112.jpg" alt="">
+            <img class="slider__img img" src="img/113.jpg" alt="">
+            <img class="slider__img img" src="img/114.jpg" alt="">
+            <img class="slider__img img" src="img/115.jpg" alt="">
+          </div>
+          <button class="slider-block__btn btn-next btn"></button>
+        </div>
+      </div>
+    </section>
+    <section class="info-slider" id="info-slider">
+    	<div class="info-slider__container">
+    		<h2 class="info-slider__title title">Код слайдера</h2>
+    		<div class="info-slider__content-slider content-slider">
+    			<div class="content-slider__block content-slider-block content-slider__block--html">
+    				<h3 class="content-slider-block__title title">HTML</h3>
+    				<pre class="content-slider__block__pre">
+&lt;div class="slider-block"&gt;
+  &lt;button class="slider-block__btn btn-prev btn"&gt;&lt;/button&gt;
+  &lt;div class="slider-block__line slider"&gt;
+    &lt;img class="slider__img img" src="img/111.jpg" alt=""&gt;
+    &lt;img class="slider__img img" src="img/112.jpg" alt=""&gt;
+    &lt;img class="slider__img img" src="img/113.jpg" alt=""&gt;
+    &lt;img class="slider__img img" src="img/114.jpg" alt=""&gt;
+    &lt;img class="slider__img img" src="img/115.jpg" alt=""&gt;
+  &lt;/div&gt;
+  &lt;button class="slider-block__btn btn-next btn"&gt;&lt;/button&gt;
+&lt;/div&gt;
+    				</pre>
+    			</div>
+    			<div class="content-slider__block content-slider-block content-slider__block--css">
+    				<h3 class="content-slider-block__title title">CSS</h3>
+    				<pre class="content-slider__block__pre">
+.slider-block {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 80%;
+  border: 1px solid rgb(192, 192, 192);
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  background-color: orangered;
+  transition: all 0.3s ease-in-out;
+}
+
+.slider-block__btn {
+  width: 30px;
+  height: 50px;
+}
+
+.btn-prev {
+  position: absolute;
+  left: 10px;
+  z-index: 1;
+}
+
+.btn-next {
+  position: absolute;
+  right: 10px;
+}
+
+.btn-prev::before,
+.btn-prev::after,
+.btn-next::before,
+.btn-next::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: rgb(192, 192, 192);
+}
+
+.btn-next::before {
+  right: 0;
+  top: 11px;
+  transform: rotate(60deg);
+}
+
+.btn-next::after {
+  right: 0;
+  bottom: 11px;
+  transform: rotate(-60deg);
+}
+
+.btn-prev::before {
+  left: 0;
+  top: 11px;
+  transform: rotate(-60deg);
+}
+
+.btn-prev::after {
+  left: 0;
+  bottom: 11px;
+  transform: rotate(60deg);
+}
+
+.btn-prev:hover::before,
+.btn-prev:hover::after,
+.btn-next:hover::before,
+.btn-next:hover::after {
+  background-color: rgb(0, 0, 255);
+}
+    				</pre>
+    			</div>
+    			<div class="content-slider__block content-slider-block content-slider__block--js">
+    				<h3 class="content-slider-block__title title">JS</h3>
+    				<pre class="content-slider__block__pre">
+"use strict"
+document.addEventListener("DOMContentLoaded", function () {
+  const sliderImg = document.querySelectorAll('.slider__img');
+  const sliderLine = document.querySelector('.slider');
+  let count = 0; <i class="color-red">// ссылается на активный слайдер</i>
+  let width; <i class="color-red">// переменная для ширины слайдера</i>
+
+  function init() {
+    console.log('resize');
+    width = document.querySelector('.slider-block').offsetWidth;
+    sliderLine.style.width = width * sliderImg.length + 'px';
+    sliderImg.forEach(function (item) {
+      item.style.width = width + 'px';
+      item.style.height = 'auto';
+    });
+    rollSlider();
+  }
+  window.addEventListener('resize', init);
+  init();
+
+  document.querySelector(".btn-prev").addEventListener('click', function () {
+    count--;
+    if (count < 0) {
+      count = sliderImg.length - 1;
+    }
+    rollSlider();
+  });
+  document.querySelector(".btn-next").addEventListener('click', function () {
+    count++;
+    if (count >= sliderImg.length) {
+      count = 0;
+    }
+    rollSlider();
+  });
+
+  <i class="color-red">/*функция смещения*/</i>
+  function rollSlider() {
+    sliderLine.style.transform = 'translate(-' + count * width + 'px)';
+  }
+});
+    				</pre>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+  </main>
+</body>
+</html>

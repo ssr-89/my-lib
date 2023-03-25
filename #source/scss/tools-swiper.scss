@@ -1,0 +1,97 @@
+body {
+	background-color: rgba(17, 24, 39, 1.0);
+	color: rgba(255, 255, 255, 1.0);
+}
+
+/*lib-swiper*/
+.lib-swiper__container {
+	padding: 50px;
+}
+.swiper-code-top {
+	margin-bottom: 30px;
+}
+.swiper-code-top__title {
+	margin-bottom: 20px;
+	font-size: 48px;
+	color: rgba(255, 255, 255, 1.0);
+}
+.swiper-code-links__heading {
+	margin-bottom: 10px;
+	font-size: 20px;
+	color: rgba(255, 255, 255, 1.0);
+}
+
+/*swiper*/
+.test-swiper {
+	max-width: 900px;
+}
+.test-swiper-wrapper {
+	margin-bottom: 50px;
+}
+.test-swiper-slide-block {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+.test-swiper-slide-img {
+	max-width: 400px;
+}
+.test-swiper-pgn {
+	bottom: 20px;
+}
+.test-swiper .swiper-scrollbar {
+  bottom: 0;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 1.0);
+}
+.test-swiper .swiper-scrollbar-drag {
+	background-color: rgba(0,128,200,1);
+}
+
+/*TABS*/
+.swiper-tabs-btns {
+	font-size: 0;
+}
+.swiper-tabs-btn {
+	padding: 10px 20px;
+	background-color: rgba(17, 24, 39, 1.0);
+	font-size: 14px;
+	color: rgba(255, 255, 255, 1.0);
+}
+
+.swiper-tabs-btn.open-tabs-btn {
+	background-color: rgba(0,128,200,1); /*teal*/
+}
+
+.swiper-tabs-item {
+	display: none;
+}
+.swiper-tabs-item.open-tabs-item {
+	display: block;
+}
+
+.swiper-tabs-item__list {
+	padding: 20px;
+	background-color: rgba(0,128,200,1); /*teal*/
+}
+.swiper-tabs-item__item::marker {
+	font-family: 'Exo 2', "FiraSans", sans-serif;	
+	font-size: 20px;
+	color: rgba(255, 255, 255, 1.0);
+}
+.swiper-tabs-item__text {
+	margin-bottom: 10px;
+	font-size: 20px;
+	color: rgba(255, 255, 255, 1.0);
+}
+.swiper-code-pre {
+	margin: 0;
+	padding: 15px 20px 0;
+	background-color: rgba(0,128,200,1); /*teal*/
+	font-size: 16px;
+	color: rgba(255, 255, 255, 1.0);
+}
+.swiper-code-pre:not(:last-child) {
+	margin-bottom: 10px;
+}

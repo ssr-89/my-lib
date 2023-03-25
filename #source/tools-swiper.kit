@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SWIPER</title>
+	<link rel="shortcut icon" href="img/swiper/favicon-swiper.png" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/accordion.css">
+	<link rel="stylesheet" href="css/tools-main.css">
+	<link rel="stylesheet" href="css/tools-swiper.css">
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+	<script defer src="../js/script.js"></script>
+	<script defer src="../js/accordion.js"></script>
+	<script defer src="js/tools-main.js"></script>
+	<script defer src="js/tools-swiper.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <main class="main">
+      <section id="lib-swiper" class="lib-swiper">
+        <div class="lib-swiper__container">
+          <h1 class="lib-swiper__title title">Swiper (слайдер)</h1>
+          <!-- swiper -->
+         <div class="test-swiper swiper">
+            <!-- враппер -->
+            <div class="test-swiper-wrapper swiper-wrapper">
+              <!-- слайды -->
+              <div class="test-swiper-slide swiper-slide">
+              	<div class="test-swiper-slide-block">
+              		<img class="test-swiper-slide-img img" src="img/swiper/01.jpg" alt="Image">
+              	</div>
+              </div>
+              <div class="test-swiper-slide swiper-slide">
+              	<div class="test-swiper-slide-block">
+              		<img class="test-swiper-slide-img img" src="img/swiper/02.jpg" alt="Image">
+              	</div>
+              </div>
+              <div class="test-swiper-slide swiper-slide">
+              	<div class="test-swiper-slide-block">
+              		<img class="test-swiper-slide-img img" src="img/swiper/03.jpg" alt="Image">
+              	</div>
+              </div>
+              <div class="test-swiper-slide swiper-slide">
+              	<div class="test-swiper-slide-block">
+              		<img class="test-swiper-slide-img img" src="img/swiper/04.jpg" alt="Image">
+              	</div>
+              </div>
+              <div class="test-swiper-slide swiper-slide">
+              	<div class="test-swiper-slide-block">
+              		<img class="test-swiper-slide-img img" src="img/swiper/05.jpg" alt="Image">
+              	</div>
+              </div>
+              <div class="test-swiper-slide swiper-slide">
+              	<div class="test-swiper-slide-block">
+              		<img class="test-swiper-slide-img img" src="img/swiper/06.jpg" alt="Image">
+              	</div>
+              </div>
+              <div class="test-swiper-slide swiper-slide">
+              	<div class="test-swiper-slide-block">
+              		<img class="test-swiper-slide-img img" src="img/swiper/07.jpg" alt="Image">
+              	</div>
+              </div>
+              <div class="test-swiper-slide swiper-slide">
+              	<div class="test-swiper-slide-block">
+              		<img class="test-swiper-slide-img img" src="img/swiper/08.jpg" alt="Image">
+              	</div>
+              </div>
+              <div class="test-swiper-slide swiper-slide">
+              	<div class="test-swiper-slide-block">
+              		<img class="test-swiper-slide-img img" src="img/swiper/09.jpg" alt="Image">
+              	</div>
+              </div>
+              <div class="test-swiper-slide swiper-slide">
+              	<div class="test-swiper-slide-block">
+              		<img class="test-swiper-slide-img img" src="img/swiper/10.jpg" alt="Image">
+              	</div>
+              </div>
+
+            </div>
+            <!-- кнопки пагинации -->
+            <div class="test-swiper-pgn swiper-pagination"></div>
+
+            <!-- кнопки для навигации -->
+            <div class="test-swiper-btn test-swiper-btn--prev swiper-button-prev"></div>
+            <div class="test-swiper-btn test-swiper-btn--next swiper-button-next"></div>
+
+            <!-- скроллбар -->
+  					<div class="test-swiper-scrollbar swiper-scrollbar"></div></div>
+        </div>
+      </section>
+      <section id="swiper-code" class="swiper-code">
+      	<div class="swiper-code__container">
+      		<div class="swiper-code__top swiper-code-top">
+            <h2 class="swiper-code-top__title title">Код</h2>
+            <div class="swiper-code-top__links swiper-code-links">
+              <p class="swiper-code-links__heading text">
+                Подключение CSS:   
+              </p>
+              <pre class="swiper-code-links__pre swiper-code-pre">
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/&gt;
+              </pre>
+              <p class="swiper-code-links__heading text">
+                Подключение JS:   
+              </p>
+              <pre class="swiper-code-links__pre swiper-code-pre">
+&lt;script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"&gt;&lt;/script&gt;
+              </pre>
+            </div>  
+          </div>
+      		<div class="swiper-code__wrapper swiper-tabs-wrapper">
+            <div class="swiper-tabs-wrapper__swiper-tabs-btns swiper-tabs-btns">
+              <button data-path="swiper-html" class="swiper-tabs-btns__btn swiper-tabs-btn btn open-tabs-btn">HTML</button>
+              <button data-path="swiper-css" class="swiper-tabs-btns__btn swiper-tabs-btn btn">CSS</button>
+              <button data-path="swiper-js" class="swiper-tabs-btns__btn swiper-tabs-btn btn">JS</button>
+            </div>
+      			<div data-target="swiper-html" class="swiper-tabs-wrapper__tabs-item swiper-tabs-item open-tabs-item">
+              <pre class="swiper-tabs-item__pre swiper-code-pre">
+<i class="color-yellow">&lt;!-- swiper --&gt;</i>
+&lt;div class="swiper"&gt;
+  <i class="color-yellow">&lt;!-- слайдер --&gt;</i>
+  &lt;div class="swiper-wrapper"&gt;
+    <i class="color-yellow">&lt;!-- слайды --&gt;</i>
+    &lt;div class="swiper-slide"&gt;Slide 1&lt;/div&gt;
+    &lt;div class="swiper-slide"&gt;Slide 2&lt;/div&gt;
+    &lt;div class="swiper-slide"&gt;Slide 3&lt;/div&gt;
+
+  &lt;/div&gt;
+  <i class="color-yellow">&lt;!-- кнопки пагинации --&gt;</i>
+  &lt;div class="swiper-pagination"&gt;&lt;/div&gt;
+
+  <i class="color-yellow">&lt;!-- кнопки для навигации --&gt;</i>
+  &lt;div class="swiper-button-prev"&gt;&lt;/div&gt;
+  &lt;div class="swiper-button-next"&gt;&lt;/div&gt;
+
+  <i class="color-yellow">&lt;!-- скроллбар --&gt;</i>
+  &lt;div class="swiper-scrollbar"&gt;&lt;/div&gt;
+&lt;/div&gt;
+              </pre>
+            </div>
+            <div data-target="swiper-css" class="swiper-tabs-wrapper__tabs-item swiper-tabs-item">
+              <ul class="swiper-tabs-item__list list">
+                <li class="swiper-tabs-item__item">
+                  <p class="swiper-tabs-item__text text">
+                    &ndash;&nbsp;swiper - указать max-width:
+                  </p>
+                </li>
+                <li class="swiper-tabs-item__item">
+                  <p class="swiper-tabs-item__text text">
+                    &ndash;&nbsp;swiper-wrapper - указать margin-bottom:, чтобы отступить от блока навигации
+                  </p>
+                </li>
+                <li class="swiper-tabs-item__item">
+                  <p class="swiper-tabs-item__text text">
+                    &ndash;&nbsp;Для обнуления margin у буллетов пагинации необходимо обратиться к буллетам в пагинации через id пагинации: <span class="color-yellow">.swiper-pagination .swiper-pagination-bullet</span>
+                  </p>
+                </li>
+                <li class="swiper-tabs-item__item">
+                  <p class="swiper-tabs-item__text text">
+                    
+                  </p>
+                </li>
+              </ul>
+              <pre class="swiper-tabs-item__pre swiper-code-pre">
+.swiper {
+  max-width: 600px;
+}
+
+<i class="color-yellow">/*swiper-slider*/</i>
+<i class="color-yellow">/* .swiper-wrapper {</i>
+ <i class="color-yellow">}*/</i>
+
+<i class="color-yellow">/*для корректной работы slidesPerView: 'auto',*/</i>
+<i class="color-yellow">/*.swiper .swiper-slide {
+  width: auto;
+}*/</i>
+
+<i class="color-yellow">/*для корректной работы мультирядности (slidesPerColumn)*/</i>
+<i class="color-yellow">/*.swiper {
+  height: 700px;
+}
+.swiper .swiper-slide {
+  height: calc((100% - 10px) / 2);
+  overflow: hidden;
+}*/</i>
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-slide-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+}
+.swiper-title {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  padding: 10px 20px;
+  background-color: #7a956b; <i class="color-yellow">/*teal*/</i>
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: #fff;
+}
+.swiper-img {
+  border-radius: 10px;
+}
+
+<i class="color-yellow">/*swiper-navigation*/</i>
+<i class="color-yellow">/*это блок для элементов навигации необходимо создать самому, чтобы было проще элементы позиционировать*/</i>
+  <i class="color-yellow">/*.swiper-navigation {
+    position: relative;
+  }*/</i>
+
+<i class="color-yellow">/*пагинация*/</i>
+.swiper-pagination {
+  bottom: 20px;
+}
+<i class="color-yellow">/*пагинация-буллеты*/</i>
+.swiper-pagination .swiper-pagination-bullet {
+  background-color: #fff;
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
+  line-height: 1;
+  color: #333;
+}
+.swiper-pagination .swiper-pagination-bullet:not(:last-child) {
+  margin-right: 10px;
+}
+<i class="color-yellow">/*пагинация-фракция*/</i>
+.swiper .swiper-pagination-fraction {
+  font-size: 20px;
+  color: #fff;
+}
+
+<i class="color-yellow">/*пагинация-прогрессбар*/</i>
+.swiper .swiper-pagination-progressbar-fill {
+  background-color: #7a956b;
+}
+
+<i class="color-yellow">/*кнопки навигации*/</i>
+.swiper-button-prev::after,
+.swiper-button-next {
+  font-size: 60px;
+  color: #fff;
+}
+
+<i class="color-yellow">/*скролл*/</i>
+.swiper .swiper-scrollbar {
+  bottom: 0;
+  height: 10px;
+}
+.swiper .swiper-scrollbar-drag {
+  background-color: #7a956b;
+  cursor: pointer;
+}    
+              </pre>
+            </div>
+            <div data-target="swiper-js" class="swiper-tabs-wrapper__tabs-item swiper-tabs-item">
+              <pre class="swiper-tabs-item__pre swiper-code-pre">
+"use strict"
+document.addEventListener("DOMContentLoaded", () =&gt; {
+  const swiper = new Swiper ('.swiper', {
+    <i class="color-yellow">// пустой объект</i>
+  });
+
+
+
+  const swiper = new Swiper('.swiper', {
+    <i class="color-yellow">/*кол-во слайдов для показа*/</i>
+    slidesPerView: 1,
+
+    <i class="color-yellow">/*Отключение функционала slidesPerView, если слайдов меньше, чем нужно*/</i>
+    watchOverflow: true,
+
+    <i class="color-yellow">/*Кол-во перелистываемых слайдов*/</i>
+    slidesPerGroup: 1,
+
+    <i class="color-yellow">/*Отступы между слайдами в px*/</i>
+    <i class="color-yellow">// spaceBetween: 10,</i>
+
+    <i class="color-yellow">/*Активный слайд по центру, если показано больше одного слайда*/</i>
+    <i class="color-yellow">// centeredSlides: true,</i>
+
+    <i class="color-yellow">/*Стартовый слайд начиная с 0*/</i>
+    <i class="color-yellow">// initialSlide: 1,</i>
+
+    <i class="color-yellow">/*Мультрядность - для корректной работы автовысоту (autoHeight) надо отключить*/</i>
+    slidesPerColumn: 1,
+
+    <i class="color-yellow">/*Автовысота*/</i>
+    autoHeight: false,
+
+    <i class="color-yellow">/*Бесконечный цикл прокрутки - не будет работать с мульдирядностью (slidesPerColumn) или значение мультирядности должно быть не больше 1*/</i>
+    loop: true,
+
+    <i class="color-yellow">/*Кол-во дублирующих слайдов - для корректной работы бесконечном цикле прокрутки при slidesPerView со значением 'auto'*/</i>
+    <i class="color-yellow">// loopedSlides: 3,</i>
+
+    <i class="color-yellow">/*Свободный режим - прокручивается как лента без фиксации на каком-либо слайде*/</i>
+    freeMode: false,
+
+    <i class="color-yellow">/*Автопрокрутка*/</i>
+    autoplay: {
+      enabled: true,
+      <i class="color-yellow">// Пауза между прокруткой (миллисекунды)</i>
+      delay: 3000,
+      <i class="color-yellow">// Закончить на последнем слайде</i>
+      stopOnLastSlide: false,
+      <i class="color-yellow">// Отключить после ручного переключения</i>
+      disableOnInteraction: false,
+    },
+
+    <i class="color-yellow">/*Скорость переключения слайдов*/</i>
+    speed: 300,
+
+    <i class="color-yellow">/*Вертикальное прокручивание - дополнительно для корректной работы необходимо задать всему swiper фиксированную высоту и сбросить внутренние отступы*/</i>
+    <i class="color-yellow">//direction: 'vertical',</i>
+
+    <i class="color-yellow">/*Эффект переключения слайдов сменой прозрачности*/</i>
+    effect: "fade",
+    <i class="color-yellow">// "slide" - стандартное значение</i>
+    <i class="color-yellow">// "fade" - смена прозрачности. Необходимо устанавливать при значении 1 у slidesPerView</i>
+    <i class="color-yellow">// "flip" - переворот. Лучше отключить переключение мышью и колёсиком мыши</i>
+    <i class="color-yellow">// "cube" - куб. Для лучшего переключения необходимо увеличить ширину swiper</i>
+    <i class="color-yellow">// "coverflow" - поток. Желательно использовать при показе от 2х слайдов</i>
+
+    <i class="color-yellow">// Дополнение к fade эффекту</i>
+    fadeEffect: {
+      <i class="color-yellow">// параллельная смена прозрачности</i>
+      crossFade: true,
+    },
+
+    <i class="color-yellow">// Дополнение к flip эффекту</i>
+    <i class="color-yellow">// flipEffect: {</i>
+    <i class="color-yellow">//   // тень</i>
+    <i class="color-yellow">//   slideShadows: true,</i>
+    <i class="color-yellow">//   // показ только активного слайда</i>
+    <i class="color-yellow">//   limitRotation: true,</i>
+    <i class="color-yellow">// },</i>
+
+    <i class="color-yellow">// Дополнение к cube</i>
+    <i class="color-yellow">// cubeEffect: {</i>
+    <i class="color-yellow">//   // Настройки тени</i>
+    <i class="color-yellow">//   slideShadows: true,</i>
+    <i class="color-yellow">//   shadow: true,</i>
+    <i class="color-yellow">//   shadowOffseet: 20,</i>
+    <i class="color-yellow">//   shadowScale: 0.94,</i>
+    <i class="color-yellow">// },</i>
+
+    <i class="color-yellow">// Дополнение к coverflow</i>
+    <i class="color-yellow">// coverflowEffect: {</i>
+    <i class="color-yellow">//   // угол</i>
+    <i class="color-yellow">//   rotate: 20,</i>
+    <i class="color-yellow">//   // наложение</i>
+    <i class="color-yellow">//   stretch: 50,</i>
+    <i class="color-yellow">//   // тень</i>
+    <i class="color-yellow">//   slideShadows: true,</i>
+    <i class="color-yellow">// },</i>
+
+    freeMode: true,
+
+    <i class="color-yellow">/*Пагинация (ТОЧКИ)*/</i>
+    pagination: {
+      el: '.swiper-pagination',
+      <i class="color-yellow">// type: 'bullets',</i>
+      <i class="color-yellow">// кликабельность буллетов</i>
+      <i class="color-yellow">// clickable: true,</i>
+      <i class="color-yellow">// динамическте буллеты</i>
+      <i class="color-yellow">// dynamicBullets: true,</i>
+      <i class="color-yellow">// кастомные буллеты</i>
+      <i class="color-yellow">// renderBullet: function (index, className) {</i>
+      <i class="color-yellow">//   return '&lt;span class="' + className + '"&gt;' + (index + 1) + '&lt;/span&gt;';</i>
+      <i class="color-yellow">// },</i>
+
+      <i class="color-yellow">/*Фракция вместо буллетов*/</i>
+      type: 'fraction',
+      <i class="color-yellow">// кастомизация фракции</i>
+      renderFraction: function (currentClass, totalClass) {
+        return 'Фото &lt;span class="' + currentClass + '"&gt;&lt;/span&gt;' + ' из ' + '&lt;span class="' + totalClass + '"&gt;&lt;/span&gt;';
+      },
+
+      <i class="color-yellow">/*Прогрессбар*/</i>
+      <i class="color-yellow">// type: 'progressbar',</i>
+    },
+
+    <i class="color-yellow">// навигация (КНОПКИ)</i>
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    <i class="color-yellow">/*Скролл*/</i>
+    scrollbar: {
+      el: '.swiper-scrollbar',
+      <i class="color-yellow">// возможность перетаскивать скролл</i>
+      draggable: true,
+    },
+
+    <i class="color-yellow">/*Включение/отключение перетаскивания на ПК*/</i>
+    simulateTouch: true,
+    <i class="color-yellow">// Чувствительность свайпа</i>
+    touchRatio: 1, <i class="color-yellow">// значение 0 отключит свайп на всех устройствах</i>
+    <i class="color-yellow">// Угол срабатывания свайпа/перетаскивания</i>
+    touchAngle: 45,
+    <i class="color-yellow">// Курсор перетаскивания</i>
+    grabCursor: true,
+
+    <i class="color-yellow">/*Переключение при клике на слайд НЕ РАБОТАЕТ */</i>
+    slideToClickedSlide: true,
+
+    <i class="color-yellow">/* Навигация по хешу - переключение по стрелкам браузера НЕ РАБОТАЕТ */</i>
+    hashNavigation: {
+      <i class="color-yellow">// отслеживать состояние</i>
+      watchState: true,
+    },
+
+    <i class="color-yellow">/*Управление клавиатурой*/</i>
+    keyboard: {
+      <i class="color-yellow">// Включить/выключить</i>
+      enabled: true,
+      <i class="color-yellow">// Включить/выключить когда слайдер в пределах вьюпорта</i>
+      onlyInViewport: true,
+      <i class="color-yellow">// Включить/выключить управление клавиатурой pageUp, pageDown</i>
+      pageUpDown: true,
+    },
+
+    <i class="color-yellow">/*Управление колёсиком мыши*/</i>
+    mousewheel: {
+      enabled: false,
+      <i class="color-yellow">// чувствительность колеса мыши</i>
+      sensitivity: 100,
+      <i class="color-yellow">// класс объекта на котором будет срабатывать прокуртка мышью</i>
+      eventsTarget: ".swiper",
+    },
+
+
+    <i class="color-yellow">/*Брейк поинты (адаптив)*/</i>
+    breakpoints: {
+      <i class="color-yellow">// срабатывает от 320px</i>
+      320: { <i class="color-yellow">// если указать '@0.75' при соотношении стороны высоты делённую на ширину</i>
+        navigation: {
+          enabled: false,
+        },
+      },
+      <i class="color-yellow">// срабатывает от 480px</i>
+      768: { <i class="color-yellow">// если указать '@1.00' при соотношении стороны высоты делённую на ширину</i>
+        navigation: {
+          enabled: false,
+        },
+      },
+      <i class="color-yellow">// срабатывает от 992px</i>
+      992: { <i class="color-yellow">// если указать '@1.50' при соотношении стороны высоты делённую на ширину</i>
+        navigation: {
+          enabled: true,
+        },
+      },
+    },
+
+
+    <i class="color-yellow">/*Lazy Loading - отложенная подгрузка картинок НЕ РАБОТАЕТ*/</i>
+    <i class="color-yellow">/*
+    Изображению добавить
+    - класс swiper-lazy
+    - атрибут data-src="путь к картинке"
+    - src="1x1.png" - добавить однопиксельное изображение
+
+    После изображения добавить элемент (div) с классом swiper-lazy-preloader.
+    Данный элемент выведет анимационную иконку подгрузки.
+    */</i>
+    preloadImages: false, <i class="color-yellow">// отключение по умолчанию предзагрузку всех картинок</i>
+
+    lazy: {
+      enabled: false,
+      <i class="color-yellow">// подгрузка на старте переключения слайда</i>
+      loadOnTransitionStart: false,
+      <i class="color-yellow">// подгрузка предыдущей и следующей картинок</i>
+      loadPrevNext: false,
+    },
+    <i class="color-yellow">// Ниже настройки стоит включать, когда значение slidesPerView: 'auto' или больше 1</i>
+    <i class="color-yellow">// слежка за видимыми слайдами</i>
+    watchSlidesProgress: false,
+    <i class="color-yellow">// добавление класса видимым слайдам</i>
+    watchSlidesVisibility: false,
+
+
+    <i class="color-yellow">/*Увеличение картинок*/</i>
+    <i class="color-yellow">/*
+    Блоку, в котором находится изображение необходимо добавить класс swiper-zoom-container
+    */</i>
+    zoom: {
+      enabled: true,
+      <i class="color-yellow">// Максимальное увеличение</i>
+      maxRatip: 5,
+      <i class="color-yellow">// Минимальное увеличение</i>
+      minRatio: 1,
+    },
+
+
+    <i class="color-yellow">/*Миниатюры (превью)*/</i>
+    <i class="color-yellow">/*
+      - в HTML создать копию слайдер со слайдами
+      - добавить другие классы и стилизовать, как превью-слайдер
+      - всё лишнее желательно убрать: скролл, фракции
+      */</i>
+    <i class="color-yellow">// thumbs: {</i>
+    <i class="color-yellow">//   swiper: {</i>
+    <i class="color-yellow">//     el: '.mini-swiper',</i>
+    <i class="color-yellow">//     slidesPerView: 5,</i>
+    <i class="color-yellow">//   },</i>
+    <i class="color-yellow">// },</i>
+
+    <i class="color-yellow">/*38:28 ФПЖ - остановился на этом "Слайдер в слайдере"*/</i>
+  });
+
+  <i class="color-yellow">/*Остановка автопрокуртки при наведении НЕ РАБОТАЕТ*/</i>
+  <i class="color-yellow">// swiper.addEventListener('mouseenter', function (e) {</i>
+  <i class="color-yellow">//   swiper.autoplay.stop();</i>
+  <i class="color-yellow">// });</i>
+  <i class="color-yellow">// swiper.addEventListener('mouseleave', function (e) {</i>
+  <i class="color-yellow">//   swiper.params.autoplay.disableOnInteraction = false;</i>
+  <i class="color-yellow">//   swiper.params.autoplay.delay = 500;</i>
+  <i class="color-yellow">//   swiper.autoplay.start();</i>
+  <i class="color-yellow">// });</i>
+});
+
+                </pre>
+              </div>
+            </div>
+          </div>
+      	</div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

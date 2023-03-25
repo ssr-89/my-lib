@@ -49,9 +49,6 @@
 						<li class="menu__item">
 							<a class="menu__link link" href="#func-name">Имена функций</a>
 						</li>
-						<li class="menu__item">
-							<a class="menu__link link" href="#closure">Замыкание (closure)</a>
-						</li>
 						<!-- <li class="menu__item">
 							<a class="menu__link link" href="#"></a>
 						</li> -->
@@ -980,92 +977,6 @@ checkPermission(..) <i class="accordion__i">// проверяет доступ, 
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-		</section>
-		<section id="closure" class="closure">
-			<div class="closure__container">
-				<h2 class="closure__title title">Замыкание (closure)</h2>
-				<p class="closure__text text">
-					<a target="_blank" class="closure__link" href="https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%BC%D1%8B%D0%BA%D0%B0%D0%BD%D0%B8%D0%B5_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)" >Замыкание</a>&nbsp;&mdash; это функция, которая запоминает свои внешние переменные и&nbsp;может получить к&nbsp;ним доступ. В&nbsp;некоторых языках это невозможно, или функция должна быть написана специальным образом, чтобы получилось замыкание. Но, как было описано выше, в&nbsp;JavaScript, все функции изначально являются замыканиями (есть только одно исключение, про которое будет рассказано в <a target="_blank" class="closure__link" href="https://learn.javascript.ru/new-function">&nbsp;Синтаксис &laquo;new Function&raquo;</a>).
-				</p>
-				<p class="closure__text text">
-					То&nbsp;есть они автоматически запоминают, где были созданы, с&nbsp;помощью скрытого свойства <code class="blue-code">[[Environment]]</code>, и&nbsp;все они могут получить доступ к&nbsp;внешним переменным.
-				</p>
-				<p class="closure__text text">
-					Когда на&nbsp;собеседовании фронтенд-разработчик получает вопрос: &laquo;что такое замыкание?&raquo;,&nbsp;&mdash; правильным ответом будет определение замыкания и&nbsp;объяснения того факта, что все функции в&nbsp;JavaScript являются замыканиями, и, может быть, несколько слов о&nbsp;технических деталях: свойстве <code class="blue-code">[[Environment]]</code> и&nbsp;о&nbsp;том, как работает лексическое окружение.
-				</p>
-				<hr>
-				<div class="closure__content closure-content">
-					<p class="closure-content__text text">
-						В&nbsp;JavaScript у&nbsp;каждой выполняемой функции, блока кода и&nbsp;скрипта есть связанный с&nbsp;ними <span class="fw-bold">внутренний (скрытый) объект</span>, называемым <span class="fw-bold">лексическим окружением LexicaEnvironment</span>
-					</p>
-					<p class="closure-content__text text">
-						Объект состоит из&nbsp;двух частей:
-					</p>
-					<p class="closure-content__text text">
-						1. <span class="fw-bold">Environment Record</span>&nbsp;&mdash; объект, в&nbsp;котором как свойства хранятся все локальные переменные (а&nbsp;также некоторая другая информация, такая как значение <span class="fw-bold">this</span>)
-					</p>
-					<p class="closure-content__text text">
-						2. Ссылка на&nbsp;внешнее лексическое окружение&nbsp;&mdash; то&nbsp;есть&nbsp;то, которое соответствует коду снаружи (снаружи от&nbsp;текущих фигурных скобок)
-					</p>
-					<h3 class="closure-content__title title">РАЗБОР НА ПРИМЕРЕ:</h3>
-					<ol class="closure-content__list closure-content-list">
-						<li class="closure-content-list__item">
-							<p class="closure-content-list__text text">
-								Все функции &laquo;при рождении&raquo; получают скрытое свойство <code class="blue-code">[[Environment]]</code>, которое ссылается на&nbsp;лексическое окружение места, где они были созданы. Это&nbsp;то, каким образом функции знают, где они были созданы.
-							</p>
-							<img class="closure-content-list__img img" src="img/function/1-closure.jpg" alt="Первый этап действия функции">
-						</li>
-						<li class="closure-content-list__item">
-							<p class="closure-content-list__text text">
-								В&nbsp;момент вызова <code class="blue-code">makeCounter()</code> создаётся лексическое окружение, для хранения его переменных и&nbsp;аргументов. В&nbsp;данном случае лексическое окружение: <code class="blue-code">counter: undefined</code> от&nbsp;вызова <code class="blue-code">let counter = makeCounter();</code>
-							</p>
-							<img class="closure-content-list__img img" src="img/function/2-closure.jpg" alt="Второй этап действия функции">
-						</li>
-						<li class="closure-content-list__item">
-							<p class="closure-content-list__text text">
-								В&nbsp;процессе выполнения <code class="blue-code">makeCounter()</code> создаётся небольшая вложенная функция.
-							</p>
-							<p class="closure-content-list__text text">
-								Неважно <span class="fw-bold">Function Declaration</span> или <span class="fw-bold">Function Expression</span> всё равно получает свойство <code class="blue-code">[[Environment]]</code>, которое ссылается на&nbsp;лексическое окружение, в&nbsp;котором она была создана, в&nbsp;данном случае текущее лексическое окружение <code class="blue-code">makeCounter()</code>.
-							</p>
-							<img class="closure-content-list__img img" src="img/function/3-closure.jpg" alt="Третий этап действия функции">
-							<p class="closure-content-list__text text">
-								<span class="color-red fw-bold">ВАЖНО!!!</span> На&nbsp;этом шаге внутренняя функция была создана, но&nbsp;ещё не&nbsp;вызвана. Код внутри <code class="blue-code">function() { return count++ }</code> не&nbsp;выполняется.
-							</p>
-						</li>
-						<li class="closure-content-list__item">
-							<p class="closure-content-list__text text">
-								Выполнение продолжается, вызов <code class="blue-code">makeCounter()</code> завершается, и&nbsp;результат (небольшая вложенная функция) присваивается глобальной переменной <code class="blue-code">counter()</code>:
-							</p>
-							<img class="closure-content-list__img img" src="img/function/4-closure.jpg" alt="Четвёртый этап действия функции">
-							<p class="closure-content-list__text text">
-								В&nbsp;этой функции есть только одна строчка: <code class="blue-code">return count++</code>, которая будет выполнена, когда мы&nbsp;вызовем функцию.
-							</p>
-						</li>
-						<li class="closure-content-list__item">							
-							<p class="closure-content-list__text text">
-								При вызове <code class="blue-code">counter()</code> для это вызова создаётся новое лексическое окружение. Оно пустое, так как в&nbsp;самом <code class="blue-code">counter()</code> локальных переменных нет. Но&nbsp;<code class="blue-code">[[Environment]]</code> <code class="blue-code">counter</code> используется, как ссылка на&nbsp;внешнее лексическое окружение <code class="blue-code">outer</code>, которое даёт доступ к&nbsp;переменным предшествующего вызова <code class="blue-code">makeCounter</code>, где <code class="blue-code">counter</code> был создан.
-							</p>
-							<img class="closure-content-list__img img" src="img/function/5-closure.jpg" alt="Пятый этап действия функции">
-							<p class="closure-content-list__text text">
-								Теперь, когда вызов ищет переменную <code class="blue-code">count</code>, он&nbsp;сначала ищет в&nbsp;собственном лексическом окружении (пустое), а&nbsp;затем в&nbsp;лексическом окружении предшествующего вызова <code class="blue-code">makeCounter()</code>, где и&nbsp;находит&nbsp;её.
-							</p>
-							<p class="closure-content-list__text text">
-								<span class="color-red fw-bold">ВАЖНО!!!</span> Хотя <code class="blue-code">makeCounter()</code> закончил выполнение некоторое время назад, его лексическое окружение остаётся в&nbsp;памяти, потому что есть вложенная функция&nbsp;с <code class="blue-code">[[Environment]]</code>, который ссылается на&nbsp;него.
-							</p>
-							<p class="closure-content-list__text text">
-								В&nbsp;большинстве случаев, объект лексического окружения существует до&nbsp;того момента, пока есть функция, которая может его использовать. И&nbsp;только тогда, когда таких не&nbsp;остаётся, окружение уничтожается.
-							</p>
-						</li>
-						<li class="closure-content-list__item">
-							<p class="closure-content-list__text text">
-								Вызов <code class="blue-code">counter()</code> не&nbsp;только возвращает значение <code class="blue-code">count</code>, но&nbsp;также увеличивает его. Обратите внимание, что модификация происходит &laquo;на&nbsp;месте&raquo;. Значение <code class="blue-code">count</code> изменяется конкретно в&nbsp;том окружении, где оно было найдено.
-							</p>
-							<img class="closure-content-list__img img" src="img/function/6-closure.jpg" alt="Шестой этап действия функции">
-						</li>
-					</ol>
 				</div>
 			</div>
 		</section>

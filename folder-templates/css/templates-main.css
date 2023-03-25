@@ -1,0 +1,317 @@
+@charset "UTF-8";
+.templates-main__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.templates-main__title {
+  margin: 0 0 20px;
+  font-size: 36px;
+}
+
+.templates-main-menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+}
+
+.templates-main-menu__item {
+  margin: 0 0 20px;
+  padding: 10px;
+  max-width: 450px;
+  min-height: 20px;
+  background-color: rgb(0, 0, 0);
+  font-size: 28px;
+  color: rgb(255, 255, 255);
+  -webkit-transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+.templates-main-menu__item:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.templates-main-menu__item:active {
+  background-color: rgb(255, 255, 255);
+  outline: none;
+  color: rgb(0, 0, 0);
+}
+
+.templates-main-menu__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.to-do {
+  background-color: rgb(55, 65, 81);
+  color: rgb(238, 238, 238);
+}
+
+.to-do__container {
+  max-width: 1000px;
+}
+
+.to-do__title {
+  margin: 0 0 30px;
+  font-size: 36px;
+}
+
+.to-do-block__title {
+  margin: 0 0 20px;
+}
+
+.to-do-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 0 30px;
+}
+
+.to-do-form__input {
+  padding: 10px 20px;
+  background-color: rgb(31, 41, 55);
+  width: 80%;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.to-do-form__input::-webkit-input-placeholder {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.to-do-form__input::-moz-placeholder {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.to-do-form__input:-ms-input-placeholder {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.to-do-form__input::-ms-input-placeholder {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.to-do-form__input::placeholder {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.to-do-form-block {
+  width: 20%;
+}
+
+.to-do-form-block__btn {
+  padding: 10px 20px;
+  background: linear-gradient(45deg, rgb(255, 192, 203), rgb(236, 72, 153), rgb(139, 92, 246));
+  width: 100%;
+  font-weight: 600;
+  font-size: 16px;
+  color: rgb(238, 238, 238);
+}
+
+.todo-list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 20px;
+  background-color: rgb(31, 41, 55);
+  width: 100%;
+}
+
+.todo-list__item:not(:last-child) {
+  margin: 0 0 5px;
+}
+
+.todo-list__item--green {
+  background-color: rgb(223, 240, 216);
+  color: rgb(60, 118, 61);
+}
+
+.todo-list-block-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 25%;
+}
+
+.todo-list__item--green .todo-list-block-btns__btn {
+  color: rgb(255, 255, 255);
+}
+
+.todo-list-block-btns__btn {
+  padding: 10px 20px;
+  width: 50%;
+}
+
+.todo-list-block-btns-ok {
+  background: linear-gradient(45deg, rgb(60, 179, 113), rgb(0, 100, 0));
+}
+
+.todo-list-block-btns-del {
+  background: linear-gradient(45deg, rgb(205, 92, 92), rgb(139, 0, 0));
+}
+
+/*todo-code*/
+.todo-code-accordion {
+  color: rgb(192, 192, 192);
+}
+
+.todo-code-accordion i {
+  color: rgb(200, 200, 0);
+}
+
+.counter-reset__container {
+  padding: 50px;
+}
+
+.counter-reset__block {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+  background-color: #333;
+  width: 100%;
+  min-height: 400px;
+  color: #eee;
+}
+
+.counter {
+  counter-reset: ms var(--number);
+  -webkit-animation: count 60s steps(100) infinite;
+          animation: count 60s steps(100) infinite;
+  -webkit-animation-iteration-count: 3;
+          animation-iteration-count: 3;
+  /*количество циклов для анимации*/
+}
+
+.counter::after {
+  content: counter(ms);
+  font-size: 10vw;
+}
+
+@property --number {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+/* <integer> - тип хранения данных в CSS, является частным случаем number, который представляет целые числа: как положительное, так и отрицательное. */
+/* inherits: false; - сброс, чтобы не было никакого наследования*/
+/* initial-value: 0; - с какого числа производится отсчёт*/
+@-webkit-keyframes count {
+  0% {
+    --number: 60;
+  }
+}
+@keyframes count {
+  0% {
+    --number: 60;
+  }
+}
+.counter-reset__code {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+/*HERO-FORM*/
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 20rem;
+  width: 100%;
+}
+
+.form__label {
+  position: relative;
+  padding-top: 1rem;
+}
+
+.js-validate-error-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 14px;
+}
+
+.form-input {
+  width: 100%;
+}
+
+.form-textarea {
+  width: 100%;
+}
+
+.form-input-file {
+  width: 50%;
+}
+
+.form-btn {
+  padding: 5px 0;
+  width: 50%;
+  background-color: rgb(240, 240, 240);
+  border: 1px solid #333;
+  -webkit-box-shadow: 2px 2px 2px 0px rgba(34, 60, 80, 0.2);
+          box-shadow: 2px 2px 2px 0px rgba(34, 60, 80, 0.2);
+}
+
+.form-btn:hover {
+  background-color: rgb(220, 220, 220);
+}
+
+.form-btn:active {
+  background-color: rgb(240, 240, 240);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}

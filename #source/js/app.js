@@ -4,24 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".hero-form");
   const inputs = document.querySelectorAll(".index-input");
   const inputName = document.querySelector("#firstname");
-  const inputDate = document.querySelector("#date");
+  const inputBirthDate = document.querySelector("#date");
   const name = document.createElement("p");
   const age = document.createElement("p");
   const btnForm = document.querySelector(".index-btn");
 
-  let me = {
-    birthDate: { year: 1989, month: 3, day: 18 },
-    getAge: function () {
-      let now = new Date();
-      let born = new Date(
-        this.birthDate.year,
-        this.birthDate.month + 1,
-        this.birthDate.day
-      );
-      let diffInMilliseconds = now.getTime() - born.getTime();
-      return Math.floor(diffInMilliseconds / 1000 / 60 / 60 / 24 / 365.25);
-    }
-  };
+  
+  
 
   /*вывод результата*/
   btnForm.disabled = true;
@@ -36,9 +25,17 @@ document.addEventListener("DOMContentLoaded", () => {
   container.append(age);
 
   form.addEventListener("submit", (e) => {
+
     e.preventDefault();
+
+    let birthDate = new Date(inputBirthDate.value); // дата рождения
+    let nowDate = new Date(); // текущая дата
+    let ageMe = nowDate.getFullYear() - birthDate.getFullYear(); // вычисление разницы в годах
+    if (nowDate.getMonth() < birthDate.getMonth() || (nowDate.getMonth() === birthDate.getMonth() && nowDate.getDate() < birthDate.getDate())) {
+      ageMe--; // корректировка возраста, если дата рождения еще не наступила в текущем году
+    }
     name.textContent = "Имя: " + inputName.value;
-    age.textContent = "Возраст: " + me.getAge();
+    age.textContent = "Возраст: " + ageMe;
 
     inputs.forEach((input) => {
     	input.value = "";

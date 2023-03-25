@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Exo+2&family=Fira+Sans&display=swap");
 *,
 *::before,
@@ -91,6 +92,10 @@ body.blocking {
 .img {
   display: block;
   width: 100%;
+}
+
+.bg-red {
+  background-color: rgb(255, 0, 0);
 }
 
 .color-yellow {
@@ -208,7 +213,12 @@ body.blocking {
 
 /*FOOTER*/
 .footer {
-  background-color: rgb(0, 0, 0);
+  position: relative;
+  background-image: url("https://images.unsplash.com/photo-1674594702477-414f96484a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
 }
 
 .footer__container {
@@ -240,51 +250,56 @@ body.blocking {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background: transparent;
+  border-radius: 0.3em;
+  /*backdrop-filter: blur(1em); /*делает размытым фон*/
   width: 30%;
 }
 
 .footer-form__input {
-  margin-bottom: 5px;
   padding: 20px;
   width: 100%;
-  background-color: rgb(192, 192, 192);
   -webkit-transition: background 0.3s ease-in-out, color 0.3s ease-in-out, outline 0.3s ease-in-out;
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out, outline 0.3s ease-in-out;
-  border-radius: 3px;
   font-size: 18px;
+  border-bottom: 1px solid rgb(220, 220, 220);
 }
 
 .footer-form__textarea {
-  margin-bottom: 5px;
   padding: 20px;
   width: 100%;
-  background-color: rgb(192, 192, 192);
-  border-radius: 3px;
+  -webkit-transition: background 0.3s ease-in-out, color 0.3s ease-in-out, outline 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, outline 0.3s ease-in-out;
   font-size: 18px;
+  resize: none;
 }
 
 .footer-form__input::-webkit-input-placeholder, .footer-form__textarea::-webkit-input-placeholder {
   -webkit-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
   font-size: 18px;
+  color: rgb(220, 220, 220);
 }
 
 .footer-form__input::-moz-placeholder, .footer-form__textarea::-moz-placeholder {
   -moz-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
   font-size: 18px;
+  color: rgb(220, 220, 220);
 }
 
 .footer-form__input:-ms-input-placeholder, .footer-form__textarea:-ms-input-placeholder {
   -ms-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
   font-size: 18px;
+  color: rgb(220, 220, 220);
 }
 
 .footer-form__input::-ms-input-placeholder, .footer-form__textarea::-ms-input-placeholder {
   -ms-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
   font-size: 18px;
+  color: rgb(220, 220, 220);
 }
 
 .footer-form__input::placeholder,
@@ -292,16 +307,17 @@ body.blocking {
   -webkit-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
   font-size: 18px;
+  color: rgb(220, 220, 220);
 }
 
 .footer-form__btn {
   padding: 15px;
   width: 100%;
-  background-color: rgb(192, 192, 192);
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-size: 20px;
   -webkit-transition: background 0.3s ease-in-out, color 0.3s ease-in-out, outline 0.3s ease-in-out;
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out, outline 0.3s ease-in-out;
-  border-radius: 3px;
 }
 
 .footer-form__input::-webkit-input-placeholder, .footer-form__textarea::-webkit-input-placeholder {
@@ -333,7 +349,7 @@ body.blocking {
 .footer-form__input:focus:not(:active),
 .footer-form__textarea:focus:not(:active),
 .footer-form__btn:focus:not(:hover):not(:active) {
-  outline: 2px solid rgb(255, 255, 255);
+  outline: 1px solid rgb(255, 255, 255);
 }
 
 .footer-form__input:focus::-webkit-input-placeholder, .footer-form__textarea:focus::-webkit-input-placeholder {
@@ -386,6 +402,6 @@ body.blocking {
 }
 
 .footer-form__btn:active {
-  background-color: rgb(50, 50, 50);
+  background: transparent;
   color: rgb(255, 255, 255);
 }

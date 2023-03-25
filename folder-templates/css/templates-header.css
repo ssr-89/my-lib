@@ -1,0 +1,329 @@
+:root {
+  --index: calc(1vw + 1vh);
+}
+
+.header-primer__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 150px;
+  padding: 20px 50px;
+  background-color: powderblue;
+}
+
+.header-primer__logo {
+  margin-right: auto;
+  width: 2em;
+}
+
+.header-primer__logo svg {
+  width: 100%;
+}
+
+.header-primer-menu {
+  margin-right: calc(var(--index) * 10);
+}
+
+.header-primer-menu,
+.header-primer-menu__list,
+.header-primer-menu__item,
+.header-primer-menu__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-primer-menu__list {
+  -webkit-column-gap: 2em;
+     -moz-column-gap: 2em;
+          column-gap: 2em;
+}
+
+.block-login {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.block-login.active,
+.signin-form.active,
+.signup-form.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.block-login__form {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  border-radius: 2px;
+  width: 20vw;
+  background-color: rgb(255, 255, 255);
+}
+
+.block-login-close-btn {
+  position: absolute;
+  top: 25%;
+  right: 35%;
+  font-size: 60px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}
+
+.signin-form__login,
+.signin-form__pass {
+  padding: 1em 10px;
+  border-bottom: 1px solid rgb(192, 192, 192);
+  border-width: 80%;
+  -webkit-transition: border 0.3s ease-in-out;
+  transition: border 0.3s ease-in-out;
+}
+
+.signin-form__login::-webkit-input-placeholder, .signin-form__pass::-webkit-input-placeholder {
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.signin-form__login::-moz-placeholder, .signin-form__pass::-moz-placeholder {
+  -moz-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.signin-form__login:-ms-input-placeholder, .signin-form__pass:-ms-input-placeholder {
+  -ms-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.signin-form__login::-ms-input-placeholder, .signin-form__pass::-ms-input-placeholder {
+  -ms-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.signin-form__login::placeholder,
+.signin-form__pass::placeholder {
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.signin-form__login:focus,
+.signin-form__pass:focus {
+  border-bottom: 1px solid rgb(150, 150, 150);
+}
+
+.signin-form__login:focus::-webkit-input-placeholder, .signin-form__pass:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.signin-form__login:focus::-moz-placeholder, .signin-form__pass:focus::-moz-placeholder {
+  color: transparent;
+}
+
+.signin-form__login:focus:-ms-input-placeholder, .signin-form__pass:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.signin-form__login:focus::-ms-input-placeholder, .signin-form__pass:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+.signin-form__login:focus::placeholder,
+.signin-form__pass:focus::placeholder {
+  color: transparent;
+}
+
+.signin-form__btn {
+  padding: 1em;
+  background-color: transparent;
+}
+
+.signup-form__login,
+.signup-form__email,
+.signup-form__pass {
+  padding: 1em 10px;
+  border-bottom: 1px solid rgb(192, 192, 192);
+  border-width: 80%;
+  -webkit-transition: border 0.3s ease-in-out;
+  transition: border 0.3s ease-in-out;
+}
+
+.signup-form__login::-webkit-input-placeholder, .signup-form__email::-webkit-input-placeholder, .signup-form__pass::-webkit-input-placeholder {
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.signup-form__login::-moz-placeholder, .signup-form__email::-moz-placeholder, .signup-form__pass::-moz-placeholder {
+  -moz-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.signup-form__login:-ms-input-placeholder, .signup-form__email:-ms-input-placeholder, .signup-form__pass:-ms-input-placeholder {
+  -ms-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.signup-form__login::-ms-input-placeholder, .signup-form__email::-ms-input-placeholder, .signup-form__pass::-ms-input-placeholder {
+  -ms-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.signup-form__login::placeholder,
+.signup-form__email::placeholder,
+.signup-form__pass::placeholder {
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.signup-form__login:focus,
+.signup-form__email:focus,
+.signup-form__pass:focus {
+  border-bottom: 1px solid rgb(150, 150, 150);
+}
+
+.signup-form__login:focus::-webkit-input-placeholder, .signup-form__email:focus::-webkit-input-placeholder, .signup-form__pass:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.signup-form__login:focus::-moz-placeholder, .signup-form__email:focus::-moz-placeholder, .signup-form__pass:focus::-moz-placeholder {
+  color: transparent;
+}
+
+.signup-form__login:focus:-ms-input-placeholder, .signup-form__email:focus:-ms-input-placeholder, .signup-form__pass:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.signup-form__login:focus::-ms-input-placeholder, .signup-form__email:focus::-ms-input-placeholder, .signup-form__pass:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+.signup-form__login:focus::placeholder,
+.signup-form__email:focus::placeholder,
+.signup-form__pass:focus::placeholder {
+  color: transparent;
+}
+
+.signup-form__btn {
+  padding: 20px;
+  background-color: transparent;
+}
+
+.block-login-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: calc(var(--index) * 2);
+}
+
+.block-login-btns__btn {
+  padding: 10px 5px;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.block-login-btns__btn--in {
+  border-right: none;
+}
+
+.header-primer-search__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-primer-search__input {
+  margin-right: 1em;
+  padding: 5px 10px;
+  border-bottom: 1px solid rgb(150, 150, 150);
+  -webkit-transition: border 0.3s ease-in-out;
+  transition: border 0.3s ease-in-out;
+}
+
+.header-primer-search__input::-webkit-input-placeholder {
+  color: rgb(150, 150, 150);
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.header-primer-search__input::-moz-placeholder {
+  color: rgb(150, 150, 150);
+  -moz-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.header-primer-search__input:-ms-input-placeholder {
+  color: rgb(150, 150, 150);
+  -ms-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.header-primer-search__input::-ms-input-placeholder {
+  color: rgb(150, 150, 150);
+  -ms-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.header-primer-search__input::placeholder {
+  color: rgb(150, 150, 150);
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.header-primer-search__input:focus {
+  border-bottom: 1px solid rgb(100, 100, 100);
+}
+
+.header-primer-search__input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.header-primer-search__input:focus::-moz-placeholder {
+  color: transparent;
+}
+
+.header-primer-search__input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.header-primer-search__input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+.header-primer-search__input:focus::placeholder {
+  color: transparent;
+}
+
+.header-primer-search__btn {
+  width: 2em;
+}
+
+.header-primer-search__btn svg {
+  width: 100%;
+}

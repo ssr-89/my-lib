@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FlexBox</title>
+	<link rel="shortcut icon" href="img/favicon-flexbox.png" type="image/x-icon">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/accordion.css">
+	<link rel="stylesheet" href="css/templates-main.css">
+	<link rel="stylesheet" href="../css/section-menu.css">
+	<link rel="stylesheet" href="css/templates-flex.css">
+	<script defer src="../js/script.js"></script>
+	<script defer src="../js/accordion.js"></script>
+	<script defer src="js/templates-main.js"></script>
+</head>
+<body>
+	<main class="main">
+		<section class="hero">
+			<div class="hero__container">
+				<h1 class="hero__title">Пример адаптивного FlexBox</h1>
+				<div class="block">
+					<div class="block-child">
+						<h2 class="block-child-title">HTML</h2>
+						<pre class="block-child-pre">
+&lt;div class="parent"&gt;
+	&lt;div class="child"&gt;&lt;/div&gt;
+	&lt;div class="child"&gt;&lt;/div&gt;
+	&lt;div class="child"&gt;&lt;/div&gt;
+	&lt;div class="child"&gt;&lt;/div&gt;
+	&lt;div class="child"&gt;&lt;/div&gt;
+	&lt;div class="child"&gt;&lt;/div&gt;
+	&lt;div class="child"&gt;&lt;/div&gt;
+	&lt;div class="child"&gt;&lt;/div&gt;
+	&lt;div class="child"&gt;&lt;/div&gt;
+	&lt;div class="child"&gt;&lt;/div&gt;
+	&lt;div class="child"&gt;&lt;/div&gt;
+	&lt;div class="child"&gt;&lt;/div&gt;
+	&lt;div class="child"&gt;&lt;/div&gt;
+	&lt;div class="child"&gt;&lt;/div&gt;
+	&lt;div class="child"&gt;&lt;/div&gt;
+	&lt;div class="child"&gt;&lt;/div&gt;
+&lt;/div&gt;
+						</pre>
+					</div>
+					<div class="block-child">
+						<h2 class="block-child-title">CSS</h2>
+						<pre class="block-child-pre">
+.parent {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 20px;
+	margin: 0 auto;
+	max-width: 1220px;
+	min-height: 290px;
+	background-color: rgba(31, 41, 55, 1.0);
+}
+.child {
+	background-color: rgba(176, 224, 230, 1);
+	flex: 1 1 290px;
+	min-height: 290px;
+}
+						</pre>
+					</div>
+				</div>
+				<div class="parent">
+					<div class="child"></div>
+					<div class="child"></div>
+					<div class="child"></div>
+					<div class="child"></div>
+					<div class="child"></div>
+					<div class="child"></div>
+					<div class="child"></div>
+					<div class="child"></div>
+					<div class="child"></div>
+					<div class="child"></div>
+					<div class="child"></div>
+					<div class="child"></div>
+					<div class="child"></div>
+					<div class="child"></div>
+					<div class="child"></div>
+					<div class="child"></div>
+				</div>
+			</div>
+		</section>
+		<section class="flex-main">
+			<div class="flex-main__container">
+				<h2 class="flex-main__title title">FlexBox</h2>
+				<ul class="flex-main__list flex-list">
+					<li class="flex-list__item">
+						<h3 class="flex-list__title title">Flex-wrap прописывается к&nbsp;flex-контейнеру</h3>
+						<p class="flex-list__text text">
+							a. <span class="fw-bold">flex-wrap: wrap;</span> &mdash;&nbsp;flex-элементы будут перенесены на&nbsp;несколько строк сверху вниз.
+						</p>
+						<p class="flex-list__text text">
+							b. <span class="fw-bold">flex-wrap: wrap-reverse;</span> flex-элементы будут перенесены на&nbsp;несколько строк снизу вверх.
+						</p>
+					</li>
+					<li class="flex-list__item">
+						<h3 class="flex-list__title title">flex-flow прописывается к&nbsp;flex-контейнеру</h3>
+						<p class="flex-list__text text">
+							Это сокращение для <span class="fw-bold">flex-direction</span> и&nbsp;<span class="fw-bold">flex-wrap</span> свойств, которые вместе определяют основные и&nbsp;поперечные оси flex контейнера.
+						</p>
+						<p class="flex-list__text text">
+							Значением по&nbsp;умолчанию является row nowrap.
+						</p>
+						<p class="flex-list__text text">
+							<span class="fw-bold">flex-flow: column wrap;</span> &mdash;&nbsp;пример
+						</p>
+					</li>
+					<li class="flex-list__item">
+						<h3 class="flex-list__title title">justify-content: прописывается к&nbsp;flex-контейнеру</h3>
+						<p class="flex-list__text text">
+							Это свойство определяет выравнивание вдоль главной оси. Оно помогает распределить дополнительный остаток свободного пространства, когда-либо все flex элементы в&nbsp;строке негибкие, либо гибкие, но&nbsp;достигли своего максимального размера. Это также обеспечивает некоторый контроль над выравниванием элементов, когда они переполняют линию.
+						</p>
+						<ul class="flex-list__list">
+							<li class="flex-list__item">
+								<p class="flex-list__text text">
+									<span class="fw-bold">flex-start</span> (по&nbsp;умолчанию): элементы сдвинуты в&nbsp;начало <span class="fw-bold">flex-direction</span> направления.
+								</p>
+							</li>
+							<li class="flex-list__item">
+								<p class="flex-list__text text">
+									<span class="fw-bold">flex-end:</span> элементы сдвинуты ближе к&nbsp;концу flex направления.
+								</p>
+							</li>
+							<li class="flex-list__item">
+								<p class="flex-list__text text">
+									<span class="fw-bold">start:</span> элементы сдвинуты к&nbsp;началу writing-mode направления.
+								</p>
+							</li>
+							<li class="flex-list__item">
+								<p class="flex-list__text text">
+									<span class="fw-bold">end:</span> элементы сдвинуты в&nbsp;конце writing-mode направления.
+								</p>
+							</li>
+							<li class="flex-list__item">
+								<p class="flex-list__text text">
+									<span class="fw-bold">left:</span> элементы сдвинуты по&nbsp;направлению к&nbsp;левому краю контейнера, если это не&nbsp;имеет смысла <span class="fw-bold">flex-direction</fspan>, тогда он&nbsp;ведет себя как <span class="fw-bold">start</span>.
+								</p>
+							</li>
+							<li class="flex-list__item">
+								<p class="flex-list__text text">
+									<span class="fw-bold">right:</span> элементы сдвинуты по&nbsp;направлению к&nbsp;правому краю контейнера, если это не&nbsp;имеет смысла <span class="fw-bold">flex-direction</span>, тогда он&nbsp;ведет себя как <span class="fw-bold">start</span>.
+								</p>
+							</li>
+							<li class="flex-list__item">
+								<p class="flex-list__text text">
+									<span class="fw-bold">center:</span> элементы центрированы вдоль линии.
+								</p>
+							</li>
+							<li class="flex-list__item">
+								<p class="flex-list__text text">
+									<span class="fw-bold">space-between:</span> элементы равномерно распределены по&nbsp;линии; первый элемент находится в&nbsp;начале строки, последний элемент в&nbsp;конце строки.
+								</p>
+							</li>
+							<li class="flex-list__item">
+								<p class="flex-list__text text">
+									<span class="fw-bold">space-around:</span> элементы равномерно распределены по&nbsp;линии с&nbsp;одинаковым пространством вокруг них.
+								</p>
+								<p class="flex-list__text text">
+									Обратите внимание, что визуально пространства не&nbsp;равны, так как все элементы имеют одинаковое пространство с&nbsp;обеих сторон.
+								</p>
+								<p class="flex-list__text text">
+									Первый элемент будет иметь одну единицу пространства напротив края контейнера, но&nbsp;две единицы пространства между следующим элементом, потому что у&nbsp;следующего элемента есть свой собственный интервал, который применяется.
+								</p>
+							</li>
+							<li class="flex-list__item">
+								<p class="flex-list__text text">
+									<span class="fw-bold">space-evenly:</span> элементы распределяются таким образом, чтобы расстояние между любыми двумя элементами (и&nbsp;расстояние до&nbsp;краев) было одинаковым.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li class="flex-list__item">
+						<h3 class="flex-list__title title">align-items: прописывается к&nbsp;flex-контейнеру</h3>
+						<p class="flex-list__text text">
+							Это свойство определяет поведение по&nbsp;умолчанию того, как flex элементы располагаются вдоль поперечной оси на&nbsp;текущей линии.
+						</p>
+						<p class="flex-list__text text">
+							Думайте об&nbsp;этом как о&nbsp;<span class="fw-bold">justify-content</span> версии для поперечной оси (перпендикулярной главной оси).
+						</p>
+						<ul class="flex-list__list">
+							<li class="flex-list__item">
+								<p class="flex-list__text text">
+									<span class="fw-bold">stretch</span> (по&nbsp;умолчанию): растягивать, чтобы заполнить контейнер (все еще соблюдаются <span class="fw-bold">min-width&nbsp;/ max-width</span>)
+								</p>
+							</li>
+							<li class="flex-list__item">
+								<p class="flex-list__text text">
+									<span class="fw-bold">flex-start</span>&nbsp;<span class="fw-bold">/ start&nbsp;/ self-start:</span> элементы размещаются в&nbsp;начале поперечной оси.
+								</p>
+								<p class="flex-list__text text">
+									Разница между ними невелика и&nbsp;заключается в&nbsp;соблюдении <span class="fw-bold">flex-direction</span> правил или writing-mode правил.
+								</p>
+							</li>
+							<li class="flex-list__item">
+								<p class="flex-list__text text">
+									<span class="fw-bold">flex-end&nbsp;/ end&nbsp;/ self-end:</span> элементы располагаются в&nbsp;конце поперечной оси.
+								</p>
+								<p class="flex-list__text text">
+									Разница опять-таки тонкая и&nbsp;заключается в&nbsp;соблюдении <span class="fw-bold">flex-direction</span> или writing-mode правил.
+								</p>
+							</li>
+							<li class="flex-list__item">
+								<p class="flex-list__text text">
+									<span class="fw-bold">center:</span> элементы центрированы по&nbsp;поперечной оси
+								</p>
+							</li>
+							<li class="flex-list__item">
+								<p class="flex-list__text text">
+									<span class="fw-bold">baseline:</span> элементы выровнены, по&nbsp;их&nbsp;базовой линии
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li class="flex-list__item">
+						<h3 class="flex-list__title title">align-content (прописывается к&nbsp;flex-контейнеру)</h3>
+						<p class="flex-list__text text warning fw-bold">
+							ВАЖНО!!! При данном свойстве
+						</p>
+						<ul class="flex-list__list warning">
+							<li class="flex-list__item">
+								<p class="flex-list__text text fw-bold">
+									у&nbsp;flex-элемента не&nbsp;должна быть зафиксирована высота (height);
+								</p>
+							</li>
+							<li class="flex-list__item">
+								<p class="flex-list__text text fw-bold">
+									а&nbsp;flex-контейнеру применяется свойство flex-wrap: wrap;
+								</p>
+							</li>
+							<li class="flex-list__item">
+								<p class="flex-list__text text fw-bold">
+									отсутствие внешних отступов (margin).
+								</p>
+							</li>
+						</ul>
+						<p class="flex-list__text text">
+							Это свойство выравнивает линии в&nbsp;пределах flex контейнера, когда есть дополнительное пространство на&nbsp;поперечной оси, подобно тому, как <span class="fw-bold">justify-content</span> выравнивает отдельные элементы в&nbsp;пределах главной оси.
+						</p>
+						<p class="flex-list__text text warning">
+							<span class="fw-bold">Примечание:</span> это свойство не&nbsp;действует, когда есть только одна строка flex элементов.
+						</p>
+						<ul class="flex-list__list">
+							<li class="flex-list__item">
+								<p class="flex-list__text text">
+									<span class="fw-bold">flex-start&nbsp;/ start:</span> элементы, сдвинуты в&nbsp;начало контейнера. 
+								</p>
+								<p class="flex-list__text text">
+									Более поддерживаемый <span class="fw-bold">flex-start</span> использует, <span class="fw-bold">flex-direction</span> в&nbsp;то&nbsp;время как <span class="fw-bold">start</span> использует writing-mode направление.
+								</p>
+							</li>
+							<li class="flex-list__item">
+								<p class="flex-list__text text">
+									<span class="fw-bold">flex-end&nbsp;/ end:</span> элементы, сдвинуты в&nbsp;конец контейнера.
+								</p>
+								<p class="flex-list__text text">
+									Более поддерживаемый <span class="fw-bold">flex-end</span> использует <span class="fw-bold">flex-direction</span> в&nbsp;то&nbsp;время как <span class="fw-bold">end</span> использует writing-mode направление.
+								</p>
+							</li>
+							<li class="flex-list__item">
+								<p class="flex-list__text text">
+									<span class="fw-bold">center:</span> элементы выровнены по&nbsp;центру в&nbsp;контейнере
+								</p>
+							</li>
+							<li class="flex-list__item">
+								<p class="flex-list__text text">
+									<span class="fw-bold">space-between:</span> элементы равномерно распределены; первая строка находится в&nbsp;начале контейнера, а&nbsp;последняя&nbsp;&mdash; в&nbsp;конце.
+								</p>
+							</li>
+							<li class="flex-list__item">
+								<p class="flex-list__text text">
+									<span class="fw-bold">space-around:</span> элементы равномерно распределены с&nbsp;равным пространством вокруг каждой строки.
+								</p>
+							</li>
+							<li class="flex-list__item">
+								<p class="flex-list__text text">
+									<span class="fw-bold">space-evenly:</span> элементы распределены равномерно, вокруг них одинаковое пространство.
+								</p>
+							</li>
+							<li class="flex-list__item">
+								<p class="flex-list__text text">
+									<span class="fw-bold">stretch</span> (по&nbsp;умолчанию): линии растягиваются, чтобы занять оставшееся пространство.
+								</p>
+							</li>
+						</ul>
+					</li>
+					<li class="flex-list__item">
+						<h3 class="flex-list__title title">align-self&nbsp;&mdash; (прописывается к&nbsp;элементу flexbox)</h3>
+						<p class="flex-list__text text">
+							align-self: auto&nbsp;| flex-start&nbsp;| flex-end&nbsp;| center&nbsp;| baseline&nbsp;| stretch;
+						</p>
+					</li>
+				</ul>
+				<div class="flex-main__links flex-links">
+					<a target="_blank" class="flex-links__link" href="https://medium.com/@stasonmars/%D0%B2%D0%B5%CC%88%D1%80%D1%81%D1%82%D0%BA%D0%B0-%D0%BD%D0%B0-flexbox-%D0%B2-css-%D0%BF%D0%BE%D0%BB%D0%BD%D1%8B%D0%B8%CC%86-%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%B8%D0%BA-e26662cf87e0">
+						Всё о&nbsp;flexbox
+					</a>
+					<a target="_blank" class="flex-links__link" href="https://medium.com/@stasonmars/%D0%BC%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B8%CC%86-inline-flex-%D0%B8-%D1%87%D1%82%D0%BE-%D0%BE%D0%BD-%D0%B4%D0%B5%D0%BB%D0%B0%D0%B5%D1%82-35997951ff03">
+						Мистический inline-flex и&nbsp;что он&nbsp;делает
+					</a>
+					<a target="_blank" class="flex-links__link" href="https://medium.com/@stasonmars/%D0%BF%D0%BB%D0%B8%D1%82%D0%BE%D1%87%D0%BD%D0%B0%D1%8F-%D1%80%D0%B0%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0-%D0%BD%D0%B0-css-flexbox-%D1%81-%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E-order-%D0%B8-nth-child-6cc2a76c9aba">
+						Плиточная раскладка на&nbsp;CSS Flexbox с&nbsp;помощью order и :nth-child()
+					</a>
+					<a target="_blank" class="flex-links__link" href="https://medium.com/@stasonmars/%D0%B2%D0%B5%D1%80%D1%82%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5-%D0%B8-%D0%B3%D0%BE%D1%80%D0%B8%D0%B7%D0%BE%D0%BD%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5-%D1%86%D0%B5%D0%BD%D1%82%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B2%D1%81%D0%B5%D0%B3%D0%BE-%D0%B8-%D0%B2%D1%81%D1%8F-%D0%B2-css-flexbox-fafd369fc71f">
+						Вертикальное и&nbsp;горизонтальное центрирование всего и&nbsp;вся в&nbsp;CSS Flexbox
+					</a>
+					<a target="_blank" class="flex-links__link" href="https://medium.com/@stasonmars/%D0%BA%D0%B0%D0%BA-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82-flex-grow-%D0%B2-css-%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%BE%D0%B5-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-557d406be844">
+						Как работает Flex-grow в&nbsp;CSS. Подробное руководство
+					</a>
+					<a target="_blank" class="flex-links__link" href="https://medium.com/@stasonmars/%D0%BA%D0%B0%D0%BA-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82-flex-shrink-%D0%B2-css-%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%BE%D0%B5-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-c41e40767194">
+						Как работает flex-shrink в&nbsp;CSS. Подробное руководство
+					</a>
+					<a target="_blank" class="flex-links__link" href="https://medium.com/@stasonmars/%D1%80%D0%B0%D0%B7%D0%BD%D0%B8%D1%86%D0%B0-%D0%BC%D0%B5%D0%B6%D0%B4%D1%83-width-%D0%B8-flex-basis-f34e658ce6a2">
+						Разница между width и&nbsp;flex-basis
+					</a>
+					<a target="_blank" class="flex-links__link" href="https://medium.com/@stasonmars/%D0%B2%D1%81%D0%B5%CC%88-%D0%BE-%D0%BC%D0%B0%D0%B3%D0%B8%D0%B8-%D0%BE%D1%82%D1%81%D1%82%D1%83%D0%BF%D0%BE%D0%B2-%D0%B2-css-flexbox-afaf6067a7f3">
+						Всё о&nbsp;магии отступов в&nbsp;CSS Flexbox
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+</body>
+</html>
