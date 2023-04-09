@@ -34,8 +34,8 @@
 .child {
   background-color: rgb(176, 224, 230);
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 290px;
-          flex: 1 1 290px;
+      -ms-flex: 1 1 23.77%;
+          flex: 1 1 23.77%;
   min-height: 290px;
   background-size: cover;
   background-position: center;

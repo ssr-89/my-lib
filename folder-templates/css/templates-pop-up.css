@@ -8,10 +8,26 @@
 body {
   background-color: rgb(51, 51, 51);
   color: rgb(255, 255, 255);
+  overflow-x: hidden;
 }
 
 body.lock {
   overflow: hidden;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  height: 100%;
+}
+
+.footer {
+  margin-top: auto;
 }
 
 #popup-link {
@@ -19,6 +35,7 @@ body.lock {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 9;
   min-height: 30px;
   background-color: rgb(51, 51, 51);
 }
@@ -87,7 +104,7 @@ body.lock {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 3;
+  z-index: 10;
   font-family: Arial, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   opacity: 0;
   visibility: hidden;
@@ -173,24 +190,46 @@ body.lock {
 .code-pop-up-btn {
   padding: 10px 20px;
   font-size: 20px;
+  background-color: rgba(122, 149, 107, 0.5);
   color: rgb(255, 255, 255);
+  -webkit-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
 }
 
-.code-pop-up-btn.open-pop-up-btn {
+.code-pop-up-btn.open-tabs-btn {
   background-color: rgb(122, 149, 107);
 }
 
-.code-pop-up-item {
-  display: none;
+.code-pop-up-items {
+  position: relative;
 }
 
-.code-pop-up-item.open-pop-up-item {
-  display: block;
+.code-pop-up-item {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, height 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, height 0.3s ease-in-out;
+  height: 0;
+}
+
+.code-pop-up-item.open-tabs-item {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
 }
 
 .code-pop-up-item__pre {
   margin: 0;
-  padding: 20px 20px 0;
+  padding: 0;
   background-color: rgb(122, 149, 107);
+  height: 0;
+  font-size: 0;
+  -webkit-transition: height 0.3s ease-in-out, padding 0.3s ease-in-out;
+  transition: height 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+.code-pop-up-item.open-tabs-item .code-pop-up-item__pre {
+  padding: 20px 20px 0;
+  height: auto;
   font-size: 16px;
 }

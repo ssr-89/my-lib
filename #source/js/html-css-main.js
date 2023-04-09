@@ -1,7 +1,7 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", function () {
   function slidesPlugin(activeSlide = 0) {
-    const slides = document.querySelectorAll(".slide");
+    const slides = document.querySelectorAll(".gallery-slider__item");
 
     slides[activeSlide].classList.add("active");
 

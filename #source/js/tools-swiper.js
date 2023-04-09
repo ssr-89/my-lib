@@ -36,24 +36,4 @@ document.addEventListener("DOMContentLoaded", function(){
       draggable: true,
     },
 	});
-
-  /*tabs*/
-  const tabsBtns = document.querySelectorAll('.swiper-tabs-btn');
-
-tabsBtns.forEach(function(tabsBtn) {
-  tabsBtn.addEventListener('click', (e)=>{
-    for (let i = 0; i < tabsBtns.length; i++) {
-      tabsBtns[i].classList.remove('open-tabs-btn');
-    };
-    const path = e.currentTarget.dataset.path;
-    e.currentTarget.classList.add('open-tabs-btn');
-    const tabsItems = document.querySelectorAll('.swiper-tabs-item')
-    tabsItems.forEach((tabsItem) => {
-      tabsItem.classList.remove('open-tabs-item');
-    });
-    const tabsItemOpen = document.querySelector(`[data-target="${path}"`);
-    tabsItemOpen.classList.add("open-tabs-item");
-  });
-});
-
 });

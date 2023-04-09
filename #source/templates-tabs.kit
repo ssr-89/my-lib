@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tabs (табы)</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/accordion.css">
+	<link rel="stylesheet" href="css/templates-main.css">
+	<link rel="stylesheet" href="css/templates-tabs.css">
+	<script defer src="../js/script.js"></script>
+	<script defer src="../js/accordion.js"></script>
+  <!-- <script defer src="../js/tabs.js"></script> -->
+	<script defer src="js/templates-main.js"></script>
+	<script defer src="js/templates-tabs.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<main class="main">
+			<section id="tabs" class="tabs">
+				<div class="tabs__container">
+					<h1 class="tabs__title title">Tabs (табы)</h1>
+					<div class="tabs__btns tabs-btns">
+						<button class="tabs-btns__btn tabs-btn btn open-tabs-btn" data-path="tabs-html">HTML</button>
+						<button class="tabs-btns__btn tabs-btn btn" data-path="tabs-css">CSS</button>
+						<button class="tabs-btns__btn tabs-btn btn" data-path="tabs-js">JS</button>
+					</div>
+					<div class="tabs__items tabs-items">
+						<div class="tabs-items__item tabs-item open-tabs-item" data-target="tabs-html">
+							<pre class="tabs-item__pre">
+&lt;section id="tabs" class="tabs"&gt;
+  &lt;div class="tabs__container"&gt;
+    &lt;div class="tabs__btns tabs-btns"&gt;
+      &lt;button class="tabs-btns__btn tabs-btn btn" data-path="name-content-1"&gt;
+        // name content
+      &lt;/button&gt;
+      &lt;button class="tabs-btns__btn tabs-btn btn" data-path="name-content-2"&gt;
+        // name content
+      &lt;/button&gt;
+      &lt;button class="tabs-btns__btn tabs-btn btn" data-path="name-content-3"&gt;
+        // name content
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="tabs__items tabs-items"&gt;
+      &lt;div class="tabs-items__item tabs-item" data-target="name-content-1"&gt;
+        &lt;pre class="tabs-item__pre"&gt;
+          // content
+        &lt;/pre&gt;
+      &lt;/div&gt;
+      &lt;div class="tabs-items__item tabs-item" data-target="name-content-2"&gt;
+        &lt;pre class="tabs-item__pre"&gt;
+          // content
+        &lt;/pre&gt;
+      &lt;/div&gt;
+      &lt;div class="tabs-items__item tabs-item" data-target="name-content-3"&gt;
+        &lt;pre class="tabs-item__pre"&gt;
+          // content
+        &lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+							</pre>
+						</div>
+						<div class="tabs-items__item tabs-item" data-target="tabs-css">
+							<pre class="tabs-item__pre">
+/*TABS*/
+.tabs-items {  
+  position: relative;
+}
+.tabs-item {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease-in-out, visibility .3s ease-in-out, height .3s ease-in-out;
+  height: 0;
+}
+.tabs-item.open-tabs-item {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+}
+.tabs-item__pre {
+  margin: 0;
+  padding: 0;
+  background-color: teal;
+  height: 0;
+  font-size: 0;  
+  transition: height .3s ease-in-out, padding .3s ease-in-out;
+}
+.tabs-item.open-tabs-item .tabs-item__pre {
+  padding: 20px 20px 0;
+  height: auto;
+  font-size: 16px;
+}
+							</pre>
+						</div>
+						<div class="tabs-items__item tabs-item" data-target="tabs-js">
+							<pre class="tabs-item__pre">
+"use strict"
+document.addEventListener("DOMContentLoaded", function(){
+  const tabsWrapperItems = document.querySelector('.tabs-items');
+  const tabsBtns = document.querySelectorAll('.tabs-btn');
+  const tabsItems = document.querySelectorAll('.tabs-item');
+
+  for (let index = 0; index < tabsItems.length; index++) {
+    if (tabsItems[index].classList.contains('open-tabs-item')) {
+      const tabsItemsChild = tabsItems[index].querySelector('.tabs-item__pre');
+      const tabsItemsChildHeight = tabsItemsChild.getBoundingClientRect().height;
+      tabsWrapperItems.style.minHeight = tabsItemsChildHeight + "px";
+    }
+  }
+
+  tabsBtns.forEach(function(tabsBtn){
+    tabsBtn.addEventListener('click', (tabsBtn)=>{
+      const path = tabsBtn.currentTarget.dataset.path;
+
+      for (let i = 0; i < tabsBtns.length; i++) {
+        tabsBtns[i].classList.remove('open-tabs-btn');
+      }
+      tabsBtn.currentTarget.classList.add('open-tabs-btn');
+      tabsItems.forEach((tabsItem)=>{
+        tabsItem.classList.remove('open-tabs-item');
+      });
+      <i class="accordion__i">// поиск ячейки по атрибуту</i>
+      const tabsOpenItem = document.querySelector(`[data-target="${path}"]`);
+      <i class="accordion__i">// присваивание ячейке класса открытия</i>
+      tabsOpenItem.classList.add('open-tabs-item');
+      <i class="accordion__i">// поиск дочери открытой ячейки по классу</i>
+      const tabsOpenItemsChild = tabsOpenItem.querySelector('.tabs-item__pre');
+      <i class="accordion__i">// вычисление высоты у дочери открытой ячейки</i>
+      const tabsOpenItemsChildHeight = tabsOpenItemsChild.getBoundingClientRect().height;
+      <i class="accordion__i">// присваивание главному блоку ячеек минимальной высоты на основании высоты дочери открытой ячейки</i>
+      tabsWrapperItems.style.minHeight = tabsOpenItemsChildHeight + "px";
+    });
+  });  
+});
+							</pre>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+	</div>
+</body>
+</html>

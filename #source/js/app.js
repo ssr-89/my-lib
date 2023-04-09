@@ -1,5 +1,6 @@
 'use strict'
 document.addEventListener("DOMContentLoaded", () => {
+  const body = document.querySelector('body');
   const container = document.querySelector(".hero__container");
   const form = document.querySelector(".hero-form");
   const inputs = document.querySelectorAll(".index-input");
@@ -10,7 +11,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnForm = document.querySelector(".index-btn");
 
   
-  
+  const header = document.querySelector("header");
+  const headerMenu = document.getElementById("header-menu-list");
+  const headerBurger = document.getElementById("header-burger");
+
+  headerBurger.addEventListener("click", function () {
+    body.classList.toggle('blocking');
+    header.classList.toggle("pull");
+    headerBurger.classList.toggle("open");
+    headerMenu.classList.toggle("show");
+  });
 
   /*вывод результата*/
   btnForm.disabled = true;

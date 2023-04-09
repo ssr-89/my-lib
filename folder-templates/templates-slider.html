@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="css/templates-slider.css">
 	<script defer src="../js/script.js"></script>
 	<script defer src="../js/accordion.js"></script>
+  <script defer src="../js/tabs.js"></script>
 	<script defer src="js/templates-main.js"></script>
 	<script defer src="js/templates-slider.js"></script>
 </head>
@@ -35,10 +36,14 @@
     <section class="info-slider" id="info-slider">
     	<div class="info-slider__container">
     		<h2 class="info-slider__title title">Код слайдера</h2>
-    		<div class="info-slider__content-slider content-slider">
-    			<div class="content-slider__block content-slider-block content-slider__block--html">
-    				<h3 class="content-slider-block__title title">HTML</h3>
-    				<pre class="content-slider__block__pre">
+        <div class="info-slider__btns info-slider-btns">
+          <button class="info-slider-btns__btn info-slider-btn tabs-btn btn open-tabs-btn" data-path="slider-html">HTML</button>
+          <button class="info-slider-btns__btn info-slider-btn tabs-btn btn" data-path="slider-css">CSS</button>
+          <button class="info-slider-btns__btn info-slider-btn tabs-btn btn" data-path="slider-js">JS</button>
+        </div>
+        <div class="info-slider__items info-slider-items">
+          <div class="info-slider-items__item info-slider-item tabs-item open-tabs-item" data-target="slider-html">
+            <pre class="info-slider-item__pre">
 &lt;div class="slider-block"&gt;
   &lt;button class="slider-block__btn btn-prev btn"&gt;&lt;/button&gt;
   &lt;div class="slider-block__line slider"&gt;
@@ -50,11 +55,10 @@
   &lt;/div&gt;
   &lt;button class="slider-block__btn btn-next btn"&gt;&lt;/button&gt;
 &lt;/div&gt;
-    				</pre>
-    			</div>
-    			<div class="content-slider__block content-slider-block content-slider__block--css">
-    				<h3 class="content-slider-block__title title">CSS</h3>
-    				<pre class="content-slider__block__pre">
+            </pre>
+          </div>
+          <div class="info-slider-items__item info-slider-item tabs-item" data-target="slider-css">
+            <pre class="info-slider-item__pre">
 .slider-block {
   position: relative;
   display: flex;
@@ -129,11 +133,10 @@
 .btn-next:hover::after {
   background-color: rgb(0, 0, 255);
 }
-    				</pre>
-    			</div>
-    			<div class="content-slider__block content-slider-block content-slider__block--js">
-    				<h3 class="content-slider-block__title title">JS</h3>
-    				<pre class="content-slider__block__pre">
+            </pre>
+          </div>
+          <div class="info-slider-items__item info-slider-item tabs-item" data-target="slider-js">
+            <pre class="info-slider-item__pre">
 "use strict"
 document.addEventListener("DOMContentLoaded", function () {
   const sliderImg = document.querySelectorAll('.slider__img');
@@ -174,9 +177,9 @@ document.addEventListener("DOMContentLoaded", function () {
     sliderLine.style.transform = 'translate(-' + count * width + 'px)';
   }
 });
-    				</pre>
-    			</div>
-    		</div>
+            </pre>
+          </div>
+        </div>
     	</div>
     </section>
   </main>

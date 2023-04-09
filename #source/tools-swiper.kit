@@ -13,6 +13,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 	<script defer src="../js/script.js"></script>
 	<script defer src="../js/accordion.js"></script>
+  <script defer src="../js/tabs.js"></script>
 	<script defer src="js/tools-main.js"></script>
 	<script defer src="js/tools-swiper.js"></script>
 </head>
@@ -111,11 +112,11 @@
           </div>
       		<div class="swiper-code__wrapper swiper-tabs-wrapper">
             <div class="swiper-tabs-wrapper__swiper-tabs-btns swiper-tabs-btns">
-              <button data-path="swiper-html" class="swiper-tabs-btns__btn swiper-tabs-btn btn open-tabs-btn">HTML</button>
-              <button data-path="swiper-css" class="swiper-tabs-btns__btn swiper-tabs-btn btn">CSS</button>
-              <button data-path="swiper-js" class="swiper-tabs-btns__btn swiper-tabs-btn btn">JS</button>
+              <button data-path="swiper-html" class="swiper-tabs-btns__btn tabs-btn swiper-tabs-btn btn open-tabs-btn">HTML</button>
+              <button data-path="swiper-css" class="swiper-tabs-btns__btn tabs-btn swiper-tabs-btn btn">CSS</button>
+              <button data-path="swiper-js" class="swiper-tabs-btns__btn tabs-btn swiper-tabs-btn btn">JS</button>
             </div>
-      			<div data-target="swiper-html" class="swiper-tabs-wrapper__tabs-item swiper-tabs-item open-tabs-item">
+      			<div data-target="swiper-html" class="swiper-tabs-wrapper__tabs-item swiper-tabs-item tabs-item open-tabs-item">
               <pre class="swiper-tabs-item__pre swiper-code-pre">
 <i class="color-yellow">&lt;!-- swiper --&gt;</i>
 &lt;div class="swiper"&gt;
@@ -139,7 +140,7 @@
 &lt;/div&gt;
               </pre>
             </div>
-            <div data-target="swiper-css" class="swiper-tabs-wrapper__tabs-item swiper-tabs-item">
+            <div data-target="swiper-css" class="swiper-tabs-wrapper__tabs-item swiper-tabs-item tabs-item">
               <ul class="swiper-tabs-item__list list">
                 <li class="swiper-tabs-item__item">
                   <p class="swiper-tabs-item__text text">
@@ -262,7 +263,7 @@
 }    
               </pre>
             </div>
-            <div data-target="swiper-js" class="swiper-tabs-wrapper__tabs-item swiper-tabs-item">
+            <div data-target="swiper-js" class="swiper-tabs-wrapper__tabs-item swiper-tabs-item tabs-item">
               <pre class="swiper-tabs-item__pre swiper-code-pre">
 "use strict"
 document.addEventListener("DOMContentLoaded", () =&gt; {

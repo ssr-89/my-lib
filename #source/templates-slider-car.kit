@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="css/templates-slider-car.css">
 	<script defer src="../js/script.js"></script>
 	<script defer src="../js/accordion.js"></script>
+  <script defer src="../js/tabs.js"></script>
 	<script defer src="js/templates-main.js"></script>
 	<script defer src="js/templates-slider-car.js"></script>
 </head>
@@ -36,11 +37,14 @@
 		</section>
 		<section class="slider-car-info">
 			<div class="slider-car-info__container">
-				<h1 class="slider-car-info__title title">CODE</h1>
-				<div class="slider-car-info__wrapper">
-					<div class="slider-car-info__block">
-						<h2 class="slider-car-info__heading title">HTML</h2>
-						<pre class="slider-car-info__pre">
+        <div class="slider-car-info__btns slider-btns">
+          <button class="slider-btns-btn slider-btn tabs-btn btn open-tabs-btn" data-path="slider-html">HTML</button>
+          <button class="slider-btns-btn slider-btn tabs-btn btn" data-path="slider-css">CSS</button>
+          <button class="slider-btns-btn slider-btn tabs-btn btn" data-path="slider-js">JS</button>
+        </div>
+        <div class="slider-car-info__items slider-items">
+          <div class="slider-items__item slider-item tabs-item open-tabs-item" data-target="slider-html">
+            <pre class="slider-item__pre">
 &lt;section class="slider-car"&gt;
   &lt;div class="slider-car__container"&gt;
     &lt;div class="slide"&gt;
@@ -60,11 +64,10 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/section&gt;
-						</pre>
-					</div>
-					<div class="slider-car-info__block">
-						<h2 class="slider-car-info__heading title">CSS</h2>
-						<pre class="slider-car-info__pre">
+            </pre>
+          </div>
+          <div class="slider-items__item slider-item tabs-item" data-target="slider-css">
+            <pre class="slider-item__pre">
 @import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
 
 body {
@@ -124,11 +127,10 @@ body {
 .slide.active h3 {
   opacity: 1;
 }
-						</pre>
-					</div>
-					<div class="slider-car-info__block">
-						<h2 class="slider-car-info__heading title">JS</h2>
-						<pre class="slider-car-info__pre">
+            </pre>
+          </div>
+          <div class="slider-items__item slider-item tabs-item" data-target="slider-js">
+            <pre class="slider-item__pre">
 "use strict";
 document.addEventListener("DOMContentLoaded", function () {
   
@@ -155,9 +157,9 @@ function slidePlugin(activeSlide = 0) {
 slidePlugin();
 
 });
-						</pre>
-					</div>
-				</div>
+            </pre>
+          </div>
+        </div>
 			</div>
 		</section>
 	</main>

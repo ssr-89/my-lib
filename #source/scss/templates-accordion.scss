@@ -1,0 +1,67 @@
+/*accordion-fpj*/
+.accordion-fpj__container {
+	padding: 100px 50px 50px;
+}
+.accordion-fpj__title {
+	margin-bottom: 20px;
+}
+
+/*accordion-other*/
+.accordion-other__title {
+	margin-bottom: 20px;
+}
+#accord {
+	max-width: 700px;
+}
+.accord__title {
+  position: relative;
+  margin: 0;
+  padding: 0.5em 0.5em 0.5em 0.7em;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: rgba(246, 246, 246, 1);
+  font-weight: normal;
+  color: rgba(3, 3, 3, 1.0);
+  transition: background .3s ease-in-out, color .3s ease-in-out;
+}
+.accord__title.select-spoller {
+  background-color: rgba(0, 0, 50, 1.0);
+  color: rgba(255, 255, 255, 1.0);
+}
+.accord__title::before,
+.accord__title::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 0.5em;
+  width: 25px;
+  height: 2px;
+  background-color: rgba(3, 3, 3, 1.0);
+  transition: transform .3s ease-in-out, background .3s ease-in-out;
+}
+.accord__title::after {
+  transform: rotate(-90deg);
+}
+.accord__title.select-spoller::after {
+  transform: rotate(0);
+  background-color: rgba(255, 255, 255, 1.0);
+}
+.accord-content {
+  padding-left: 15px;
+  padding-right: 15px;
+	height: 0;
+  overflow: hidden;
+  color: rgba(3, 3, 3, 1.0);
+  transition: height 1s;
+}
+.accord-content:not(:last-child) {
+	margin-bottom: 10px;
+}
+.accord-content__pre {
+	margin: 0;
+	padding: 20px 20px 0;
+	background-color: transparent;
+  border-radius: 5px;
+  font-size: 14px;
+	color: rgba(3, 3, 3, 1.0);
+}

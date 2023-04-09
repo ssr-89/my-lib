@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="css/templates-pop-up.css">
 	<script defer src="../js/script.js"></script>
 	<script defer src="../js/accordion.js"></script>
+  <script defer src="../js/tabs.js"></script>
 	<script defer src="js/templates-main.js"></script>
 	<script defer src="js/templates-pop-up.js"></script>
 </head>
@@ -64,59 +65,59 @@
         </div>
         <div class="code-pop-up__content code-pop-up-content">
           <div class="code-pop-up-content__btns code-pop-up-btns">
-            <button class="code-pop-up-btn btn open-pop-up-btn" data-path="pop-up-html">HTML</button>
-            <button class="code-pop-up-btn btn" data-path="pop-up-css">CSS</button>
-            <button class="code-pop-up-btn btn" data-path="pop-up-js">JS</button>
+            <button class="code-pop-up-btn btn tabs-btn open-tabs-btn" data-path="pop-up-html">HTML</button>
+            <button class="code-pop-up-btn btn tabs-btn" data-path="pop-up-css">CSS</button>
+            <button class="code-pop-up-btn btn tabs-btn" data-path="pop-up-js">JS</button>
           </div>
           <div class="code-pop-up-content__items code-pop-up-items">
-            <div data-target="pop-up-html" class="code-pop-up-items code-pop-up-item open-pop-up-item">
+            <div data-target="pop-up-html" class="code-pop-up-items__item code-pop-up-item tabs-item open-tabs-item">
               <pre class="code-pop-up-item__pre">
 &lt;div class="wrapper"&gt;
-    &lt;header id="header" class="header lock-padding"&gt;
-      &lt;div class="header__container"&gt;
-        &lt;a href="#popup" class="click popup-link"&gt;Pop-up #1&lt;/a&gt;
-      &lt;/div&gt;
-    &lt;/header&gt;
-    &lt;div id="popup" class="popup"&gt;
-      &lt;div class="popup__body"&gt;
-        &lt;div class="popup__content"&gt;
-          &lt;a class="popup__close link close-popup" href="#"&gt;&#10006;&lt;/a&gt;
-          &lt;div class="popup__title"&gt;Это модальное окно №1&lt;/div&gt;
-          &lt;div class="popup__text"&gt;
-            &lt;a href="#popup__2" class="click popup-link"&gt;Pop-up #2&lt;/a&gt;
-            Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные тексты.
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
+  &lt;header id="header" class="header lock-padding"&gt;
+    &lt;div class="header__container"&gt;
+      &lt;a href="#popup" class="click popup-link"&gt;Pop-up #1&lt;/a&gt;
     &lt;/div&gt;
-    &lt;div id="popup__2" class="popup"&gt;
-      &lt;div class="popup__body"&gt;
-        &lt;div class="popup__content"&gt;
-          &lt;a class="popup__close link close-popup" href="#"&gt;&#10006;&lt;/a&gt;
-          &lt;div class="popup__title"&gt;Это модальное окно №2&lt;/div&gt;
-          &lt;div class="popup__text"&gt;
-            &lt;a href="#popup__3" class="click popup-link"&gt;Pop-up #3&lt;/a&gt;
-            Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные тексты.
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div id="popup__3" class="popup"&gt;
-      &lt;div class="popup__body"&gt;
-        &lt;div class="popup__content"&gt;
-          &lt;a class="popup__close link close-popup" href="#"&gt;&#10006;&lt;/a&gt;
-          &lt;div class="popup__title"&gt;Это модальное окно №3&lt;/div&gt;
-          &lt;div class="popup__text"&gt;
-            &lt;a href="#popup" class="click popup-link"&gt;Pop-up #1&lt;/a&gt;
-            Далеко-далеко за словесными горами, в стране гласных и согласных живут, рыбные тексты.
-          &lt;/div&gt;
+  &lt;/header&gt;
+  &lt;div id="popup" class="popup"&gt;
+    &lt;div class="popup__body"&gt;
+      &lt;div class="popup__content"&gt;
+        &lt;a class="popup__close link close-popup" href="#"&gt;&#10006;&lt;/a&gt;
+        &lt;div class="popup__title"&gt;Это модальное окно №1&lt;/div&gt;
+        &lt;div class="popup__text"&gt;
+          &lt;a href="#popup__2" class="click popup-link"&gt;Pop-up #2&lt;/a&gt;
+          Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные тексты.
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
+  &lt;div id="popup__2" class="popup"&gt;
+    &lt;div class="popup__body"&gt;
+      &lt;div class="popup__content"&gt;
+        &lt;a class="popup__close link close-popup" href="#"&gt;&#10006;&lt;/a&gt;
+        &lt;div class="popup__title"&gt;Это модальное окно №2&lt;/div&gt;
+        &lt;div class="popup__text"&gt;
+          &lt;a href="#popup__3" class="click popup-link"&gt;Pop-up #3&lt;/a&gt;
+          Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные тексты.
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div id="popup__3" class="popup"&gt;
+    &lt;div class="popup__body"&gt;
+      &lt;div class="popup__content"&gt;
+        &lt;a class="popup__close link close-popup" href="#"&gt;&#10006;&lt;/a&gt;
+        &lt;div class="popup__title"&gt;Это модальное окно №3&lt;/div&gt;
+        &lt;div class="popup__text"&gt;
+          &lt;a href="#popup" class="click popup-link"&gt;Pop-up #1&lt;/a&gt;
+          Далеко-далеко за словесными горами, в стране гласных и согласных живут, рыбные тексты.
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
               </pre>
             </div>
-            <div data-target="pop-up-css" class="code-pop-up-items code-pop-up-item">
+            <div data-target="pop-up-css" class="code-pop-up-items__item code-pop-up-item tabs-item">
               <pre class="code-pop-up-item__pre">
 *,
 *::before,
@@ -202,7 +203,7 @@ body.lock {
 }
               </pre>
             </div>
-            <div data-target="pop-up-js" class="code-pop-up-items code-pop-up-item">
+            <div data-target="pop-up-js" class="code-pop-up-items__item code-pop-up-item tabs-item">
               <pre class="code-pop-up-item__pre">
 const popupLinks = document.querySelectorAll(".popup-link");
 const body = document.querySelector("body");

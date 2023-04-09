@@ -1,3 +1,8 @@
+body {
+  background-color: rgb(31, 41, 55);
+  color: rgb(238, 238, 238);
+}
+
 .hero__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -118,26 +123,53 @@
   margin-bottom: 2em;
 }
 
-.content-slider {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-column-gap: 20px;
-     -moz-column-gap: 20px;
-          column-gap: 20px;
+.info-slider-btns {
+  font-size: 0;
 }
 
-.content-slider-block {
-  padding: 10px;
-  background-color: rgb(176, 224, 230);
+.info-slider-btn {
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: rgba(223, 240, 216, 0.5);
+  -webkit-transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.info-slider-btn.open-tabs-btn {
+  background-color: rgb(223, 240, 216);
+  color: rgb(60, 118, 61);
+}
+
+.info-slider-items {
+  position: relative;
+  min-height: 1000px;
+}
+
+.info-slider-item {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: scaleZ(0);
+          transform: scaleZ(0);
+  -webkit-transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+.info-slider-item.open-tabs-item {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scaleZ(1);
+          transform: scaleZ(1);
+  background-color: rgb(223, 240, 216);
+  color: rgb(60, 118, 61);
+}
+
+.info-slider-item__pre {
+  padding: 20px;
+  font-size: 18px;
 }

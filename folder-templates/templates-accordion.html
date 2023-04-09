@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Accordion</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/accordion.css">
+	<link rel="stylesheet" href="css/templates-main.css">
+	<link rel="stylesheet" href="css/templates-accordion.css">
+	<script defer src="../js/script.js"></script>
+	<script defer src="../js/accordion.js"></script>
+	<script defer src="../js/tabs.js"></script>
+	<script defer src="js/templates-main.js"></script>
+	<script defer src="js/templates-accordion.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<main class="main">
+			<section id="accordion-fpj" class="accordion-fpj">
+				<div class="accordion-fpj__container">
+					<h1 class="accordion-fpj__title title">Аккордион от Фрилансера по жизни</h1>
+    			<div class="000__block accordion" data-spollers data-one-spoller>
+      			<div class="accordion__item">
+        			<button class="accordion__title btn" data-spoller>HTML</button>
+        			<div class="accordion__content">
+          			<div class="accordion__wrapper">
+            			<pre class="accordion__pre block">
+&lt;div class="000__block accordion" data-spollers data-one-spoller&gt;
+  &lt;div class="accordion__item"&gt;
+    &lt;button class="accordion__title btn" data-spoller&gt;000&lt;/button&gt;
+    &lt;div class="accordion__content"&gt;
+      &lt;div class="accordion__wrapper"&gt;
+        &lt;pre class="accordion__pre block"&gt;
+          <i class="accordion__i">&lt;!-- content --&gt;</i>
+        &lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="accordion__item"&gt;
+    &lt;button class="accordion__title btn" data-spoller&gt;000&lt;/button&gt;
+    &lt;div class="accordion__content"&gt;
+      &lt;div class="accordion__wrapper"&gt;
+        &lt;pre class="accordion__pre block"&gt;
+          <i class="accordion__i">&lt;!-- content --&gt;</i>
+        &lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="accordion__item"&gt;
+    &lt;button class="accordion__title btn" data-spoller&gt;000&lt;/button&gt;
+    &lt;div class="accordion__content"&gt;
+      &lt;div class="accordion__wrapper"&gt;
+        &lt;pre class="accordion__pre block"&gt;
+          <i class="accordion__i">&lt;!-- content --&gt;</i>
+        &lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+									</pre>
+          			</div>
+        			</div>
+      			</div>
+      			<div class="accordion__item">
+        			<button class="accordion__title btn" data-spoller>CSS</button>
+        			<div class="accordion__content">
+          			<div class="accordion__wrapper">
+            			<pre class="accordion__pre block">
+.container-title {
+  margin: 0 0 20px;
+}
+
+<i class="accordion__i">/*accordion*/</i>
+.accordion {
+  color: rgba(255, 255, 255, 1.0);
+}
+<span class="color-yellow">
+<i class="accordion__i">/*Отступ между спойлерами*/</i>
+.accordion__item:not(:last-child) {
+  margin: 0 0 20px;
+}
+</span>
+.accordion__title {
+  position: relative;
+  padding: 20px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  text-align: left;
+  font-size: 20px;
+  transition: margin .3s ease-in-out;
+}
+.accordion._init .accordion__title {
+  padding: 20px 40px 20px 20px;
+}
+.accordion._init .accordion__title::after {
+  transform: rotate(-90deg);
+}
+.accordion._init .accordion__title._active::after {
+  transform: rotate(0deg);
+}
+.accordion._init .accordion__title::before,
+.accordion._init .accordion__title::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  width: 30px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, .9);
+  transition: transform 0.3s ease 0s;
+}
+.accordion__content {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.accordion__heading {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 5px;
+  font-weight: normal;
+  background-color: rgba(0, 0, 128, 1);
+}
+.accordion__link {
+  margin: 0 0 20px 0;
+  padding: 5px;
+  color: rgba(255, 255, 255, 1.0);
+  outline: 1px solid rgba(255, 255, 255, 1.0);
+  border-radius: 3px;
+  transition: background .3s ease-in-out, color .3s ease-in-out, outline .3s ease-in-out;
+}
+.accordion__link:hover {
+  background-color: rgba(255, 255, 255, 1.0);
+  color: rgba(0, 0, 0, 1.0);
+  outline: none;
+}
+.accordion__link:active {
+  background-color: rgba(0, 0, 0, 0);
+  color: rgba(255, 255, 255, .5);
+  outline: none;
+}
+.accordion__wrapper {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.accordion__wrapper:not(:last-child) {
+  margin: 0 0 30px 0;
+}
+.accordion__descr {
+  color: rgba(255, 255, 0, 1.0);
+}
+.accordion__descr:not(:last-child),
+.accordion__text:not(:last-child) {
+  margin: 0 0 10px 0;
+}
+.accordion__pre {
+  margin: 0;
+  padding: 1em 1em 0;
+  font-family: Monospace;
+  font-size: 17px;
+  background-color: rgba(0,80,80,1);
+}
+.accordion__pre:not(:last-child) {
+  margin-bottom: 20px;;
+}
+.accordion__code {
+  font-family: Monospace;
+  font-size: 17px;
+}
+.blue-code {
+  padding: 0 5px;
+  background-color: rgba(176, 224, 230, .5);
+}
+.navy-code {
+  background-color: rgba(0, 0, 128, 1);
+}
+.accordion__i {
+  color: rgba(170, 170, 170, 1);
+}
+.accordion__table th,
+.accordion__table td {
+  padding: 5px 10px;
+  text-align: center;
+  border: 1px solid rgba(150, 150, 150, 1.0);
+  color: rgba(200, 200, 200, 1.0);
+}
+									</pre>
+          			</div>
+        			</div>
+      			</div>
+      			<div class="accordion__item">
+        			<button class="accordion__title btn" data-spoller>JavaScript</button>
+        			<div class="accordion__content">
+          			<div class="accordion__wrapper">
+            			<pre class="accordion__pre block">
+"use strict"
+document.addEventListener("DOMContentLoaded", function() {
+  <i class="accordion__i">/*ACCORDION*/</i>
+  const spollersArray = document.querySelectorAll("[data-spollers]");
+  <i class="accordion__i">// Проверка на наличие таких элементов</i>
+  if (spollersArray.length > 0) {
+    <i class="accordion__i">// Получение обычных спойлеров</i>
+    <i class="accordion__i">// Array.from - в данном случае переводит коллекцию в массив</i>
+    <i class="accordion__i">/*
+      - dataset.spollers проверяет все data c названием spollers - data-spollers
+      - !item.dataset.spollers.split(',')[0] - проверка ОТСУТСТВИЯ параметра у data-spollers или 
+      первого [0] элемента массива
+    */</i>
+    const spollersRegular = Array.from(spollersArray).filter(function (
+      item,
+      index,
+      self
+    ) {
+      return !item.dataset.spollers.split(",")[0];
+    });
+
+    <i class="accordion__i">// Инициализация обычных спойлеров</i>
+    <i class="accordion__i">// spollersRegular - массив передаётся в будущую функцию initSpollers</i>
+    if (spollersRegular.length > 0) {
+      initSpollers(spollersRegular);
+    }
+
+    <i class="accordion__i">// Получение спойлеров с медиа запросами</i>
+    <i class="accordion__i">/*
+      - dataset.spollers проверяет все data c названием spollers - data-spollers
+      - item.dataset.spollers.split(',')[0] - проверка НАЛИЧИЯ параметра у data-spollers или первого [0] элемента массива
+    */</i>
+    const spollersMedia = Array.from(spollersArray).filter(function (
+      item,
+      index,
+      self
+    ) {
+      return item.dataset.spollers.split(",")[0];
+    });
+
+    <i class="accordion__i">// Инициализация спойлеров с медиа запросами</i>
+    <i class="accordion__i">// Проверка на существование блоков с брейпоинтами</i>
+    if (spollersMedia.length > 0) {
+      const breakpointsArray = []; <i class="accordion__i">// пустой массив для заполнения</i>
+      spollersMedia.forEach((item) => {
+        const params = item.dataset.spollers; <i class="accordion__i">// dataset проверяет у data-spollers наличие параметров 650,min</i>
+        const breakpoint = {}; <i class="accordion__i">// пустой объект для заполнения</i>
+        const paramsArray = params.split(","); <i class="accordion__i">// преобразование в массив c элементами [650,min]</i>
+        breakpoint.value = paramsArray[0]; <i class="accordion__i">// присваивание значения 650/800 в объект breakpoint</i>
+        breakpoint.type = paramsArray[1] ? paramsArray[1].trim() : "max"; <i class="accordion__i">// присваивается значение по умолчанию 'max', если не указали второе значение</i>
+        breakpoint.item = item; <i class="accordion__i">// присваивается сам объект</i>
+        breakpointsArray.push(breakpoint); <i class="accordion__i">// всё это добавляется в массив breakpointsArray</i>
+        <i class="accordion__i">/*
+          breakpointsArray - массив содержит объекты, которые содержат необходимую информацию
+        */</i>
+      });
+
+      <i class="accordion__i">// Получаем уникальные брейкпоинты</i>
+      let mediaQueries = breakpointsArray.map(function (item) {
+      <i class="accordion__i">/* 
+        min-width: 650px - '650,min' или max-width: 800px - '800,max'
+        item.value = 650
+        item.type = min 
+      */</i>
+        return (
+          "(" +
+          item.type +
+          "-width: " +
+          item.value +
+          "px)," +
+          item.value +
+          "," +
+          item.type
+        );
+      });
+      <i class="accordion__i">// отфильтровываем и указываем, чтобы все блоки работали с одинаковыми параметрами</i>
+      mediaQueries = mediaQueries.filter(function (item, index, self) {
+        return self.indexOf(item) === index;
+      });
+
+      <i class="accordion__i">// Работаем с каждым брейкпоинтом</i>
+      mediaQueries.forEach((breakpoint) => {
+        const paramsArray = breakpoint.split(","); <i class="accordion__i">// преобразование строки в массив</i>
+        const mediaBreakpoint = paramsArray[1]; <i class="accordion__i">// первый параметр 650/800</i>
+        const mediaType = paramsArray[2]; <i class="accordion__i">// второй параметр min/max</i>
+        const matchMedia = window.matchMedia(paramsArray[0]);
+        <i class="accordion__i">// matchMedia - метод следит за шириной экрана</i>
+        <i class="accordion__i">// matchMedia - добавляет 0 элемент в paramsArray, если сработал нужный брейкпоинт, а именно 'min-width: 650px' или 'max-width: 800px'</i>
+
+        <i class="accordion__i">// Объекты с нужными условиями</i>
+        <i class="accordion__i">// spollersArray - массив объектов (блоков со спойлерами)</i>
+        <i class="accordion__i">// mediaBreakpoint = 650/800</i>
+        <i class="accordion__i">// mediaType = min/max</i>
+        <i class="accordion__i">// mediaBreakpoint и mediaType - условия для активации спойлера</i>
+        const spollersArray = breakpointsArray.filter(function (item) {
+          if (item.value === mediaBreakpoint && item.type === mediaType) {
+            return true;
+          }
+        });
+
+        <i class="accordion__i">// Событие - если ширина экрана соответствует условиям, то активируется спойлер</i>
+        matchMedia.addListener(function () {
+          <i class="accordion__i">// Отрабатывает при изменении ширины</i>
+          initSpollers(spollersArray, matchMedia);
+        });
+        <i class="accordion__i">// Отрабатывает при загрузке страницы</i>
+        initSpollers(spollersArray, matchMedia);
+      });
+    }
+
+    <i class="accordion__i">// Инициализация</i>
+    <i class="accordion__i">// spollersArray - массив объектов (блоков со спойлерами)</i>
+    <i class="accordion__i">// matchMedia - если нет аргумента, то будет false</i>
+    function initSpollers(spollersArray, matchMedia = false) {
+      spollersArray.forEach((spollersBlock) => {
+        <i class="accordion__i">// Проверка, если matchMedia не равно false, то добавляется элемент item</i>
+        <i class="accordion__i">// item вроде брейкпоинт</i>
+        <i class="accordion__i">// spollersBlock - блок со спойлерами</i>
+        spollersBlock = matchMedia ? spollersBlock.item : spollersBlock; <i class="accordion__i">// если matchMedia чему то равно тогда присваиваем имя объекта spollersBlock</i>
+        <i class="accordion__i">// благодаря методу matchMedia активирует спойлер</i>
+        if (matchMedia.matches || !matchMedia) {
+          spollersBlock.classList.add("_init");
+          initSpollerBody(spollersBlock);
+          spollersBlock.addEventListener("click", setSpollerAction);
+        } else {
+          spollersBlock.classList.remove("_init");
+          initSpollerBody(spollersBlock, false);
+          spollersBlock.removeEventListener("click", setSpollerAction); <i class="accordion__i">// убираем событие клик</i>
+        }
+      });
+    }
+
+    <i class="accordion__i">// Работа с контентом</i>
+    function initSpollerBody(spollersBlock, hideSpollerBody = true) {
+      <i class="accordion__i">// spollerTitles - массив кнопок с атрибутами [data-spoller] в блоках со спойлерами</i>
+      const spollerTitles = spollersBlock.querySelectorAll("[data-spoller]");
+      <i class="accordion__i">// если у кнопки есть [data-spoller]</i>
+      if (spollerTitles.length > 0) {
+        spollerTitles.forEach((spollerTitle) => {
+          if (hideSpollerBody) {
+            spollerTitle.removeAttribute("tabindex");
+            <i class="accordion__i">// contains - если у заголовка нет класса _active, то контент скрыт</i>
+            if (!spollerTitle.classList.contains("_active")) {
+              <i class="accordion__i">// nextElementSibling - следующий объект после заголовка</i>
+              <i class="accordion__i">// hidden - атрибут сокрытия аналогичный display: none;, но более изящно</i>
+              spollerTitle.nextElementSibling.hidden = true;
+            }
+          } else {
+            <i class="accordion__i">// отображение спойлера как обычный блок, если условия не соответствуют</i>
+            spollerTitle.setAttribute("tabindex", "-1");
+            spollerTitle.nextElementSibling.hidden = false;
+          }
+        });
+      }
+    }
+
+    <i class="accordion__i">// Функция при клике на заголовок спойлера</i>
+    function setSpollerAction(e) {
+      <i class="accordion__i">// e - сжатый объект</i>
+      const el = e.target;
+      <i class="accordion__i">// el.hasAttribute('data-spoller') - если у элемента есть атрибут data-spoller</i>
+      <i class="accordion__i">// el.closest('[data-spoller]') - или у родителя элемента</i>
+      if (el.hasAttribute("data-spoller") || el.closest("[data-spoller]")) {
+        const spollerTitle = el.hasAttribute("data-spoller")
+          ? el
+          : el.closest("[data-spoller]");
+        <i class="accordion__i">// spollersBlock - блоки со спойлерами</i>
+        const spollersBlock = spollerTitle.closest("[data-spollers]");
+        <i class="accordion__i">// oneSpoller - спойлер с атрибутом data-one-spoller</i>
+        const oneSpoller = spollersBlock.hasAttribute("data-one-spoller")
+          ? true
+          : false;
+        <i class="accordion__i">// если нет элементов с классом _slide, то работаем дальше</i>
+        <i class="accordion__i">// данная проверка добавлена для корректной работы аккордиона</i>
+        if (!spollersBlock.querySelectorAll("._slide").length) {
+          <i class="accordion__i">// если у спойлера и у заголовка нет класса _active</i>
+          if (oneSpoller && !spollerTitle.classList.contains("_active")) {
+            <i class="accordion__i">// тогда все остальные спойлеры скрыты</i>
+            hideSpollersBody(spollersBlock);
+          }
+          spollerTitle.classList.toggle("_active");
+          _slideToggle(spollerTitle.nextElementSibling, 500);
+        }
+        <i class="accordion__i">// отменяет действие по умолчанию</i>
+        e.preventDefault();
+      }
+    }
+    function hideSpollersBody(spollersBlock) {
+      <i class="accordion__i">// spollersActiveTitle - открытый активный спойлер</i>
+      const spollerActiveTitle = spollersBlock.querySelector(
+        "[data-spoller]._active"
+      );
+      if (spollerActiveTitle) {
+        <i class="accordion__i">// убираем класс _active у spollersActiveTitle и скрываем все элементы</i>
+        spollerActiveTitle.classList.remove("_active");
+        _slideUp(spollerActiveTitle.nextElementSibling, 500);
+      }
+    }
+  }
+
+  <i class="accordion__i">/*========================================================================================================================================================*/</i>
+  <i class="accordion__i">// SlideToggle</i>
+  <i class="accordion__i">// Функция _slideUp - анимировано скрывает объект</i>
+  let _slideUp = function (target, duration = 500) {
+    if (!target.classList.contains("_slide")) {
+      target.classList.add("_slide");
+      target.style.transitionProperty = "height, margin, padding";
+      target.style.transitionDuration = duration + "ms";
+      target.style.height = target.offsetHeight + "px";
+      target.offsetHeight;
+      target.style.overflow = "hidden";
+      target.style.height = 0;
+      target.style.paddingTop = 0;
+      target.style.paddingBottom = 0;
+      target.style.marginTop = 0;
+      target.style.marginBottom = 0;
+      window.setTimeout(function () {
+        target.hidden = true;
+        target.style.removeProperty("height");
+        target.style.removeProperty("padding-top");
+        target.style.removeProperty("padding-bottom");
+        target.style.removeProperty("margin-top");
+        target.style.removeProperty("margin-bottom");
+        target.style.removeProperty("overflow");
+        target.style.removeProperty("transition-duration");
+        target.style.removeProperty("transition-property");
+        target.classList.remove("_slide");
+      }, duration);
+    }
+  };
+  <i class="accordion__i">// Функция _slideDown - анимировано показывает объект</i>
+  let _slideDown = function (target, duration = 500) {
+    if (!target.classList.contains("_slide")) {
+      target.classList.add("_slide");
+      if (target.hidden) {
+        target.hidden = false;
+      }
+      let height = target.offsetHeight;
+      target.style.overflow = "hidden";
+      target.style.height = 0;
+      target.style.paddingTop = 0;
+      target.style.paddingBottom = 0;
+      target.style.marginTop = 0;
+      target.style.marginBottom = 0;
+      target.offsetHeight;
+      target.style.transitionProperty = "height, margin, padding";
+      target.style.transitionDuration = duration + "ms";
+      target.style.height = height + "px";
+      target.style.removeProperty("padding-top");
+      target.style.removeProperty("padding-bottom");
+      target.style.removeProperty("margin-top");
+      target.style.removeProperty("margin-bottom");
+      window.setTimeout(function () {
+        target.style.removeProperty("height");
+        target.style.removeProperty("overflow");
+        target.style.removeProperty("transition-duration");
+        target.style.removeProperty("transition-property");
+        target.classList.remove("_slide");
+      }, duration);
+    }
+  };
+  <i class="accordion__i">// Функция _slideToggle - комбинация предыдущих двух функций</i>
+  let _slideToggle = function (target, duration = 500) {
+    if (target.hidden) {
+      return _slideDown(target, duration);
+    } else {
+      _slideUp(target, duration);
+    }
+  };
+  <i class="accordion__i">/*========================================================================================================================================================*/</i>
+  <i class="accordion__i">/*
+  Для родителя спойлеров пишем атрибут data-spollers
+  Для заголовков спойлеров пишем атрибут data-spoller
+  Если нужно включать/выключать работу спойлуров на разных размерах экранов пишем параметры ширины и типа брейкпоинта.
+  Например:
+  data-spollers='992,max' - спойлеры будут работать на экранах шириной меньше или равно 992px
+  data-spollers='768,min' - спойлеры будут работать на экранах шириной больше или равно 768px
+
+  Если нужно, чтобы в блоке открывался только один спойлер добавляем атрибут data-one-spoller
+  */</i>
+});
+									</pre>
+          			</div>
+        			</div>
+      			</div>
+    			</div>
+				</div>
+			</section>
+			<section id="accordion-other" class="accordion-other">
+				<div class="accordion-other__container">
+					<h2 class="accordion-other__title title">Accordion html/css/js</h2>
+					<div id="accord" class="accordion-other__accord accord">
+						<h3 class="accord__title title">HTML</h3>
+						<div id="tab-1" class="accord__content accord-content">
+							<pre class="accord-content__pre">
+&lt;div id="accord" class="accordion-other__accord accord"&gt;
+  &lt;h3 class="accord__title title"&gt;HTML&lt;/h3&gt;
+  &lt;div id="tab-1" class="accord__content accord-content"&gt;
+    <i class="color-navy">&lt;!-- content --&gt;</i>
+  &lt;/div&gt;
+  &lt;h3 class="accord__title title"&gt;CSS&lt;/h3&gt;
+  &lt;div id="tab-2" class="accord__content accord-content"&gt;
+    <i class="color-navy">&lt;!-- content --&gt;</i>
+  &lt;/div&gt;
+  &lt;h3 class="accord__title title"&gt;JavaScript&lt;/h3&gt;
+  &lt;div id="tab-3" class="accord__content accord-content"&gt;
+    <i class="color-navy">&lt;!-- content --&gt;</i>
+  &lt;/div&gt;
+&lt;/div&gt;
+							</pre>
+						</div>
+						<h3 class="accord__title title">CSS</h3>
+						<div id="tab-2" class="accord__content accord-content">
+							<pre class="accord-content__pre">
+<i class="color-navy">/*accordion-other*/</i>
+#accord {
+  max-width: 900px;
+}
+.accord__title {
+  cursor: pointer;
+  margin: 5px 0;
+  padding: 0.5em 0.5em 0.5em 0.7em;
+  border-radius: 5px;
+  background-color: rgba(246, 246, 246, 1);
+  font-weight: normal;
+  color: rgba(3, 3, 3, 1.0);
+  transition: background .3s ease-in-out, color .3s ease-in-out;
+}
+.accord__title.select-spoller {
+  background-color: rgba(0, 0, 128, 1.0);
+  color: rgba(255, 255, 255, 1.0);
+}
+.accord-content {
+  height: 0;
+  overflow: hidden;
+  color: rgba(3, 3, 3, 1.0);
+  padding-left: 15px;
+  padding-right: 15px;
+  transition: height 1s;
+}
+							</pre>
+						</div>
+						<h3 class="accord__title title">JavaScript</h3>
+						<div id="tab-3" class="accord__content accord-content">
+							<pre class="accord-content__pre">
+"use strict"
+document.addEventListener("DOMContentLoaded", function(){
+  const accordOther = document.getElementById("accord");
+  accordOther.addEventListener("click", change);
+  function change(event) {
+    const targ = event.target;
+    if (targ.tagName !== "H3") return;
+    if (targ.classList.contains("select-spoller")) {
+      hideAll();
+    } else {
+      hideAll();
+      targ.classList.add("select-spoller");
+      showText(targ.nextElementSibling);
+    }
+  }
+  function hideAll() {
+    const accordTitle = accordOther.querySelectorAll(".accord__title");
+    const accordContent = accordOther.querySelectorAll(".accord-content");
+    for (let i = 0; i < accordTitle.length; i++) {
+      accordTitle[i].classList.remove("select-spoller");
+    }
+    for (let i = 0; i < accordContent.length; i++) {
+      accordContent[i].style.height = "0";
+    }
+  }
+  function showText(textEl) {
+    textEl.style.height = textEl.scrollHeight + "px";
+  }
+});
+							</pre>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+	</div>
+</body>
+</html>

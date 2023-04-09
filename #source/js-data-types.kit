@@ -59,7 +59,6 @@
 					<div class="accordion__content">
 						<div class="accordion__wrapper">
 							<pre class="accordion__pre block">
-								<code class="accordion__code block">
 let primer = 100;
 console.log(primer);
 console.log(typeof primer);
@@ -73,12 +72,10 @@ console.log(primerNan);
 console.log(typeof primerNan);
 <i class="accordion__i">// при вычитании, умножении и делении 10 на "5" будет просчитываться как число.</i>
 <i class="accordion__i">// при сложении 10 + "5" выдаст строку 105</i>
-								</code>
 							</pre>
 						</div>
 						<div class="accordion__wrapper">
 							<pre class="accordion__pre block">
-								<code class="accordion__code block">
 let digit = 25;
 let fract = 25.03;
 let exp = 2e10; <i class="accordion__i">// 2 * 10 в десятой степени (20000000000)</i>
@@ -100,10 +97,74 @@ let oct = 0o10; // число 8
 let x = 0x1b; // число 27
 <i class="accordion__i">// начинается с числа 11 и прибавляется 16 каждый раз</i>
 <i class="accordion__i">// 0x1b - 11+16=27, 0x2b - 27+16=43</i>
-								</code>
+							</pre>
+						</div>
+						<div class="accordion__wrapper">
+							<p class="accrodion__text text">
+								Преобразование в число
+							</p><br>
+							<pre class="accordion__pre block">
+Number("42"); <i class="accordion__i">// число 42</i>
+Number("3.14"); <i class="accordion__i">// число 3.14 (запятая не работает!)</i>
+Number("-42"); <i class="accordion__i">// -42</i>
+Number("+42"); <i class="accordion__i">// 42</i>
+
+Number("0b1001"); <i class="accordion__i">// 9, работает с 2-чными</i>
+Number("0o22"); <i class="accordion__i">// 18, работает с 8-чными</i>
+Number("0x22"); <i class="accordion__i">// 34, работает с 16-чными</i>
+
+Number("\n\t 42 \n\t"); <i class="accordion__i">// 42, пробельные символы не учитываются</i>
+
+Number("И как из этого сделать число?"); <i class="accordion__i">// NaN - not a number</i>
+
+Number(true); <i class="accordion__i">// 1</i>
+Number(false); <i class="accordion__i">// 0</i>
+
+Number(null); <i class="accordion__i">// 0, лекго запомнить, null cозвучен с ноль и переводится как "нулевой"</i>
+Number(undefined); <i class="accordion__i">// NaN</i>
+
+Number({}); <i class="accordion__i">// NaN</i>
+Number([100, 200, 300, 400, 500]); <i class="accordion__i">// NaN</i>
+Number(() => {}); <i class="accordion__i">// NaN</i>
 							</pre>
 						</div>
 					</div>
+					</div>
+					<div class="accordion__item">
+						<button class="accordion__title btn" data-spoller>NaN</button>
+						<div class="accordion__content">
+							<div class="accordion__wrapper">
+								<pre class="accordion__pre block">
+console.log(NaN === 0); <i class="accordion__i">// false</i>
+console.log(NaN === NaN); <i class="accordion__i">// false</i>
+console.log(NaN > 0); <i class="accordion__i">// false</i>
+console.log(NaN > NaN); <i class="accordion__i">// false</i>
+console.log(NaN < 0); <i class="accordion__i">// false</i>
+console.log(NaN < NaN); <i class="accordion__i">// false</i>
+console.log(NaN >= 0); <i class="accordion__i">// false</i>
+console.log(NaN >= NaN); <i class="accordion__i">// false</i>
+console.log(NaN <= 0); <i class="accordion__i">// false</i>
+console.log(NaN <= NaN); <i class="accordion__i">// false</i>
+								</pre>
+							</div>
+							<div class="accordion__wrapper">
+								<pre class="accordion__pre block">
+const value = "4";
+
+<i class="accordion__i">// этот кода не сработает, т.к. выражение NaN === NaN вернёт false</i>
+if (Number(value) === NaN) {
+  console.log("Не удалось разобрать число");
+}
+
+<i class="accordion__i">// а вот это сработает как надо</i>
+if (isNaN(Number(value))) {
+  console.log(true); <i class="accordion__i">// true, если не число</i>
+} else {
+  console.log(false); <i class="accordion__i">// false, если число</i>
+}
+								</pre>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -57,9 +57,14 @@
 	transition: opacity 0.3s ease-in-out, color .3s ease-in-out;
 }
 .footer-form__input:focus:not(:active),
-.footer-form__textarea:focus:not(:active),
+.footer-form__textarea:focus:not(:active) {
+	box-shadow: 0px 0px 3px 3px rgba(0, 50, 100, 1);
+	border-color: rgba(0, 50, 100, 1);
+}
 .footer-form__btn:focus:not(:hover):not(:active) {
-	outline: 1px solid rgba(255, 255, 255, 1.0);
+	background: transparent;
+	color: rgba(255, 255, 255, 1.0);
+	outline: 1px solid rgba(0, 50, 100, 1);
 }
 .footer-form__input:focus::placeholder,
 .footer-form__textarea:focus::placeholder {
@@ -77,5 +82,6 @@
 }
 .footer-form__btn:active {
 	background: transparent;
-	color: rgba(255,255,255,1);	
+	outline: 1px solid rgba(0, 50, 150, 1);
+	color: rgba(0, 50, 150, 1);	
 }

@@ -479,7 +479,7 @@ console.log(users); <i class="accordion__i">// вернёт 6 возвращае
 						</div>
 					</div>
 					<div class="accordion__item">
-						<button class="accordion__title btn" data-spoller>Оператор <code class="accordion__code color-yellow">НЕ</code></button>
+						<button class="accordion__title btn" data-spoller>Оператор отрицания <code class="accordion__code color-yellow">НЕ</code></button>
 						<div class="accordion__content">
 							<div class="accordion__wrapper">
 								<h3 class="accordion__heading title">
@@ -487,6 +487,19 @@ console.log(users); <i class="accordion__i">// вернёт 6 возвращае
 								</h3>
 								<p class="accordion__text text">
 									Данный оператор имеет наивысший приоритет над <code class="accordion__code color-yellow">|| &&</code>
+								</p>
+								<p class="accordion__text text">
+									Можно использовать два оператора отрицания, чтобы вернуть изначальное значение.
+								</p>
+								<p class="accordion__text text">
+									Например:
+									<pre class="accordion__code color-yellow">
+const digit = true;
+
+function (digit) {
+  return (!!digit); <i class="accordion__i">// выведет как true, т.е., первый оператор ! переведёт на false, второй оператор ! обратно на true</i>
+}
+									</pre>
 								</p>
 							</div>
 						</div>
